@@ -150,12 +150,10 @@
 }
 .led__row:hover { padding-inline-start: .9rem; }
 @media (min-width: 48rem) {
-  .led__row { grid-template-columns: 1.6fr 1.4fr auto; align-items: baseline; }
+  .led__row { grid-template-columns: 1.6fr 1.4fr; align-items: baseline; }
 }
 .led__org { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.15rem, 2.2vw, 1.6rem); letter-spacing: -.02em; }
 .led__role { color: var(--sage); font-size: var(--t-sm); }
-.led__when { font-family: var(--f-mono); font-size: var(--t-mono); color: var(--sage); letter-spacing: .09em; white-space: nowrap; }
-.led__now { color: var(--green); }
 .led__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; }
 
 /* ---------- Testimonials ---------- */

@@ -104,7 +104,6 @@
 .role:last-of-type { border-bottom: 0; }
 .role__hd { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem; margin-bottom: .35rem; }
 .role__org { font-family: var(--f-display); font-weight: 700; font-size: clamp(1.25rem,2.4vw,1.75rem); letter-spacing: -.025em; }
-.role__when { margin-left: auto; }
 .role__title { color: var(--teal); margin-bottom: .9rem; }
 .role__body { color: var(--tx-mute); max-width: var(--measure); }
 .role__body + .role__body { margin-top: .75rem; }

@@ -120,7 +120,7 @@ CASES = [
  "alt":"Illustrative intake console showing pipeline stages and an onboarding runbook",
  "caption":"Illustrative interface &mdash; sample data, no client information",
  "meta":[("Role","Client Coordinator &amp; EA"),("Discipline","Legal operations"),
-         ("Stack","Clio, DocuSign, LawPay, Dropbox"),("Status","Current")],
+         ("Stack","Clio, DocuSign, LawPay, Dropbox"),("Sector","Intellectual property")],
  "body":"""<h2>The problem</h2>
 <p>Intake at a small firm is deceptively hard. A prospective client emails, calls, or arrives
 through a referral. Somebody books a consultation. Somebody else drafts an engagement letter.

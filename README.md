@@ -96,7 +96,26 @@ marketing pages with nothing private on them.
 **Keep it that way.** If you swap in a real screenshot, check it at full resolution for
 names, addresses, figures and third parties first.
 
-## 5. Deploying
+## 5. Analytics
+
+Vercel Web Analytics, added as one tag on every page:
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+**It only reports once enabled in the dashboard** — Vercel project →
+Analytics → Enable. The script is served by Vercel at that path at runtime;
+there is no package to install and nothing to configure in the code.
+
+Cookieless, so no consent banner is required. The path 404s when you open the
+files locally, which is harmless — the tag is deferred and nothing else depends
+on it.
+
+To add Speed Insights later, the same pattern applies with
+`/_vercel/speed-insights/script.js`.
+
+## 6. Deploying
 
 Static — any host works. Drag the folder into Netlify, or:
 
@@ -107,7 +126,7 @@ npx vercel --prod
 Before going live, replace `https://example.com` in `sitemap.xml` and `robots.txt`
 with the real domain.
 
-## 6. Browser support
+## 7. Browser support
 
 Modern evergreen browsers. Uses `:has()`-free CSS, CSS nesting-free syntax, WebP,
 `overflow: clip`, `inert`, and `IntersectionObserver`. Reduced motion is respected —

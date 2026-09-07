@@ -99,6 +99,7 @@ PAGE = '''<!doctype html>
 </main>
 {foot}
 <script src="../assets/js/main.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
 '''

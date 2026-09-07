@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap");
+:root{--ink:#1f2421;--ink2:#272e2a;--ink3:#323a35;--teal:#216869;--green:#49a078;--sage:#9cc5a1;--paper:#dce1de;--rule:rgba(220,225,222,.13)}
+*{box-sizing:border-box;margin:0}
+html{background:#1f2421}
+body{width:1280px;min-height:0;background:var(--ink);color:var(--paper);font:15px/1.5 "Instrument Sans",sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+.mono{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:500}
+h1,h2,h3{font-family:"Archivo",sans-serif;letter-spacing:-.025em;line-height:1.05;font-weight:700}
+.app{display:grid;grid-template-columns:60px 1fr}
+.rail{background:#1a1e1c;border-right:1px solid var(--rule);display:flex;flex-direction:column;align-items:center;padding:18px 0;gap:20px}
+.rail .logo{width:26px;height:26px;border-radius:7px;background:var(--green);display:grid;place-items:center;color:var(--ink);font-weight:800;font-family:Archivo,sans-serif;font-size:13px}
+.rail i{width:20px;height:20px;border-radius:5px;background:var(--ink3);display:block}
+.rail i.on{background:var(--sage)}
+.main{display:flex;flex-direction:column;min-width:0}
+.top{display:flex;align-items:center;gap:14px;padding:0 26px;height:58px;border-bottom:1px solid var(--rule);flex:none}
+.top .mono{color:var(--sage)}
+.chip{margin-left:auto;display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule);border-radius:999px;padding:5px 11px;color:var(--sage)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.body{padding:24px 26px 26px;display:grid;gap:20px;align-content:start;overflow:hidden}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tile{background:var(--ink2);border:1px solid var(--rule);border-radius:10px;padding:15px 16px}
+.tile .k{color:var(--sage);margin-bottom:9px}
+.tile .v{font-family:Archivo,sans-serif;font-weight:700;font-size:34px;letter-spacing:-.035em;line-height:1}
+.tile .d{margin-top:6px;color:var(--green);font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.06em}
+.cols{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}
+.panel{background:var(--ink2);border:1px solid var(--rule);border-radius:10px;padding:18px 20px}
+.panel h3{font-size:15px;margin-bottom:16px}
+.panel h3 span{color:var(--sage);font-weight:500;font-family:"Instrument Sans";font-size:12px;letter-spacing:0;margin-left:8px}
+.fun{display:grid;gap:11px}
+.fun .r{display:grid;grid-template-columns:120px 1fr 34px;align-items:center;gap:12px}
+.fun .lb{color:var(--sage);font-size:12.5px}
+.fun .tr{height:22px;background:#1c211e;border-radius:4px;overflow:hidden}
+.fun .br{height:100%;border-radius:4px;background:var(--green)}
+.fun .n{font-family:"JetBrains Mono",monospace;font-size:12px;text-align:right;color:var(--paper)}
+.steps{display:grid;gap:0}
+.step{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:13px}
+.step:last-child{border-bottom:0}
+.step .bx{width:15px;height:15px;border-radius:4px;border:1.5px solid var(--ink3);flex:none;display:grid;place-items:center}
+.step.ok .bx{background:var(--green);border-color:var(--green)}
+.step.ok .bx::after{content:"";width:7px;height:4px;border-left:1.6px solid var(--ink);border-bottom:1.6px solid var(--ink);rotate:-45deg;margin-top:-2px}
+.step.ok span{color:var(--sage)}
+.step .no{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:10px;color:#5d6863}
+.feed{display:grid;gap:0}
+.ev{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--rule)}
+.ev:last-child{border-bottom:0}
+.ev .t{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:#6d7772;padding-top:2px}
+.ev .h{font-size:13.5px;font-weight:600;margin-bottom:2px}
+.ev .s{font-size:12.5px;color:var(--sage)}
+.ev .badge{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:var(--ink3);color:var(--sage);margin-left:7px;vertical-align:1px}
+.ev .badge.g{background:rgba(73,160,120,.2);color:var(--green)}
+.ev .badge.a{background:rgba(156,197,161,.16);color:var(--sage)}
+.agenda{display:grid;gap:0}
+.day{display:grid;grid-template-columns:38px 1fr;gap:11px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.day:last-child{border-bottom:0}
+.day .dn{font-family:Archivo,sans-serif;font-weight:700;font-size:17px;line-height:1}
+.day .dm{font-family:"JetBrains Mono",monospace;font-size:9px;color:#6d7772;letter-spacing:.08em}
+.day .it{font-size:12.5px;color:var(--sage);display:flex;align-items:center;gap:7px}
+.day .it+.it{margin-top:4px}
+.day .pip{width:5px;height:5px;border-radius:50%;background:var(--teal);flex:none}
+.note{text-align:right;padding:0 26px 16px;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#5a645f}
+.spark{display:flex;align-items:flex-end;gap:5px;height:96px;margin-top:4px}
+.spark div{flex:1;background:var(--ink3);border-radius:3px 3px 0 0}
+.spark div.hi{background:var(--green)}
+.ai{background:rgba(73,160,120,.09);border:1px solid rgba(73,160,120,.28);border-radius:9px;padding:14px 16px}
+.ai .tag{display:inline-flex;align-items:center;gap:6px;color:var(--green);margin-bottom:8px}
+.ai p{font-size:13px;color:var(--sage);line-height:1.5}
+.rows{display:grid}
+.row{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule);font-size:13.5px}
+.row:last-child{border-bottom:0}
+.row .st{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 7px;border-radius:3px;background:var(--ink3);color:var(--sage)}
+.row .st.g{background:rgba(73,160,120,.2);color:var(--green)}
+.row .mt{font-family:"JetBrains Mono",monospace;font-size:11px;color:#6d7772}
+.bar{height:6px;border-radius:3px;background:#1c211e;overflow:hidden;margin-top:7px}
+.bar i{display:block;height:100%;background:var(--green);border-radius:3px}
+.mods{display:grid;gap:10px}
+.mod{background:var(--ink2);border:1px solid var(--rule);border-radius:9px;padding:13px 15px}
+.mod .hd{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600}
+.mod .nm{font-family:"JetBrains Mono",monospace;font-size:10px;color:#6d7772;margin-left:auto}
+.mod .sb{font-size:12px;color:var(--sage);margin-top:3px}

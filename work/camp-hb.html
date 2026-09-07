@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Non-member class booking — Rafael Reyes</title>
+<meta name="description" content="A mobile-first booking page letting prospects claim a free first class, with a serverless backend and a staff playbook.">
+<meta property="og:title" content="Non-member class booking — Rafael Reyes">
+<meta property="og:description" content="A mobile-first booking page letting prospects claim a free first class, with a serverless backend and a staff playbook.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" data-open="false">
+  <div class="nav__in">
+    <a class="nav__mark" href="../index.html">RR<span>.</span></a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
+    </button>
+    <div class="nav__links" id="menu">
+      <a class="nav__link" href="../index.html#work">Work</a>
+      <a class="nav__link" href="../index.html#services">Services</a>
+      <a class="nav__link" href="../index.html#experience">Experience</a>
+      <a class="nav__link" href="../about.html">About</a>
+      <a class="nav__link" href="../index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn--ink nav__cta" href="../index.html#contact">Let's talk <span class="btn__arw">&#8599;</span></a>
+  </div>
+</nav>
+<main id="main" class="wrap">
+  <a class="back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+  <header class="chead">
+    <span class="chead__eyebrow mono">The Camp Transformation Center &middot; Huntington Beach</span>
+    <h1 class="chead__title">Non-member class booking</h1>
+    <p class="lead chead__lede">The original of the pair. A prospect picks a class, the team gets an email they can act on, and the front desk works from something written down.</p>
+  </header>
+
+  <div class="cmeta"><div class="cmeta__c"><span class="cmeta__k mono">Role</span><span class="cmeta__v">Builder</span></div><div class="cmeta__c"><span class="cmeta__k mono">Discipline</span><span class="cmeta__v">Lead generation</span></div><div class="cmeta__c"><span class="cmeta__k mono">Stack</span><span class="cmeta__v">Static + serverless</span></div><div class="cmeta__c"><span class="cmeta__k mono">Live</span><span class="cmeta__v"><a href="https://thecamp-hb-booking.vercel.app" target="_blank" rel="noopener">View site &#8599;</a></span></div></div>
+
+  <figure class="shot">
+    <img src="../assets/img/screens/camp-hb.webp" srcset="../assets/img/screens/camp-hb-sm.webp 600w, ../assets/img/screens/camp-hb.webp 1200w" sizes="(max-width: 48rem) 100vw, 50vw" alt="The Camp Huntington Beach class booking landing page" width="1200" height="750">
+    <figcaption>Live site &mdash; thecamp-hb-booking.vercel.app</figcaption>
+  </figure>
+
+  <article class="prose">
+<h2>The problem</h2>
+<p>The gym's first class is free, which is a strong offer undermined by a weak path to claiming it.
+Interested people had to call during opening hours and negotiate a time — a small amount of
+friction placed at exactly the moment someone has decided to try something intimidating.</p>
+<p>Phone tag is where casual interest goes to die.</p>
+
+<h2>What I built</h2>
+<p>A single page that lets someone pick a class time and submit in about forty-five seconds. No
+membership, no account, no payment. The weekly schedule is defined as a pattern in one place, so
+the front desk can adjust class times without touching anything that looks like code.</p>
+<p>On submission the team receives an email formatted to match how they enter leads into their
+sales system, and the prospect receives a confirmation. Staff update the CRM by hand — a
+deliberate choice that keeps the conversion path short and preserves a human follow-up.</p>
+
+<h2>The half that is not a website</h2>
+<p>A booking page produces bookings, which is only useful if someone reliably acts on them. So the
+project also delivered the operating material around it: a staff workflow defining what happens
+when a booking arrives and who owns it, text-message templates for follow-up, guidance on where
+the link belongs across social channels, and a QA checklist to run before sharing it.</p>
+<p>That is usually the difference between a page that generates leads and a business that converts
+them. The page was the easy half.</p>
+
+<h2>Built to be reused</h2>
+<p>The server logic lives in one shared module with thin adapters for two different hosts, so the
+whole thing can move between platforms with a configuration change. When the Whittier location
+needed a promotion of its own, that structure meant starting from a proven engine rather than a
+blank page — as a separate repo and deploy, so neither location's funnel can break the other.</p>
+  </article>
+
+  <div class="nextup">
+    <a href="arc-intake.html">
+      <span class="nextup__k mono">Next case</span>
+      <span class="nextup__t">The intake system that runs itself <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="nav__mark" style="font-size:1.4rem;margin-bottom:.75rem">Rafael Reyes<span style="color:var(--green)">.</span></div>
+        <p class="mute" style="max-width:34ch">Operations Manager &amp; AI Systems Builder. Building the systems I run.</p>
+      </div>
+      <div>
+        <div class="foot__h mono">Site</div>
+        <ul class="foot__list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot__h mono">Elsewhere</div>
+        <ul class="foot__list">
+          <li><a href="mailto:Reyesralf17@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/yourtop1va-rafaelreyes" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://bit.ly/3Xg4aam" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar mono">
+      <span>&copy; 2026 Rafael Reyes</span>
+      <span>Interface images are illustrative &mdash; no client data</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

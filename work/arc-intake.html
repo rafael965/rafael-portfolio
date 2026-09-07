@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The intake system that runs itself — Rafael Reyes</title>
+<meta name="description" content="A seventeen-step client intake and onboarding chain for an IP law firm, documented and delegable.">
+<meta property="og:title" content="The intake system that runs itself — Rafael Reyes">
+<meta property="og:description" content="A seventeen-step client intake and onboarding chain for an IP law firm, documented and delegable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" data-open="false">
+  <div class="nav__in">
+    <a class="nav__mark" href="../index.html">RR<span>.</span></a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
+    </button>
+    <div class="nav__links" id="menu">
+      <a class="nav__link" href="../index.html#work">Work</a>
+      <a class="nav__link" href="../index.html#services">Services</a>
+      <a class="nav__link" href="../index.html#experience">Experience</a>
+      <a class="nav__link" href="../about.html">About</a>
+      <a class="nav__link" href="../index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn--ink nav__cta" href="../index.html#contact">Let's talk <span class="btn__arw">&#8599;</span></a>
+  </div>
+</nav>
+<main id="main" class="wrap">
+  <a class="back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+  <header class="chead">
+    <span class="chead__eyebrow mono">ARC IP Law, PC &middot; Legal operations</span>
+    <h1 class="chead__title">The intake system that runs itself</h1>
+    <p class="lead chead__lede">A law firm loses money in the gap between “someone enquired” and “the matter is open.” I closed that gap by writing the whole thing down and wiring the tools together.</p>
+  </header>
+
+  <div class="cmeta"><div class="cmeta__c"><span class="cmeta__k mono">Role</span><span class="cmeta__v">Client Coordinator &amp; EA</span></div><div class="cmeta__c"><span class="cmeta__k mono">Discipline</span><span class="cmeta__v">Legal operations</span></div><div class="cmeta__c"><span class="cmeta__k mono">Stack</span><span class="cmeta__v">Clio, DocuSign, LawPay, Dropbox</span></div><div class="cmeta__c"><span class="cmeta__k mono">Status</span><span class="cmeta__v">Current</span></div></div>
+
+  <figure class="shot">
+    <img src="../assets/img/screens/arc-intake.webp" srcset="../assets/img/screens/arc-intake-sm.webp 600w, ../assets/img/screens/arc-intake.webp 1200w" sizes="(max-width: 48rem) 100vw, 50vw" alt="Illustrative intake console showing pipeline stages and an onboarding runbook" width="1200" height="675">
+    <figcaption>Illustrative interface &mdash; sample data, no client information</figcaption>
+  </figure>
+
+  <article class="prose">
+<h2>The problem</h2>
+<p>Intake at a small firm is deceptively hard. A prospective client emails, calls, or arrives
+through a referral. Somebody books a consultation. Somebody else drafts an engagement letter.
+A retainer needs collecting, a conflicts check needs running, an entity needs verifying with the
+Secretary of State, and a matter needs opening in a different system than the one the enquiry
+arrived in.</p>
+<p>None of that is difficult. All of it is forgettable. And when a step is forgotten, the failure
+is silent — the enquiry simply goes quiet, and nobody notices until the month-end review asks
+why the pipeline looks thin.</p>
+<p>The firm had capable people. What it did not have was a written answer to
+<strong>“what happens next, and who does it.”</strong></p>
+
+<h2>What I built</h2>
+<p>A single onboarding chain covering every step from first contact to an open, funded matter —
+sequenced, owned, and documented well enough that someone who had never done it could run it
+correctly on their first attempt.</p>
+<ol class="chain">
+  <li><span class="n">01</span><span>Create the matter and log the enquiry source</span></li>
+  <li><span class="n">02</span><span>Provision the client folder against a fixed structure</span></li>
+  <li><span class="n">03</span><span>Send the intake form and record what came back</span></li>
+  <li><span class="n">04</span><span>Verify the entity where the client is a company</span></li>
+  <li><span class="n">05</span><span>Prepare the engagement letter and disclosures</span></li>
+  <li><span class="n">06</span><span>Route to the assigned attorney for review</span></li>
+  <li><span class="n">07</span><span>Send for signature and track the retainer</span></li>
+  <li><span class="n">08</span><span>File executed documents back to the client folder</span></li>
+  <li><span class="n">09</span><span>Convert the record into an active matter</span></li>
+  <li><span class="n">10</span><span>Trigger the welcome sequence and first follow-up task</span></li>
+</ol>
+<p>Seventeen steps in total. Each one names the tool, the owner, and the trigger for the step
+after it — so the process moves without anyone holding the whole thing in their head.</p>
+
+<h2>How it holds together</h2>
+<p>The chain spans four systems that do not natively talk to each other, so the documentation
+<em>is</em> the integration. Clio Grow holds the enquiry, Clio Manage holds the matter, DocuSign
+carries the signature, LawPay carries the retainer, and Dropbox holds the file. The runbook
+defines the handoff at every boundary, including what “done” looks like before the next step
+is allowed to start.</p>
+<p>Around it sits a set of companion procedures for the work that recurs: inbox triage rules that
+sort what needs an attorney's judgement from what needs an assistant's, continuing-education
+compliance tracking, and expense entry against the right matter.</p>
+
+<h2>Where AI actually helps</h2>
+<p>I use it where it removes genuine work rather than where it demonstrates well. Reviewing an
+executive inbox and surfacing what needs a decision. Turning a long thread into a short summary
+with the action items pulled out. Drafting the routine correspondence that follows a predictable
+shape. Researching a prospective client or organisation ahead of a meeting.</p>
+<p>The pattern that made these stick was writing them as reusable workflows rather than one-off
+prompts — so the output is consistent enough to trust, and someone other than me can run them.</p>
+
+<h2>What changed</h2>
+<p>The measurable part is not speed, it is <strong>survivability</strong>. Before, the process
+lived in the head of whoever had done it last. Now it exists as a document, which means it can be
+delegated, audited, improved, and handed to a new starter.</p>
+<p>The follow-up tracking is the part I would keep if I could only keep one thing. Enquiries do
+not stall silently any more, because “waiting on the client” is a state the system knows about
+rather than something a person has to remember.</p>
+<div class="note-box"><p>The interface above is an illustration built for this portfolio. It shows
+the shape of the work, not the firm's data — no client information appears anywhere on this site.</p></div>
+  </article>
+
+  <div class="nextup">
+    <a href="lively-dashboard.html">
+      <span class="nextup__k mono">Next case</span>
+      <span class="nextup__t">Client reporting platform <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="nav__mark" style="font-size:1.4rem;margin-bottom:.75rem">Rafael Reyes<span style="color:var(--green)">.</span></div>
+        <p class="mute" style="max-width:34ch">Operations Manager &amp; AI Systems Builder. Building the systems I run.</p>
+      </div>
+      <div>
+        <div class="foot__h mono">Site</div>
+        <ul class="foot__list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot__h mono">Elsewhere</div>
+        <ul class="foot__list">
+          <li><a href="mailto:Reyesralf17@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/yourtop1va-rafaelreyes" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://bit.ly/3Xg4aam" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar mono">
+      <span>&copy; 2026 Rafael Reyes</span>
+      <span>Interface images are illustrative &mdash; no client data</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand reopening funnel — Rafael Reyes</title>
+<meta name="description" content="A mobile-first promotional landing page and booking funnel for a gym under new ownership.">
+<meta property="og:title" content="Grand reopening funnel — Rafael Reyes">
+<meta property="og:description" content="A mobile-first promotional landing page and booking funnel for a gym under new ownership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" data-open="false">
+  <div class="nav__in">
+    <a class="nav__mark" href="../index.html">RR<span>.</span></a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
+    </button>
+    <div class="nav__links" id="menu">
+      <a class="nav__link" href="../index.html#work">Work</a>
+      <a class="nav__link" href="../index.html#services">Services</a>
+      <a class="nav__link" href="../index.html#experience">Experience</a>
+      <a class="nav__link" href="../about.html">About</a>
+      <a class="nav__link" href="../index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn--ink nav__cta" href="../index.html#contact">Let's talk <span class="btn__arw">&#8599;</span></a>
+  </div>
+</nav>
+<main id="main" class="wrap">
+  <a class="back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+  <header class="chead">
+    <span class="chead__eyebrow mono">The Camp Transformation Center &middot; Whittier</span>
+    <h1 class="chead__title">Grand reopening funnel</h1>
+    <p class="lead chead__lede">A gym under new ownership had one month to convert local interest into memberships. The page had to work on a phone, in a parking lot, in under a minute.</p>
+  </header>
+
+  <div class="cmeta"><div class="cmeta__c"><span class="cmeta__k mono">Role</span><span class="cmeta__v">Builder</span></div><div class="cmeta__c"><span class="cmeta__k mono">Discipline</span><span class="cmeta__v">Lead generation</span></div><div class="cmeta__c"><span class="cmeta__k mono">Stack</span><span class="cmeta__v">Static + serverless</span></div><div class="cmeta__c"><span class="cmeta__k mono">Live</span><span class="cmeta__v"><a href="https://thecamp-whittier-reopening-promo.vercel.app" target="_blank" rel="noopener">View site &#8599;</a></span></div></div>
+
+  <figure class="shot">
+    <img src="../assets/img/screens/camp-whittier.webp" srcset="../assets/img/screens/camp-whittier-sm.webp 600w, ../assets/img/screens/camp-whittier.webp 1200w" sizes="(max-width: 48rem) 100vw, 50vw" alt="The Camp Whittier grand reopening landing page" width="1200" height="750">
+    <figcaption>Live site &mdash; thecamp-whittier-reopening-promo.vercel.app</figcaption>
+  </figure>
+
+  <article class="prose">
+<h2>The problem</h2>
+<p>New ownership, a dollar-for-your-first-month offer, and a hard date. Everything hung on
+converting attention into a booked first class before the promotion expired.</p>
+<p>The constraint that shaped every decision: almost all the traffic would arrive from a phone,
+via Instagram or a text from a friend, and would give the page well under a minute.</p>
+
+<h2>What I built</h2>
+<p>A single mobile-first page that does exactly one job — pick a class, submit, done. No account,
+no payment online, no CRM integration to go wrong at the moment of conversion.</p>
+<p>On submission, two emails fire: one to the team formatted for how they actually work, and one
+to the prospect confirming the booking with a calendar invite attached. Staff update their sales
+system by hand, which sounds primitive and is in fact the correct call — it keeps the critical
+path short and gives the front desk a human touchpoint.</p>
+
+<h2>One backend, two hosts</h2>
+<p>All the server logic lives once, in a shared module holding validation and both emails. Two
+thin adapters expose it — one for Netlify functions, one for Vercel. The page always posts to the
+same path, and host configuration rewrites it as needed.</p>
+<p>The reason is unglamorous and practical: a small business should never be stuck with a host
+because their landing page is welded to it. Moving is a config change, not a rebuild.</p>
+
+<h2>Beyond the page</h2>
+<p>A landing page alone does not run a promotion. The same project produced the surrounding
+material: QR codes in print-ready formats with ready-to-print counter signs, a front-desk playbook
+that works as a web page and a PDF from one source file, text-message follow-up templates, and a
+testing checklist to run before the link went out.</p>
+<p>It is built on the same engine as the Huntington Beach page, deliberately kept as a separate
+folder, repo, deploy and data store — so retiring this promotion can never disturb the other
+location's live funnel.</p>
+
+<h2>Working with the client</h2>
+<p>Two days before launch the client came back with changes: special hours for the Monday, and a
+rename from “Reopening” to “Grand Reopening Event” so members understood the gym was already open
+and this was an event, not a return from closure.</p>
+<p>That second note was a genuine catch — the original wording would have cost them walk-ins from
+people who assumed the doors were shut. Both changes went live the same day, and the current site
+reflects them.</p>
+  </article>
+
+  <div class="nextup">
+    <a href="gbi-buildertrend.html">
+      <span class="nextup__k mono">Next case</span>
+      <span class="nextup__t">Project operations in Buildertrend <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="nav__mark" style="font-size:1.4rem;margin-bottom:.75rem">Rafael Reyes<span style="color:var(--green)">.</span></div>
+        <p class="mute" style="max-width:34ch">Operations Manager &amp; AI Systems Builder. Building the systems I run.</p>
+      </div>
+      <div>
+        <div class="foot__h mono">Site</div>
+        <ul class="foot__list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot__h mono">Elsewhere</div>
+        <ul class="foot__list">
+          <li><a href="mailto:Reyesralf17@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/yourtop1va-rafaelreyes" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://bit.ly/3Xg4aam" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar mono">
+      <span>&copy; 2026 Rafael Reyes</span>
+      <span>Interface images are illustrative &mdash; no client data</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

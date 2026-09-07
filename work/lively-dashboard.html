@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client reporting platform — Rafael Reyes</title>
+<meta name="description" content="A multi-tenant Next.js reporting platform that collects weekly client numbers, generates the monthly narrative, renders a PDF and emails it.">
+<meta property="og:title" content="Client reporting platform — Rafael Reyes">
+<meta property="og:description" content="A multi-tenant Next.js reporting platform that collects weekly client numbers, generates the monthly narrative, renders a PDF and emails it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" data-open="false">
+  <div class="nav__in">
+    <a class="nav__mark" href="../index.html">RR<span>.</span></a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
+    </button>
+    <div class="nav__links" id="menu">
+      <a class="nav__link" href="../index.html#work">Work</a>
+      <a class="nav__link" href="../index.html#services">Services</a>
+      <a class="nav__link" href="../index.html#experience">Experience</a>
+      <a class="nav__link" href="../about.html">About</a>
+      <a class="nav__link" href="../index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn--ink nav__cta" href="../index.html#contact">Let's talk <span class="btn__arw">&#8599;</span></a>
+  </div>
+</nav>
+<main id="main" class="wrap">
+  <a class="back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+  <header class="chead">
+    <span class="chead__eyebrow mono">Lively &middot; Client reporting</span>
+    <h1 class="chead__title">Client reporting platform</h1>
+    <p class="lead chead__lede">Monthly client reporting was a manual assembly job that consumed the same days every month. I replaced the assembly line with software.</p>
+  </header>
+
+  <div class="cmeta"><div class="cmeta__c"><span class="cmeta__k mono">Role</span><span class="cmeta__v">Builder</span></div><div class="cmeta__c"><span class="cmeta__k mono">Stack</span><span class="cmeta__v">Next.js, TypeScript</span></div><div class="cmeta__c"><span class="cmeta__k mono">Services</span><span class="cmeta__v">Claude API, Sheets, Resend</span></div><div class="cmeta__c"><span class="cmeta__k mono">Host</span><span class="cmeta__v">Vercel</span></div></div>
+
+  <figure class="shot">
+    <img src="../assets/img/screens/lively-dashboard.webp" srcset="../assets/img/screens/lively-dashboard-sm.webp 600w, ../assets/img/screens/lively-dashboard.webp 1200w" sizes="(max-width: 48rem) 100vw, 50vw" alt="Illustrative client reporting dashboard with KPI tiles, a trend chart and a generated summary" width="1200" height="672">
+    <figcaption>Illustrative interface &mdash; sample data, no client information</figcaption>
+  </figure>
+
+  <article class="prose">
+<h2>The problem</h2>
+<p>An agency reporting to a roster of clients every month does the same work repeatedly: chase
+each account for their numbers, assemble them into a document, write a paragraph explaining what
+the numbers mean, export it, and email it. Multiply by the client list and it consumes several
+days of senior time every cycle — time that produces no new value, only the same value again.</p>
+<p>Worse, the chasing is invisible work. Nobody sees the effort spent finding out that three
+accounts have not submitted yet.</p>
+
+<h2>What I built</h2>
+<p>Two applications that operate as one system.</p>
+<ul>
+  <li><strong>An intake portal</strong> where each account submits their weekly and monthly
+      figures through structured forms — separate flows for different service lines, plus
+      financials and strategy inputs.</li>
+  <li><strong>A reporting dashboard</strong> that reads what came in, tracks it against per-client
+      goals, surfaces which accounts are healthy and which are drifting, generates the written
+      summary, renders the report as a PDF, and sends it.</li>
+</ul>
+<p>Both sit behind one-time-passcode authentication with signed sessions, because the data is
+commercially sensitive and the users are not technical.</p>
+
+<h2>How it works</h2>
+<p>Submissions land in a structured store the team can still inspect directly — deliberately, so
+nobody is locked out of their own numbers by the tool meant to help them. The dashboard reads
+against that, compares to goals, and derives the health signals.</p>
+<p>The narrative summary is generated through the Claude API from the actual figures, then
+reviewed before delivery. The report renders server-side to PDF and goes out through a
+transactional email service. Reports can also be shared as tokenised links, so a client can open
+one without needing an account.</p>
+<p>Scheduled checks watch for the things that quietly go wrong — a missed submission, an invoice
+past due, a month with no monthly report — and raise them rather than waiting for someone to
+notice.</p>
+
+<h2>Decisions worth defending</h2>
+<p>The generated summary is <em>reviewed, never auto-sent.</em> The model is good at turning
+numbers into readable prose and unreliable at knowing which omission matters. Keeping a human
+approval step is what makes it usable for client-facing work.</p>
+<p>Authentication is one-time passcode rather than passwords. For a small set of infrequent,
+non-technical users, passwords generate support burden and get reused; a passcode to a known
+address removes both problems.</p>
+
+<h2>What changed</h2>
+<p>The reporting cycle stopped being a manual assembly job. Chasing became visible — the system
+knows who has not submitted, so the follow-up is a glance rather than an investigation. And the
+monthly narrative starts from a draft rather than a blank page.</p>
+<div class="note-box"><p>The interface above is an illustration built for this portfolio, with
+invented clients and figures. No client data appears anywhere on this site.</p></div>
+  </article>
+
+  <div class="nextup">
+    <a href="camp-whittier.html">
+      <span class="nextup__k mono">Next case</span>
+      <span class="nextup__t">Grand reopening funnel <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="nav__mark" style="font-size:1.4rem;margin-bottom:.75rem">Rafael Reyes<span style="color:var(--green)">.</span></div>
+        <p class="mute" style="max-width:34ch">Operations Manager &amp; AI Systems Builder. Building the systems I run.</p>
+      </div>
+      <div>
+        <div class="foot__h mono">Site</div>
+        <ul class="foot__list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot__h mono">Elsewhere</div>
+        <ul class="foot__list">
+          <li><a href="mailto:Reyesralf17@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/yourtop1va-rafaelreyes" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://bit.ly/3Xg4aam" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar mono">
+      <span>&copy; 2026 Rafael Reyes</span>
+      <span>Interface images are illustrative &mdash; no client data</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

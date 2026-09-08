@@ -76,3 +76,35 @@ h1,h2,h3{font-family:"Archivo",sans-serif;letter-spacing:-.025em;line-height:1.0
 .mod .hd{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600}
 .mod .nm{font-family:"JetBrains Mono",monospace;font-size:10px;color:#6d7772;margin-left:auto}
 .mod .sb{font-size:12px;color:var(--sage);margin-top:3px}
+
+/* ---------- Calendar ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:14px}
+.lg{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
+.lg i{width:9px;height:9px;border-radius:2px;display:block}
+.cal{border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--ink2)}
+.cal__hd{display:grid;grid-template-columns:52px repeat(5,1fr);border-bottom:1px solid var(--rule)}
+.cal__hd div{padding:9px 10px;border-right:1px solid var(--rule)}
+.cal__hd div:last-child{border-right:0}
+.cal__dn{font-family:Archivo,sans-serif;font-weight:700;font-size:15px;line-height:1}
+.cal__dm{font-family:"JetBrains Mono",monospace;font-size:9px;color:#6d7772;letter-spacing:.1em;margin-top:2px}
+.cal__all{display:grid;grid-template-columns:52px repeat(5,1fr);border-bottom:1px solid var(--rule);padding:6px 0;gap:3px 0;position:relative}
+.cal__all .k{font-family:"JetBrains Mono",monospace;font-size:8.5px;color:#5d6863;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;grid-column:1;align-self:center}
+.band{margin:0 3px;padding:3px 8px;border-radius:3px;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.band.oof{background:rgba(156,197,161,.14);color:var(--sage);border-left:2px solid var(--sage)}
+.band.tz{background:rgba(33,104,105,.3);color:#bfe0d5;border-left:2px solid var(--teal)}
+.band.due{background:var(--sage);color:var(--ink);font-weight:700;border-left:2px solid var(--paper)}
+.cal__body{display:grid;grid-template-columns:52px repeat(5,1fr);position:relative}
+.cal__gut{border-right:1px solid var(--rule)}
+.cal__gut span{display:block;height:44px;font-family:"JetBrains Mono",monospace;font-size:9px;color:#5d6863;padding:2px 8px 0;text-align:right;letter-spacing:.06em}
+.col{position:relative;border-right:1px solid var(--rule);height:396px}
+.col:last-child{border-right:0}
+.col .hr{position:absolute;left:0;right:0;height:1px;background:var(--rule)}
+.ev2{position:absolute;left:3px;right:3px;border-radius:4px;padding:3px 7px;overflow:hidden;font-size:10.5px;line-height:1.22}
+.ev2 b{display:block;font-weight:600;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev2 em{display:block;font-style:normal;font-family:"JetBrains Mono",monospace;font-size:8.5px;line-height:1.1;color:inherit;opacity:.72;letter-spacing:.05em}
+.ev2.block{background:rgba(73,160,120,.18);border-left:2px solid var(--green);color:#cdebdb}
+.ev2.client{background:rgba(33,104,105,.4);border-left:2px solid #3d9b9c;color:#d6ece9}
+.ev2.internal{background:#333b36;border-left:2px solid #6d7772;color:#dbe2dd}
+.ev2.network{background:rgba(156,197,161,.14);border-left:2px solid var(--sage);color:#d3e6d6}
+.ev2.buffer{background:transparent;border:1px dashed rgba(220,225,222,.28);color:#8e9993}
+.ev2.personal{background:rgba(220,225,222,.07);border-left:2px solid #4e5853;color:#a9b3ae}

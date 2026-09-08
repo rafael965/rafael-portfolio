@@ -184,6 +184,66 @@ rather than something a person has to remember.</p>
 the shape of the work, not the firm's data — no client information appears anywhere on this site.</p></div>""",
 },
 {
+ "slug":"exec-calendar",
+ "title":"Running a principal's calendar",
+ "eyebrow":"ARC IP Law, PC &middot; Executive operations",
+ "desc":"Weekly calendar structure for a law firm's principal attorney — protected time, prep buffers, team availability and deadline visibility.",
+ "lede":"An attorney's calendar is the constraint the whole firm runs against. Left to fill "
+        "itself, it fills with other people's priorities.",
+ "img":"calendar.webp","imgh":"693",
+ "alt":"Illustrative weekly calendar showing protected blocks, buffers, team availability and a deadline",
+ "caption":"Illustrative interface &mdash; sample data, no client, matter or personal information",
+ "meta":[("Role","Executive Assistant"),("Discipline","Calendar &amp; inbox"),
+         ("Tools","Outlook, Teams, Zoom"),("Cadence","Weekly")],
+ "body":"""<h2>The problem</h2>
+<p>A principal attorney's week is contested by everyone at once. Client consultations, internal
+reviews, networking commitments, vendor calls, filing deadlines, and a steady background of people
+who need ten minutes. Every one of those requests is reasonable in isolation.</p>
+<p>Left to arrive first-come, the calendar fills with whatever was asked for earliest rather than
+whatever matters most. The predictable results: no gap between a meeting across town and the one
+after it, administrative work pushed to the evening because the day had no room for it, and a
+double-booking nobody notices until someone is already waiting.</p>
+<p>The failure is rarely a missed meeting. It is that the highest-value work &mdash; the work only
+the attorney can do &mdash; gets whatever is left over.</p>
+
+<h2>How I structure the week</h2>
+<p>The calendar is treated as a budget rather than a queue. Some of it is spent before anyone gets
+to ask.</p>
+<ul>
+  <li><strong>Protected blocks.</strong> Recurring, defended time for inbox triage, invoicing and
+      matter administration. Booked like a meeting, because time that is not on the calendar is
+      time other people assume is free.</li>
+  <li><strong>Buffers.</strong> Prep and travel sit on the calendar as their own entries before
+      anything external. A one o'clock across town starts at twelve-fifteen.</li>
+  <li><strong>Categories.</strong> Client, internal, networking, protected and buffer are visually
+      distinct, so a glance answers &ldquo;what kind of week is this&rdquo; without reading a
+      single title.</li>
+  <li><strong>Availability bands.</strong> Who is out, who is remote, who is working several hours
+      ahead &mdash; across the top, where it informs scheduling instead of being discovered
+      afterwards.</li>
+  <li><strong>Deadlines as fixtures.</strong> Filing and response dates sit in the all-day row from
+      the moment they are known, so the days before them are visibly spoken for.</li>
+</ul>
+
+<h2>The judgement part</h2>
+<p>Structure handles the routine. The rest is triage, and it is the part that cannot be automated.</p>
+<p>When two things collide, someone has to weigh which moves &mdash; against travel feasibility,
+who else is affected, whether the other party can reasonably be rescheduled, and what it costs the
+relationship. I make that call and present a recommendation rather than handing over a conflict.</p>
+<p>The same applies to the inbox. Most of what arrives needs an answer, a delegation or a diary
+entry; only a fraction genuinely needs the principal's judgement. Sorting those is the job.</p>
+
+<h2>Why it holds</h2>
+<p>Because the rules are written down rather than held in my head. The categories, the buffer
+conventions, what gets protected and what may be moved &mdash; documented alongside the firm's
+other procedures, so someone covering for me schedules the week the way I would.</p>
+<p>That is the same test I apply to everything else here. A calendar only I can run is not a
+system, it is a dependency.</p>
+<div class="note-box"><p>The calendar above is an illustration built for this portfolio. Every
+name, meeting and deadline is invented &mdash; no client, matter or personal information from any
+firm appears anywhere on this site.</p></div>""",
+},
+{
  "slug":"lively-dashboard",
  "title":"Client reporting platform",
  "eyebrow":"Lively &middot; Client reporting",

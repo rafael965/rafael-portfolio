@@ -294,6 +294,63 @@ competitors, chain-of-title problems in training data, copyright exposure surfac
 and the shifting IP landscape in China &mdash; alongside the foundational trademark material a
 prospective client searches for.</p>
 
+<h2>Selected writing</h2>
+<p>Openings from three pieces, chosen for range rather than performance. Each was written for the
+firm and published under its byline &mdash; these are excerpts shown as writing samples, not
+republished articles.</p>
+
+<div class="samples">
+
+  <article class="sample">
+    <div class="sample__m"><span class="sample__d mono">August 2026</span><span class="tag">AI &amp; trade secrets</span></div>
+    <h3 class="sample__t">Apple v. OpenAI Is a Warning Shot on Trade Secret Contamination</h3>
+    <div class="sample__x">
+      <p>On July 10, 2026, Apple filed a trade-secret and breach-of-contract lawsuit in the Northern
+      District of California against OpenAI, two former employees, and related entities tied to
+      OpenAI&rsquo;s hardware push. The case is at an early stage, and the allegations remain
+      allegations. But for business leaders, that does not mean the dispute is only interesting if
+      Apple ultimately wins.</p>
+      <p>What makes this filing important is the type of IP risk it highlights. For the last several
+      years, AI legal commentary has focused heavily on copyright, training data, and model outputs.
+      Those issues still matter. But the Apple complaint is a reminder that the next major AI IP
+      problem for some companies may look less like a copyright theory and more like trade secret
+      contamination.</p>
+    </div>
+    <div class="sample__by mono">Written for ARC IP Law, PC &middot; published under the firm&rsquo;s byline</div>
+  </article>
+
+  <article class="sample">
+    <div class="sample__m"><span class="sample__d mono">March 2026</span><span class="tag">Privilege &amp; AI</span></div>
+    <h3 class="sample__t">AI-Created Documents Sent to Counsel Are Not Privileged, Federal Judge Rules</h3>
+    <div class="sample__x">
+      <p>A recent federal court decision from the Southern District of New York has delivered a clear
+      message about the limits of attorney-client privilege in the age of artificial intelligence. In
+      <em>United States v. Heppner</em>, a district court held that documents a client generated using
+      a commercial AI tool and later shared with his attorneys were not protected by attorney-client
+      privilege or the work-product doctrine.</p>
+      <p>The case involved a financial services executive facing federal fraud charges who used an AI
+      tool to create a series of documents related to his legal defense. Even though the client shared
+      those materials with his lawyer, the court agreed with the government that privilege did not
+      apply.</p>
+    </div>
+    <div class="sample__by mono">Written for ARC IP Law, PC &middot; published under the firm&rsquo;s byline</div>
+  </article>
+
+  <article class="sample">
+    <div class="sample__m"><span class="sample__d mono">February 2026</span><span class="tag">Trademarks</span></div>
+    <h3 class="sample__t">Why Trademark Clearance Should Happen Before You Launch</h3>
+    <div class="sample__x">
+      <p>Launching a new brand is exciting. You have invested time, money, and creativity into your
+      name, logo, and messaging, and you are ready to go to market.</p>
+      <p>But one of the most common &mdash; and costly &mdash; mistakes we see is skipping trademark
+      clearance before launch. In today&rsquo;s fast-moving, digital-first environment, failing to
+      clear a brand name early can expose businesses to unnecessary risk, expense, and disruption.</p>
+    </div>
+    <div class="sample__by mono">Written for ARC IP Law, PC &middot; published under the firm&rsquo;s byline</div>
+  </article>
+
+</div>
+
 <h2>What made it hold</h2>
 <p>Twenty-four articles between January and August, at three to four a month. The number matters
 less than the fact that the cadence survived busy months, which is exactly where these programmes

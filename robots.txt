@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rafael-portfolio-sable.vercel.app/sitemap.xml
+Sitemap: https://rafaelreyes.dev/sitemap.xml

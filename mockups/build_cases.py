@@ -60,8 +60,9 @@ PAGE = '''<!doctype html>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{title} — Rafael Reyes">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="https://rafael-portfolio-sable.vercel.app/assets/img/og.png">
+<meta property="og:image" content="https://rafaelreyes.dev/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rafaelreyes.dev/work/{slug}.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -614,6 +615,7 @@ for i, c in enumerate(CASES):
     out = PAGE.format(
         nav=NAV, foot=FOOT,
         title=c["title"], desc=c["desc"], eyebrow=c["eyebrow"], lede=c["lede"],
+        slug=c["slug"],
         meta=meta_cells(c["meta"]), img=c["img"], img_sm=c["img"].replace(".webp","-sm.webp"), imgh=c["imgh"],
         alt=c["alt"], caption=c["caption"], body=c["body"],
         next_href=nxt["slug"] + ".html", next_title=nxt["title"],

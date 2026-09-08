@@ -131,7 +131,7 @@ Static — any host works. Drag the folder into Netlify, or:
 npx vercel --prod
 ```
 
-Live at **https://rafael-portfolio-sable.vercel.app**
+Live at **https://rafaelreyes.dev**
 
 The domain appears in four places. Change all of them together when it moves:
 
@@ -141,7 +141,7 @@ The domain appears in four places. Change all of them together when it moves:
 - `mockups/build_cases.py` — the `og:image` in the page template
 
 ```bash
-OLD=rafael-portfolio-sable.vercel.app; NEW=your-domain.com
+OLD=rafaelreyes.dev; NEW=your-domain.com
 grep -rl "$OLD" --include=*.html --include=*.xml --include=*.txt --include=*.py . \
   | xargs sed -i '' "s|$OLD|$NEW|g"
 python3 mockups/build_cases.py

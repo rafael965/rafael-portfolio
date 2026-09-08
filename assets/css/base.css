@@ -141,30 +141,6 @@ h1, h2, h3, h4 {
 .dark .btn--line { border-color: var(--rule-dk); color: var(--paper); }
 .dark .btn--line:hover { background: var(--green); color: var(--ink); border-color: var(--green); }
 
-/* ---------- Status pill ---------- */
-
-.status {
-  display: inline-flex; align-items: center; gap: .55rem;
-  padding: .5rem 1rem .5rem .8rem;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  background: var(--card);
-}
-.dark .status { border-color: var(--rule-dk); background: var(--ink-2); }
-
-.status__dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 0 rgba(73,160,120,.7);
-  animation: pulse 2.4s var(--ease) infinite;
-  flex: none;
-}
-@keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(73,160,120,.55); }
-  70%  { box-shadow: 0 0 0 7px rgba(73,160,120,0); }
-  100% { box-shadow: 0 0 0 0 rgba(73,160,120,0); }
-}
-
 /* ---------- Tags ---------- */
 
 .tags { display: flex; flex-wrap: wrap; gap: .4rem; }

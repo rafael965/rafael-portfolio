@@ -104,7 +104,20 @@ marketing pages with nothing private on them.
 **Keep it that way.** If you swap in a real screenshot, check it at full resolution for
 names, addresses, figures and third parties first.
 
-## 5. Analytics
+## 5. Availability
+
+The site carries no "available for work" signal. To put one back, three places:
+
+- `index.html` hero — a pill above the name
+- `index.html` contact section — a pill above the headline, plus the headline and
+  supporting copy, which currently invite conversation rather than pitch for work
+- `mockups/og.html` — the social card pill; re-render it afterwards (see Images)
+
+The `.status` / `.status__dot` CSS and its `pulse` keyframes were removed when the
+pills came out. Restore them from git history rather than rewriting:
+`git log -S"status__dot" -- assets/css/base.css`
+
+## 6. Analytics
 
 Vercel Web Analytics, added as one tag on every page:
 
@@ -123,7 +136,7 @@ on it.
 To add Speed Insights later, the same pattern applies with
 `/_vercel/speed-insights/script.js`.
 
-## 6. Deploying
+## 7. Deploying
 
 Static — any host works. Drag the folder into Netlify, or:
 
@@ -147,7 +160,7 @@ grep -rl "$OLD" --include=*.html --include=*.xml --include=*.txt --include=*.py 
 python3 mockups/build_cases.py
 ```
 
-## 7. Browser support
+## 8. Browser support
 
 Modern evergreen browsers. Uses `:has()`-free CSS, CSS nesting-free syntax, WebP,
 `overflow: clip`, `inert`, and `IntersectionObserver`. Reduced motion is respected —

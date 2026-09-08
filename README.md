@@ -84,7 +84,7 @@ rather than guessing, or the image gets dead space at the bottom.
 
 ### No client data
 
-The Lively, ARC (intake and calendar) and Grace Built images are **illustrations built
+The Lively, ARC (intake, calendar and content) and Grace Built images are **illustrations built
 for this site**, using invented names and figures. They are labelled as such in the interface itself, in each
 case study, and in the site footer.
 
@@ -93,7 +93,12 @@ construction project's location, named staff and payment activity; and an execut
 calendar carrying litigation deadlines, privileged matter subjects, matter numbers,
 live meeting links and colleagues' vacation dates. None of that belongs on a public
 page, and the calendar in particular could not have been safely redacted — nearly every
-block held something identifying. The Camp images are genuine, because those are public
+block held something identifying.
+
+The content-programme case deliberately carries **no engagement metrics**. The source
+analytics belonged to the firm's principal — her followers, profile views and search
+appearances — and two of the four headline figures were negative. Scale of output is
+Rafael's to cite; audience performance is not. The Camp images are genuine, because those are public
 marketing pages with nothing private on them.
 
 **Keep it that way.** If you swap in a real screenshot, check it at full resolution for

@@ -244,6 +244,69 @@ name, meeting and deadline is invented &mdash; no client, matter or personal inf
 firm appears anywhere on this site.</p></div>""",
 },
 {
+ "slug":"content-programme",
+ "title":"The firm's LinkedIn content programme",
+ "eyebrow":"ARC IP Law, PC &middot; Business development",
+ "desc":"An editorial programme for an IP law firm — twenty-four articles across eight months on AI and intellectual property, written, produced and published to a held cadence.",
+ "lede":"Every professional services firm knows it should be publishing. Almost none of them "
+        "do it consistently, and the reason is always the same: it depends on the busiest person.",
+ "img":"content-pipeline.webp","imgh":"778",
+ "alt":"Illustrative editorial pipeline showing an article calendar, production run and topic mix",
+ "caption":"Illustrative interface &mdash; no performance data, no personal information",
+ "meta":[("Role","Content &amp; BD support"),("Output","24 articles, 8 months"),
+         ("Beat","AI &amp; intellectual property"),("Cadence","3&ndash;4 per month")],
+ "body":"""<h2>The problem</h2>
+<p>Thought leadership at a small firm fails in a predictable way. Someone decides the firm should
+be visible. Three good posts go out in a fortnight. Then a filing deadline lands, and nothing
+appears for two months.</p>
+<p>Sporadic publishing is close to worthless, because none of it compounds. The audience never
+forms a habit, the firm never builds a beat it is known for, and the effort already spent is
+wasted rather than banked.</p>
+<p>The bottleneck is never ideas. It is that drafting depends on the person with the least
+available time &mdash; the attorney whose expertise makes the writing worth reading.</p>
+
+<h2>What I do</h2>
+<p>I run the programme end to end so the attorney's involvement is concentrated where only they
+can contribute: reviewing for accuracy and positioning.</p>
+<ul>
+  <li><strong>Topic selection against the news.</strong> An editorial calendar tracking rulings,
+      agency guidance and disputes as they land, filtered to what the firm's clients would
+      actually act on.</li>
+  <li><strong>Drafting.</strong> Each article written to a consistent shape &mdash; what happened,
+      why it matters commercially, what a business should do about it.</li>
+  <li><strong>Attorney review.</strong> The one step that cannot be delegated, and the reason the
+      rest is worth delegating.</li>
+  <li><strong>Production.</strong> A matched banner graphic per article, so the feed presence is
+      recognisable rather than incidental.</li>
+  <li><strong>Publication and reporting.</strong> Scheduled to hold the cadence, with performance
+      rolled into the monthly summary to leadership.</li>
+</ul>
+
+<h2>Choosing the beat</h2>
+<p>The programme concentrated on <strong>artificial intelligence and intellectual property</strong>,
+and that focus is what made it work.</p>
+<p>It is where the firm's clients have live, unresolved questions, and where the law is moving fast
+enough that timely commentary has genuine value. It also rewards consistency: a reader who wants to
+understand how AI is reshaping IP risk has a reason to come back, which a general-interest legal
+feed never earns.</p>
+<p>Pieces covered privilege over AI-generated documents, trade secret contamination between
+competitors, chain-of-title problems in training data, copyright exposure surfacing in discovery,
+and the shifting IP landscape in China &mdash; alongside the foundational trademark material a
+prospective client searches for.</p>
+
+<h2>What made it hold</h2>
+<p>Twenty-four articles between January and August, at three to four a month. The number matters
+less than the fact that the cadence survived busy months, which is exactly where these programmes
+normally die.</p>
+<p>It survived because it stopped being a creative act performed when someone felt inspired and
+became a production run with defined steps and a named owner at each one. Same path every time.
+That is the whole trick, and it is the same one behind the intake system and the reporting
+platform on this site.</p>
+<div class="note-box"><p>The pipeline above is an illustration built for this portfolio. It shows
+no performance figures and no personal data &mdash; audience and engagement metrics belong to the
+firm and its people, not to a portfolio.</p></div>""",
+},
+{
  "slug":"lively-dashboard",
  "title":"Client reporting platform",
  "eyebrow":"Lively &middot; Client reporting",

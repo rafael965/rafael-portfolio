@@ -123,8 +123,21 @@ Static — any host works. Drag the folder into Netlify, or:
 npx vercel --prod
 ```
 
-Before going live, replace `https://example.com` in `sitemap.xml` and `robots.txt`
-with the real domain.
+Live at **https://rafael-portfolio-sable.vercel.app**
+
+The domain appears in four places. Change all of them together when it moves:
+
+- `robots.txt` — the `Sitemap:` line
+- `sitemap.xml` — every `<loc>`
+- `index.html` and `about.html` — `og:image` and `og:url`
+- `mockups/build_cases.py` — the `og:image` in the page template
+
+```bash
+OLD=rafael-portfolio-sable.vercel.app; NEW=your-domain.com
+grep -rl "$OLD" --include=*.html --include=*.xml --include=*.txt --include=*.py . \
+  | xargs sed -i '' "s|$OLD|$NEW|g"
+python3 mockups/build_cases.py
+```
 
 ## 7. Browser support
 

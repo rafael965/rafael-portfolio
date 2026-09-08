@@ -60,6 +60,8 @@ PAGE = '''<!doctype html>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{title} — Rafael Reyes">
 <meta property="og:description" content="{desc}">
+<meta property="og:image" content="https://rafael-portfolio-sable.vercel.app/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">

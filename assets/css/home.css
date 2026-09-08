@@ -167,6 +167,10 @@
   padding: clamp(1.5rem, 3vw, 2.25rem);
   display: flex; flex-direction: column; gap: 1.25rem;
 }
+@media (min-width: 48rem) {
+  .quote--wide { grid-column: 1 / -1; }
+  .quote--wide .quote__txt { font-size: clamp(1.4rem, 2.5vw, 1.95rem); }
+}
 .quote__mark { font-family: var(--f-serif); font-size: 3.5rem; line-height: .6; color: var(--teal); }
 .quote__txt { font-family: var(--f-serif); font-size: clamp(1.2rem, 2.1vw, 1.6rem); line-height: 1.35; letter-spacing: -.01em; }
 .quote__by { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--rule-2); }

@@ -481,7 +481,7 @@ reflects them.</p>""",
 {
  "slug":"gbi-buildertrend",
  "title":"Project operations in Buildertrend",
- "eyebrow":"Grace Built Homes &middot; Construction",
+ "eyebrow":"Grace Built Inc &middot; Construction",
  "desc":"Estimating, allowances and compliance documentation standardised inside Buildertrend for a residential builder.",
  "lede":"Construction admin fails quietly. A missing certificate or an uncategorised line item "
         "costs nothing on the day and a great deal three months later.",

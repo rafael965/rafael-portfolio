@@ -33,6 +33,7 @@ FOOT = '''<footer class="foot">
           <li><a href="../index.html#services">Services</a></li>
           <li><a href="../index.html#experience">Experience</a></li>
           <li><a href="../about.html">About</a></li>
+          <li><a href="../resources.html">Resources</a></li>
         </ul>
       </div>
       <div>

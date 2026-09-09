@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+:root{--ink:#1f2421;--teal:#216869;--green:#49a078;--sage:#9cc5a1;--paper:#dce1de;--card:#f2f5f3;
+      --rule:rgba(31,36,33,.16);--rule2:rgba(31,36,33,.07);--mute:#4d5551}
+@page{size:Letter;margin:0.6in 0.7in}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Instrument Sans",Arial,sans-serif;font-size:10.5pt;line-height:1.45;color:var(--ink)}
+h1,h2,h3{font-family:Archivo,sans-serif;letter-spacing:-.025em;line-height:1.1}
+
+/* cover */
+.cover{height:9.3in;display:flex;flex-direction:column;justify-content:space-between;break-after:page}
+.cover .mark{font-family:Archivo;font-weight:800;font-size:15pt;letter-spacing:-.03em}
+.cover .mark i{color:var(--green);font-style:normal}
+.cover h1{font-size:46pt;font-weight:800;text-transform:uppercase;letter-spacing:-.045em;line-height:.92}
+.cover .sub{font-size:13pt;color:var(--teal);margin-top:14pt;font-weight:500}
+.cover .lede{font-size:11.5pt;max-width:34em;margin-top:16pt;color:var(--mute)}
+.cover .toc{border-top:1.5px solid var(--ink);margin-top:26pt;padding-top:12pt;
+            display:grid;grid-template-columns:1fr 1fr;gap:10pt 24pt}
+.cover .toc div{border-bottom:1px solid var(--rule2);padding-bottom:7pt}
+.cover .toc b{display:block;font-family:Archivo;font-weight:700;font-size:11pt}
+.cover .toc span{font-size:9.5pt;color:var(--mute)}
+.cover .foot{font-family:"JetBrains Mono";font-size:8.5pt;letter-spacing:.1em;text-transform:uppercase;
+             color:var(--mute);display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding-top:10pt}
+
+/* sections */
+.sec{break-before:page}
+.eyebrow{font-family:"JetBrains Mono";font-size:8.5pt;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+h2{font-size:24pt;font-weight:800;text-transform:uppercase;margin:6pt 0 10pt}
+h2::before{content:"/";color:var(--green)}
+.intro{max-width:38em;color:var(--mute);margin-bottom:11pt}
+h3{font-size:12pt;font-weight:700;margin:16pt 0 6pt}
+p{margin:5pt 0;max-width:40em}
+
+table{width:100%;border-collapse:collapse;margin:8pt 0 4pt;font-size:9.5pt}
+thead{display:table-header-group}
+th{font-family:"JetBrains Mono";font-size:8pt;letter-spacing:.1em;text-transform:uppercase;
+   text-align:left;color:var(--teal);border-bottom:1.5px solid var(--ink);padding:5pt 8pt 5pt 0;vertical-align:bottom}
+td{border-bottom:1px solid var(--rule2);padding:3.6pt 8pt 3.6pt 0;vertical-align:top}
+td:first-child{font-family:"JetBrains Mono";font-size:8.5pt;color:var(--mute);width:26pt}
+tr{break-inside:avoid}
+.blank{color:#98a29d}
+
+.note{border-left:2.5px solid var(--green);background:var(--card);padding:9pt 12pt;margin:10pt 0;
+      font-size:9.5pt;color:var(--mute);break-inside:avoid}
+.note b{color:var(--ink)}
+
+.pbox{border:1px solid var(--rule);border-radius:6px;padding:11pt 13pt;margin:8pt 0;break-inside:avoid;background:var(--card)}
+.pbox .t{font-family:Archivo;font-weight:700;font-size:11pt;margin-bottom:2pt}
+.pbox .w{font-family:"JetBrains Mono";font-size:8pt;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:7pt}
+.pbox pre{font-family:"JetBrains Mono";font-size:8.5pt;line-height:1.5;white-space:pre-wrap;
+          background:#fff;border:1px solid var(--rule2);border-radius:4px;padding:9pt 10pt;color:var(--ink)}
+ul{margin:5pt 0;padding-left:14pt;max-width:40em}
+li{margin:3pt 0}
+li::marker{color:var(--teal)}

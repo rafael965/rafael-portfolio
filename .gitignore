@@ -10,3 +10,6 @@ Thumbs.db
 # Local tooling
 node_modules/
 .vercel
+
+# Kit page renders (regenerated from kit/kit.html)
+kit/p-*.jpg

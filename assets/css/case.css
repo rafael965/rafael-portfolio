@@ -132,3 +132,34 @@
   margin-top: 1rem; padding-top: .8rem; border-top: 1px solid var(--rule-2);
   color: var(--tx-mute);
 }
+
+/* ---------- Resource / signup ---------- */
+.kit { display: grid; gap: clamp(2rem,5vw,3.5rem); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 56rem) { .kit { grid-template-columns: 1.1fr 1fr; } }
+
+.kit__cover { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--card-2); }
+.kit__cover img { width: 100%; display: block; }
+
+.kit__list { list-style: none; padding: 0; display: grid; margin-block: 1.5rem; }
+.kit__list li { display: grid; grid-template-columns: 2.2rem 1fr; gap: .9rem;
+                padding: .85rem 0; border-bottom: 1px solid var(--rule-2); }
+.kit__list li:last-child { border-bottom: 0; }
+.kit__list .n { font-family: var(--f-mono); font-size: var(--t-mono); color: var(--teal); padding-top: .2rem; }
+.kit__list b { font-family: var(--f-display); font-weight: 600; font-size: 1.0625rem; display: block; }
+.kit__list span { color: var(--tx-mute); font-size: var(--t-sm); }
+
+.form { background: var(--card); border: 1px solid var(--rule); border-radius: 12px;
+        padding: clamp(1.5rem,3vw,2rem); display: grid; gap: .9rem; }
+.form label { font-family: var(--f-mono); font-size: var(--t-mono); letter-spacing: .12em;
+              text-transform: uppercase; color: var(--teal); display: block; margin-bottom: .4rem; }
+.form input { width: 100%; font: inherit; padding: .75rem .9rem; border: 1px solid var(--rule);
+              border-radius: 8px; background: #fff; color: var(--ink); }
+.form input:focus-visible { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form button { justify-self: start; }
+.form button[disabled] { opacity: .55; cursor: not-allowed; }
+.form__note { font-size: var(--t-sm); color: var(--tx-mute); }
+.form__msg { font-size: var(--t-sm); padding: .7rem .9rem; border-radius: 8px; display: none; }
+.form__msg.show { display: block; }
+.form__msg.ok { background: rgba(73,160,120,.16); color: var(--ink); border: 1px solid var(--green); }
+.form__msg.err { background: rgba(31,36,33,.05); color: var(--ink); border: 1px solid var(--rule); }

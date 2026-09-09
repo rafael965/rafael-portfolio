@@ -8,12 +8,12 @@
   <div>
     <h1>The Operations<br>Runbook Kit</h1>
     <div class="sub">Four templates for turning work that lives in your head into work someone else can run</div>
-    <p class="lede">Every one of these came out of a real job — a law firm's intake, an executive's
-    calendar, a construction coordinator's handover. They are deliberately tool-agnostic. The value
+    <p class="lede">Every one of these came out of a real job — a client intake chain, an executive's
+    calendar, a project coordinator's handover. They are deliberately tool-agnostic. The value
     was never the software; it was deciding who owns each step and what "done" means.</p>
 
     <div class="toc">
-      <div><b>01 &nbsp;Client intake runbook</b><span>Seventeen steps from enquiry to open matter</span></div>
+      <div><b>01 &nbsp;Intake to onboarding</b><span>Seventeen steps from first enquiry to onboarded client</span></div>
       <div><b>02 &nbsp;SOP template</b><span>The structure that makes a process delegable</span></div>
       <div><b>03 &nbsp;Weekly calendar structure</b><span>Protecting the work only one person can do</span></div>
       <div><b>04 &nbsp;AI prompt workflows</b><span>Six prompts that survive repeated use</span></div>
@@ -25,7 +25,7 @@
 <!-- ================= 01 INTAKE ================= -->
 <section class="sec">
   <div class="eyebrow">Template 01</div>
-  <h2>Client intake runbook</h2>
+  <h2>Intake to onboarding</h2>
   <p class="intro">Intake fails quietly. Nobody drops a client on purpose — an enquiry just goes
   unanswered while each person assumes someone else has it. This is the chain that stops that.</p>
 
@@ -49,7 +49,7 @@
       <tr><td>12</td><td>Chase signature on a set cadence</td><td class="blank">…</td><td class="blank">…</td><td>Signed, or marked stalled with a reason</td></tr>
       <tr><td>13</td><td>Collect the deposit or retainer</td><td class="blank">…</td><td class="blank">…</td><td>Funds cleared and reconciled</td></tr>
       <tr><td>14</td><td>File the executed documents</td><td class="blank">…</td><td class="blank">…</td><td>Signed copy stored, not in email</td></tr>
-      <tr><td>15</td><td>Convert enquiry to active matter</td><td class="blank">…</td><td class="blank">…</td><td>Live record created, enquiry closed</td></tr>
+      <tr><td>15</td><td>Convert enquiry to active client</td><td class="blank">…</td><td class="blank">…</td><td>Client record live, enquiry closed</td></tr>
       <tr><td>16</td><td>Send welcome, set expectations</td><td class="blank">…</td><td class="blank">…</td><td>Client knows who to contact and when</td></tr>
       <tr><td>17</td><td>Create the first follow-up task</td><td class="blank">…</td><td class="blank">…</td><td>Dated task, named assignee</td></tr>
     </tbody>
@@ -130,102 +130,164 @@
 <section class="sec">
   <div class="eyebrow">Template 04</div>
   <h2>AI prompt workflows</h2>
-  <p class="intro">These are the ones that survived repeated use. What separates them from the
-  prompts people collect and never reopen: each has a fixed output shape. A prompt that returns
-  something different every time cannot be built into a process.</p>
+  <p class="intro">These are the ones that survived repeated use. Each is written to the same
+  five-part structure, because a prompt that changes shape every time cannot be built into a
+  process.</p>
+
+  <table>
+    <thead><tr><th></th><th style="width:20%">Part</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td>R</td><td><b>Role</b></td><td>Who the model is answering as. Sets vocabulary and judgement before anything else.</td></tr>
+      <tr><td>T</td><td><b>Task</b></td><td>The single thing you want done, in one sentence.</td></tr>
+      <tr><td>C</td><td><b>Context</b></td><td>The material to work from, and anything it could not infer.</td></tr>
+      <tr><td>C</td><td><b>Constraints</b></td><td>What not to do, and what to do when unsure. The part most people leave out, and the reason output drifts.</td></tr>
+      <tr><td>O</td><td><b>Output</b></td><td>The exact shape to return. Fix this and the result becomes something a process can consume.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note"><b>Constraints and Output are what make a prompt reusable.</b> Role, Task and
+  Context get you a reasonable answer once. The last two get you the same answer shape every time —
+  which is the difference between a clever prompt and a workflow someone else can run.</div>
 
   <div class="pbox">
     <div class="t">Executive inbox triage</div>
-    <div class="w">Run daily &middot; paste the subject lines and senders</div>
-<pre>Sort these emails into four groups and nothing else:
+    <div class="w">Run daily</div>
+<pre>ROLE
+You are an executive assistant triaging a principal's inbox.
 
-1. NEEDS A DECISION — only the executive can answer
-2. DELEGATE — someone else can handle; name who
-3. REPLY — routine, I can answer; draft one line
-4. FILE — no action
+TASK
+Sort the messages below into four groups.
 
-For each, give the sender and a six-word summary.
+CONTEXT
+[Paste subject lines and senders. Flag anything time-sensitive.]
+
+CONSTRAINTS
+Do not summarise the whole inbox. Do not add commentary.
 If a message is ambiguous, put it in group 1 and say why.
-Do not summarise the whole inbox. Do not add commentary.</pre>
+
+OUTPUT
+1  NEEDS A DECISION — only the principal can answer
+2  DELEGATE — name who
+3  REPLY — routine; draft one line
+4  FILE — no action
+For each: sender, then a six-word summary.</pre>
   </div>
 
   <div class="pbox">
     <div class="t">Long thread to action items</div>
-    <div class="w">When a thread passes ~10 messages</div>
-<pre>Summarise this thread in three parts:
+    <div class="w">When a thread passes about ten messages</div>
+<pre>ROLE
+You are a coordinator closing out a long email thread.
 
-DECIDED — what was actually agreed, with who agreed it
-OPEN — questions still unanswered
-ACTIONS — owner, action, due date (write "unassigned" if unclear)
+TASK
+Reduce this thread to what was decided and what is still open.
 
-Quote the exact wording for anything involving money, dates or
-commitments. If something was implied but never confirmed, list it
-under OPEN rather than DECIDED.</pre>
+CONTEXT
+[Paste the thread. Say who the decision-makers are.]
+
+CONSTRAINTS
+Quote exact wording for anything involving money, dates or commitments.
+If something was implied but never confirmed, it is OPEN, not DECIDED.
+
+OUTPUT
+DECIDED — what was agreed, and who agreed it
+OPEN    — questions still unanswered
+ACTIONS — owner, action, due date (write "unassigned" if unclear)</pre>
   </div>
 
   <div class="pbox">
     <div class="t">Pre-meeting brief</div>
     <div class="w">Run the evening before</div>
-<pre>Write a one-page brief for this meeting.
+<pre>ROLE
+You are an assistant preparing a principal for a meeting.
 
-WHO — each attendee, their role, our last interaction
-PURPOSE — why this meeting exists in one sentence
-OUTSTANDING — anything we owe them, or they owe us
+TASK
+Write a one-page brief.
+
+CONTEXT
+[Attendees, their organisation, prior correspondence, why we are meeting.]
+
+CONSTRAINTS
+Under 250 words. If you do not know something, write "unknown" —
+do not infer it.
+
+OUTPUT
+WHO         — each attendee, role, our last interaction
+PURPOSE     — why this meeting exists, one sentence
+OUTSTANDING — what we owe them, what they owe us
 LIKELY ASKS — two or three things they may raise
-OPENING — a first line that gets to the point
-
-Keep it under 250 words. If you do not know something, write
-"unknown" — do not infer it.</pre>
+OPENING     — a first line that gets to the point</pre>
   </div>
 
   <div class="pbox">
     <div class="t">Monthly report narrative</div>
     <div class="w">Feed it the actual figures</div>
-<pre>Write the narrative section of a monthly report from these numbers.
+<pre>ROLE
+You are an analyst writing the narrative section of a client report.
 
-Three short paragraphs:
-1. What moved and by how much
-2. Why, where the data supports a reason
-3. What to watch next month
+TASK
+Turn these figures into three short paragraphs.
 
-Use only the figures given. Never estimate or fill gaps. If a number
-looks anomalous, say so rather than explaining it away. Plain language,
-no superlatives, no "leveraging" or "synergies".</pre>
+CONTEXT
+[Paste the numbers, with the prior period alongside for comparison.]
+
+CONSTRAINTS
+Use only the figures given. Never estimate or fill a gap.
+If a number looks anomalous, say so rather than explaining it away.
+Plain language. No superlatives, no "leveraging", no "synergies".
+
+OUTPUT
+1  What moved, and by how much
+2  Why, where the data supports a reason
+3  What to watch next period</pre>
   </div>
 
   <div class="pbox">
     <div class="t">Routine reply draft</div>
     <div class="w">For correspondence with a predictable shape</div>
-<pre>Draft a reply to this message.
+<pre>ROLE
+You are drafting for someone whose voice is direct and brief.
 
+TASK
+Write a reply to the message below.
+
+CONTEXT
+[Paste the message, plus any history that changes the answer.]
+
+CONSTRAINTS
 Match the sender's register — formal if formal, brief if brief.
 Answer every question asked, in the order asked.
-State clearly what happens next and by when.
 No filler openings. No "I hope this finds you well".
 Under 150 words unless the questions genuinely need more.
 
-Flag anything you are unsure about at the end under CHECK, outside
-the draft.</pre>
+OUTPUT
+The draft reply. Then a CHECK section, outside the draft, listing
+anything you were unsure about.</pre>
   </div>
 
   <div class="pbox">
     <div class="t">Prospect research brief</div>
-    <div class="w">Before a first conversation</div>
-<pre>Research this company and write a briefing.
+    <div class="w">Before a first commercial conversation</div>
+<pre>ROLE
+You are preparing background before a first commercial conversation.
 
-WHAT THEY DO — one sentence a non-expert would understand
-SIZE AND STAGE — headcount, funding or revenue if public
-RECENT — anything from the last 6 months worth referencing
+TASK
+Research this company and write a briefing.
+
+CONTEXT
+[Company name, website, who we are meeting, and why.]
+
+CONSTRAINTS
+Cite a source for every factual claim.
+Where you cannot find something, write "not found" — never guess.
+
+OUTPUT
+WHAT THEY DO        — one sentence a non-expert would understand
+SIZE AND STAGE      — headcount, funding or revenue if public
+RECENT              — anything from the last six months worth citing
 WHY THEY MIGHT NEED US — two specific hypotheses, not generic ones
-DO NOT SAY — anything sensitive, contested or awkward to raise
-
-Cite a source for every factual claim. Where you cannot find
-something, write "not found" rather than guessing.</pre>
+DO NOT SAY          — anything sensitive or awkward to raise</pre>
   </div>
-
-  <div class="note"><b>Why these hold up.</b> Each one fixes the output shape, forbids invention,
-  and says what to do with uncertainty. That is what makes a prompt reusable by someone other than
-  its author — and reusable by someone else is the only definition of a workflow that matters.</div>
 </section>
 
 <!-- ================= CLOSING ================= -->

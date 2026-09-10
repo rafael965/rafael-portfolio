@@ -41,8 +41,8 @@ FOOT = '''<footer class="foot">
         <div class="foot__h mono">Elsewhere</div>
         <ul class="foot__list">
           <li><a href="mailto:Reyesralf17@gmail.com">Email</a></li>
-          <li><a href="https://www.linkedin.com/in/yourtop1va-rafaelreyes" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://bit.ly/3Xg4aam" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+          <li><a href="https://www.linkedin.com/in/reyesralf17" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://drive.google.com/file/d/1HjKzQR7-CzYpcu2JTC6ixwIcjOjyoJ0V/view?usp=sharing" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
         </ul>
       </div>
     </div>

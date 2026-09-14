@@ -11,7 +11,7 @@ NAV = '''<nav class="nav" data-open="false">
     <div class="nav__links" id="menu">
       <a class="nav__link" href="../index.html#work">Work<sup>08</sup></a>
       <a class="nav__link" href="../index.html#services">Services<sup>05</sup></a>
-      <a class="nav__link" href="../index.html#experience">Experience<sup>05</sup></a>
+      <a class="nav__link" href="../index.html#experience">Experience<sup>06</sup></a>
       <a class="nav__link" href="../about.html">About</a>
       <a class="nav__link" href="../resources.html">Resources</a>
       <a class="nav__link" href="../index.html#contact">Contact</a>

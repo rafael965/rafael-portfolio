@@ -573,41 +573,36 @@ and results are invented &mdash; no personal or client information appears on th
 {
  "slug":"agent-system",
  "title":"Five agents with real boundaries",
- "eyebrow":"Lively &middot; AI systems",
- "desc":"Five AI agents with defined domains, written routing rules, and a shared client knowledge base that compounds across accounts.",
+ "eyebrow":"Lively &amp; ARC IP Law &middot; AI systems",
+ "desc":"Five AI agents across two organisations — a strategy-and-execution team at Lively and research agents at ARC IP Law — each defined as much by what it declines as by what it does.",
  "lede":"Most teams end up with one general-purpose assistant that is vaguely useful at "
         "everything. I built five that are each unambiguously responsible for something &mdash; "
-        "and told them when to decline.",
- "img":"agents.webp","imgh":"780",
- "alt":"Illustrative agent system showing the roster, routing rules and shared knowledge base",
- "caption":"Illustrative interface &mdash; no client information",
+        "and told them, in writing, what to refuse.",
+ "img":"agents.webp","imgh":"724",
+ "alt":"Illustrative agent system showing the Lively and ARC IP Law rosters, routing rules and the due diligence path",
+ "caption":"Illustrative interface &mdash; no client or counterparty information",
  "meta":[("Role","Designer &amp; builder"),("Agents","5"),
-         ("Shared memory","4 client brands"),("Discipline","AI systems")],
+         ("Organisations","Lively, ARC IP Law"),("Discipline","AI systems")],
  "body":"""<h2>The problem with one assistant</h2>
 <p>A single general-purpose agent gives you confident answers in domains it has no business
 answering. Ask it to price an offer and it will cheerfully produce a number with no grasp of
-margin. Ask it to clean a CRM and it will advise rather than act.</p>
+margin. Ask it whether a prospective client is safe to take on and it will tell you, without
+knowing that it should not be the one deciding.</p>
 <p>The failure is not capability. It is that nothing <em>owns</em> anything, so nothing can be
 relied upon &mdash; which is the same failure as an operations team with no named owners.</p>
 
-<h2>The roster</h2>
+<h2>Lively: a strategy-and-execution team</h2>
 <ul>
-  <li><strong>Bruce</strong> &mdash; marketing strategy. Demand generation, channels, audiences,
-      creative, content, SEO, paid media, offer construction.</li>
+  <li><strong>Bruce</strong> &mdash; marketing strategy. Channels, audiences, creative, content,
+      SEO, paid media, offer construction.</li>
   <li><strong>Marcus</strong> &mdash; sales and revenue operations. Pricing, margin, unit
-      economics, pipeline, forecasting, retention and expansion.</li>
-  <li><strong>Jarvis</strong> &mdash; executive assistant. Inbox, scheduling, briefings,
-      follow-ups, and hands-on operation of the CRM, task and document systems.</li>
-  <li><strong>Tony</strong> &mdash; due diligence on prospective clients and their strategic
-      partners, before a commitment gets made rather than after.</li>
-  <li><strong>Troy</strong> &mdash; research on referral partners and networking opportunities,
-      so calendar time goes to rooms worth being in.</li>
+      economics, pipeline, forecasting, retention.</li>
+  <li><strong>Jarvis</strong> &mdash; executive assistant. Inbox, scheduling, briefings, and
+      hands-on operation of the CRM, task and document systems.</li>
 </ul>
-
-<h2>The routing rules are the design</h2>
-<p>Defining five roles is easy. The work is in the overlaps, because that is where a user's
-question does not announce which agent it belongs to.</p>
-<p>So the boundaries are written down explicitly, as a shared vocabulary resolved once:</p>
+<p>Three agents whose domains genuinely overlap, which is why the routing rules are the real
+design. A user's question rarely announces which agent it belongs to, so the boundaries are written
+down as a shared vocabulary, resolved once:</p>
 <ul>
   <li>An offer's <strong>price or margin</strong> goes to Marcus. The same offer's <strong>hook
       and creative</strong> goes to Bruce.</li>
@@ -616,30 +611,54 @@ question does not announce which agent it belongs to.</p>
       Jarvis.</li>
   <li>Deciding what should happen is Bruce or Marcus. Doing it in a system is Jarvis.</li>
 </ul>
-<p>Each agent is told what to <strong>decline</strong>, not only what to do. Jarvis executes and
-coordinates; he does not set strategy. Bruce does not touch pricing. That refusal is what makes
-the answers trustworthy &mdash; an agent that answers everything tells you nothing about whether
-this particular answer is any good.</p>
+<p>Underneath them sits a shared memory: a standardised knowledge base per client brand &mdash;
+brand, audience, voice, offers, channels, campaigns, performance, competitors, economics,
+pipeline, sales process, decisions and learnings. Fourteen files, the same shape for every
+account, so someone who has never touched an account gets a real answer in one prompt rather than
+a plausible one. Prompts are easy to copy. Accumulated client intelligence in a consistent shape
+is not.</p>
 
-<h2>The part that actually compounds</h2>
-<p>Each agent has one canonical prompt, versioned in a single place, so everyone on the team is
-talking to the same Bruce rather than to whichever copy they happened to paste.</p>
-<p>But the prompts are the easy half. The asset is the <strong>shared memory</strong>: a
-standardised knowledge base per client brand &mdash; brand, audience, voice, offers, channels,
-campaigns, performance, competitors, economics, pipeline, sales process, decisions and learnings.
-Fourteen files, the same shape for every account.</p>
-<p>That structure is what lets someone who has never touched an account get a real answer in one
-prompt, instead of a plausible one. Prompts are trivially copyable. Accumulated client
-intelligence, in a consistent shape, is not.</p>
+<h2>ARC IP Law: research agents</h2>
+<ul>
+  <li><strong>Tony</strong> &mdash; due diligence on prospective clients and their strategic
+      partners, before a commitment is made rather than after.</li>
+  <li><strong>Troy</strong> &mdash; research on referral partners and networking opportunities,
+      so calendar time goes to rooms worth being in.</li>
+</ul>
+<p>Diligence for a law firm is the clearest case for hard boundaries, because a wrong answer is
+not merely unhelpful. Tony is built around four rules:</p>
+<ul>
+  <li><strong>Confirm identity before attributing anything.</strong> Name collisions are the
+      most common way diligence goes wrong, and the most damaging &mdash; adverse information
+      pinned to the wrong person.</li>
+  <li><strong>Keep verified fact apart from allegation.</strong> Primary and official sources
+      first; anything adverse stays an allegation until a reliable source establishes it.</li>
+  <li><strong>Classify, and say what the classification cannot tell you.</strong> A Green,
+      Yellow or Red rating &mdash; with the explicit caveat that finding nothing is not proof of
+      no risk.</li>
+  <li><strong>Escalate judgement to an attorney.</strong> Tony never states that conflicts are
+      clear, because conflicts are a separate process, and never makes the final decision on
+      whether to accept a client. Legal judgement calls go to a person whose job that is.</li>
+</ul>
+<p>The detailed procedures load only when a task needs them, so the core instructions stay short
+enough to follow reliably.</p>
 
-<h2>How it gets distributed</h2>
-<p>Build scripts generate the paste-ready project instructions and packaged skill bundles from the
-canonical prompts, so updating an agent is a single edit followed by a rebuild, rather than a
-message asking everyone to re-copy something.</p>
+<h2>The principle both share</h2>
+<p>Each agent is told what to <strong>decline</strong>, not only what to do. Jarvis executes;
+he does not set strategy. Bruce does not touch pricing. Tony researches and recommends; he never
+clears conflicts or accepts a client.</p>
+<p>That refusal is what makes the answers trustworthy. An agent that answers everything tells you
+nothing about whether this particular answer is any good &mdash; and in a law firm, an agent that
+oversteps can create a problem a person then has to unwind.</p>
+
+<h2>How it gets maintained</h2>
+<p>Each agent has one canonical definition, versioned in a single place, with build scripts that
+generate the paste-ready instructions and packaged skill bundles from it. Updating an agent is one
+edit and a rebuild, rather than a message asking everyone to re-copy something.</p>
 <p>Which is the same idea as every other system here: write it down once, give it an owner, and
 make the next use a configuration rather than a rebuild.</p>
 <div class="note-box"><p>The interface above is an illustration built for this portfolio. No
-client knowledge-base content appears anywhere on this site.</p></div>""",
+client, counterparty or knowledge-base content from either organisation appears on this site.</p></div>""",
 },
 {
  "slug":"camp-hb-6week",

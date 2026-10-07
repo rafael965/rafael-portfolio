@@ -152,3 +152,10 @@ h1,h2,h3{font-family:"Archivo",sans-serif;letter-spacing:-.025em;line-height:1.0
 .rt__a{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;text-align:right;color:var(--green)}
 .kb{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
 .kb span{font-family:"JetBrains Mono",monospace;font-size:8.5px;letter-spacing:.05em;padding:3px 6px;border:1px solid var(--rule);border-radius:3px;color:#8e9993}
+.grp{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#6d7772;padding:12px 0 4px;border-bottom:1px solid var(--rule)}
+.grp:first-child{padding-top:0}
+.rk{display:flex;gap:5px;margin-top:8px}
+.rk span{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:3px;font-weight:600}
+.rk .g{background:rgba(73,160,120,.22);color:#7fcca4}
+.rk .y{background:rgba(214,186,92,.18);color:#d9c17c}
+.rk .r{background:rgba(205,104,90,.2);color:#e0968a}

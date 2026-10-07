@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five agents with real boundaries — Rafael Reyes</title>
+<meta name="description" content="Five AI agents with defined domains, written routing rules, and a shared client knowledge base that compounds across accounts.">
+<meta property="og:title" content="Five agents with real boundaries — Rafael Reyes">
+<meta property="og:description" content="Five AI agents with defined domains, written routing rules, and a shared client knowledge base that compounds across accounts.">
+<meta property="og:image" content="https://rafaelreyes.dev/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rafaelreyes.dev/work/agent-system.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" data-open="false">
+  <div class="nav__in">
+    <a class="nav__mark" href="../index.html">RR<span>.</span></a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
+    </button>
+    <div class="nav__links" id="menu">
+      <a class="nav__link" href="../index.html#work">Work<sup>12</sup></a>
+      <a class="nav__link" href="../index.html#services">Services<sup>05</sup></a>
+      <a class="nav__link" href="../index.html#experience">Experience<sup>06</sup></a>
+      <a class="nav__link" href="../about.html">About</a>
+      <a class="nav__link" href="../resources.html">Resources</a>
+      <a class="nav__link" href="../index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn--ink nav__cta" href="../index.html#contact">Let's talk <span class="btn__arw">&#8599;</span></a>
+  </div>
+</nav>
+<main id="main" class="wrap">
+  <a class="back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+  <header class="chead">
+    <span class="chead__eyebrow mono">Lively &middot; AI systems</span>
+    <h1 class="chead__title">Five agents with real boundaries</h1>
+    <p class="lead chead__lede">Most teams end up with one general-purpose assistant that is vaguely useful at everything. I built five that are each unambiguously responsible for something &mdash; and told them when to decline.</p>
+  </header>
+
+  <div class="cmeta"><div class="cmeta__c"><span class="cmeta__k mono">Role</span><span class="cmeta__v">Designer &amp; builder</span></div><div class="cmeta__c"><span class="cmeta__k mono">Agents</span><span class="cmeta__v">5</span></div><div class="cmeta__c"><span class="cmeta__k mono">Shared memory</span><span class="cmeta__v">4 client brands</span></div><div class="cmeta__c"><span class="cmeta__k mono">Discipline</span><span class="cmeta__v">AI systems</span></div></div>
+
+  <figure class="shot">
+    <img src="../assets/img/screens/agents.webp" srcset="../assets/img/screens/agents-sm.webp 600w, ../assets/img/screens/agents.webp 1200w" sizes="(max-width: 48rem) 100vw, 50vw" alt="Illustrative agent system showing the roster, routing rules and shared knowledge base" width="1200" height="780">
+    <figcaption>Illustrative interface &mdash; no client information</figcaption>
+  </figure>
+
+  <article class="prose">
+<h2>The problem with one assistant</h2>
+<p>A single general-purpose agent gives you confident answers in domains it has no business
+answering. Ask it to price an offer and it will cheerfully produce a number with no grasp of
+margin. Ask it to clean a CRM and it will advise rather than act.</p>
+<p>The failure is not capability. It is that nothing <em>owns</em> anything, so nothing can be
+relied upon &mdash; which is the same failure as an operations team with no named owners.</p>
+
+<h2>The roster</h2>
+<ul>
+  <li><strong>Bruce</strong> &mdash; marketing strategy. Demand generation, channels, audiences,
+      creative, content, SEO, paid media, offer construction.</li>
+  <li><strong>Marcus</strong> &mdash; sales and revenue operations. Pricing, margin, unit
+      economics, pipeline, forecasting, retention and expansion.</li>
+  <li><strong>Jarvis</strong> &mdash; executive assistant. Inbox, scheduling, briefings,
+      follow-ups, and hands-on operation of the CRM, task and document systems.</li>
+  <li><strong>Tony</strong> &mdash; due diligence on prospective clients and their strategic
+      partners, before a commitment gets made rather than after.</li>
+  <li><strong>Troy</strong> &mdash; research on referral partners and networking opportunities,
+      so calendar time goes to rooms worth being in.</li>
+</ul>
+
+<h2>The routing rules are the design</h2>
+<p>Defining five roles is easy. The work is in the overlaps, because that is where a user's
+question does not announce which agent it belongs to.</p>
+<p>So the boundaries are written down explicitly, as a shared vocabulary resolved once:</p>
+<ul>
+  <li>An offer's <strong>price or margin</strong> goes to Marcus. The same offer's <strong>hook
+      and creative</strong> goes to Bruce.</li>
+  <li>&ldquo;Funnel&rdquo; as a campaign question is Bruce. As a forecast question, Marcus.</li>
+  <li>CRM: <em>whether the data can be trusted</em> is Marcus. <em>Performing the cleanup</em> is
+      Jarvis.</li>
+  <li>Deciding what should happen is Bruce or Marcus. Doing it in a system is Jarvis.</li>
+</ul>
+<p>Each agent is told what to <strong>decline</strong>, not only what to do. Jarvis executes and
+coordinates; he does not set strategy. Bruce does not touch pricing. That refusal is what makes
+the answers trustworthy &mdash; an agent that answers everything tells you nothing about whether
+this particular answer is any good.</p>
+
+<h2>The part that actually compounds</h2>
+<p>Each agent has one canonical prompt, versioned in a single place, so everyone on the team is
+talking to the same Bruce rather than to whichever copy they happened to paste.</p>
+<p>But the prompts are the easy half. The asset is the <strong>shared memory</strong>: a
+standardised knowledge base per client brand &mdash; brand, audience, voice, offers, channels,
+campaigns, performance, competitors, economics, pipeline, sales process, decisions and learnings.
+Fourteen files, the same shape for every account.</p>
+<p>That structure is what lets someone who has never touched an account get a real answer in one
+prompt, instead of a plausible one. Prompts are trivially copyable. Accumulated client
+intelligence, in a consistent shape, is not.</p>
+
+<h2>How it gets distributed</h2>
+<p>Build scripts generate the paste-ready project instructions and packaged skill bundles from the
+canonical prompts, so updating an agent is a single edit followed by a rebuild, rather than a
+message asking everyone to re-copy something.</p>
+<p>Which is the same idea as every other system here: write it down once, give it an owner, and
+make the next use a configuration rather than a rebuild.</p>
+<div class="note-box"><p>The interface above is an illustration built for this portfolio. No
+client knowledge-base content appears anywhere on this site.</p></div>
+  </article>
+
+  <div class="nextup">
+    <a href="camp-hb-6week.html">
+      <span class="nextup__k mono">Next case</span>
+      <span class="nextup__t">The Final 6-Week Challenge <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="nav__mark" style="font-size:1.4rem;margin-bottom:.75rem">Rafael Reyes<span style="color:var(--green)">.</span></div>
+        <p class="mute" style="max-width:34ch">Operations Manager &amp; AI Systems Builder. Building the systems I run.</p>
+      </div>
+      <div>
+        <div class="foot__h mono">Site</div>
+        <ul class="foot__list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot__h mono">Elsewhere</div>
+        <ul class="foot__list">
+          <li><a href="mailto:hello@rafaelreyes.dev">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/reyesralf17" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://drive.google.com/file/d/1HjKzQR7-CzYpcu2JTC6ixwIcjOjyoJ0V/view?usp=sharing" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar mono">
+      <span>&copy; 2026 Rafael Reyes</span>
+      <span>Interface images are illustrative &mdash; no client data</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

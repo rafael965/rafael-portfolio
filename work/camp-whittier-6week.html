@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The same challenge, relocated — Rafael Reyes</title>
+<meta name="description" content="The Huntington Beach challenge page relocated to a second gym in days, with only the genuinely local differences changed.">
+<meta property="og:title" content="The same challenge, relocated — Rafael Reyes">
+<meta property="og:description" content="The Huntington Beach challenge page relocated to a second gym in days, with only the genuinely local differences changed.">
+<meta property="og:image" content="https://rafaelreyes.dev/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rafaelreyes.dev/work/camp-whittier-6week.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" data-open="false">
+  <div class="nav__in">
+    <a class="nav__mark" href="../index.html">RR<span>.</span></a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
+    </button>
+    <div class="nav__links" id="menu">
+      <a class="nav__link" href="../index.html#work">Work<sup>12</sup></a>
+      <a class="nav__link" href="../index.html#services">Services<sup>05</sup></a>
+      <a class="nav__link" href="../index.html#experience">Experience<sup>06</sup></a>
+      <a class="nav__link" href="../about.html">About</a>
+      <a class="nav__link" href="../resources.html">Resources</a>
+      <a class="nav__link" href="../index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn--ink nav__cta" href="../index.html#contact">Let's talk <span class="btn__arw">&#8599;</span></a>
+  </div>
+</nav>
+<main id="main" class="wrap">
+  <a class="back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+  <header class="chead">
+    <span class="chead__eyebrow mono">The Camp &middot; Whittier</span>
+    <h1 class="chead__title">The same challenge, relocated</h1>
+    <p class="lead chead__lede">The second location did not get a rebuild. It got a relocation &mdash; and the list of what actually had to change is the whole point.</p>
+  </header>
+
+  <div class="cmeta"><div class="cmeta__c"><span class="cmeta__k mono">Role</span><span class="cmeta__v">Builder</span></div><div class="cmeta__c"><span class="cmeta__k mono">Source</span><span class="cmeta__v">HB challenge page</span></div><div class="cmeta__c"><span class="cmeta__k mono">Discipline</span><span class="cmeta__v">Campaign funnel</span></div><div class="cmeta__c"><span class="cmeta__k mono">Live</span><span class="cmeta__v"><a href="https://camp-whittier-6-week-challenge.vercel.app" target="_blank" rel="noopener">View site &#8599;</a></span></div></div>
+
+  <figure class="shot">
+    <img src="../assets/img/screens/camp-whittier-6w.webp" srcset="../assets/img/screens/camp-whittier-6w-sm.webp 600w, ../assets/img/screens/camp-whittier-6w.webp 1200w" sizes="(max-width: 48rem) 100vw, 50vw" alt="The Camp Whittier 6-Week Challenge landing page" width="1200" height="750">
+    <figcaption>Live site &mdash; camp-whittier-6-week-challenge.vercel.app</figcaption>
+  </figure>
+
+  <article class="prose">
+<h2>The temptation</h2>
+<p>A second gym wants the same campaign. The obvious move is to copy the folder, change the
+address and the phone number, and ship it. That is how two pages quietly become two codebases
+that drift apart until nobody is sure which one is correct.</p>
+<p>The alternative is to treat the first build as the system and the second as a configuration of
+it &mdash; which means being disciplined about what is genuinely different rather than assuming
+everything is.</p>
+
+<h2>What actually changed</h2>
+<p>Six things, each confirmed with the client before a line was written.</p>
+<ol class="chain">
+  <li><span class="n">01</span><span><strong>Elite strength training removed.</strong> Huntington
+      Beach runs it; Whittier does not. It came out of the page and out of the emails, rather than
+      being left in as an aspirational detail that would embarrass the front desk.</span></li>
+  <li><span class="n">02</span><span><strong>Its own prize pool.</strong> Not a share of a
+      franchise pot &mdash; Whittier's own, growing with Whittier's own enrolments.</span></li>
+  <li><span class="n">03</span><span><strong>Its own lead destination.</strong> A separate Google
+      Sheet and a separate Apps Script deployment, so neither location can break the other.</span></li>
+  <li><span class="n">04</span><span><strong>A different call to action.</strong> HB books a tour;
+      Whittier invites you to take a class, because that is what their front desk is set up to
+      receive.</span></li>
+  <li><span class="n">05</span><span><strong>Its own class schedule</strong> driving the time
+      picker.</span></li>
+  <li><span class="n">06</span><span><strong>Local details</strong> &mdash; address, phone, email,
+      dates.</span></li>
+</ol>
+
+<h2>What deliberately did not change</h2>
+<p>The design system, the booking engine, the email templates, the page structure, the serverless
+backend, the dual-host adapters, the print collateral pattern. None of it was revisited, because
+none of it was wrong.</p>
+<p>The same discipline applied to what was <em>not</em> added. No guarantee, no risk reversal, no
+capacity cap invented to manufacture scarcity &mdash; the deadline was real, so nothing else was
+needed. Resisting the urge to improve a working page while moving it is most of the skill.</p>
+
+<h2>Why this is the case study worth reading</h2>
+<p>Anyone can build one landing page. The question that decides whether a business can run
+campaigns at all is what the second one costs &mdash; and the answer here is a short list of
+confirmed differences rather than a project.</p>
+<p>That is the same argument as the intake runbook and the reporting platform, in a different
+medium: do the thinking once, write it down, and the next instance becomes configuration.</p>
+  </article>
+
+  <div class="nextup">
+    <a href="camp-hb-rejoin.html">
+      <span class="nextup__k mono">Next case</span>
+      <span class="nextup__t">Rejoin for $1 <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="nav__mark" style="font-size:1.4rem;margin-bottom:.75rem">Rafael Reyes<span style="color:var(--green)">.</span></div>
+        <p class="mute" style="max-width:34ch">Operations Manager &amp; AI Systems Builder. Building the systems I run.</p>
+      </div>
+      <div>
+        <div class="foot__h mono">Site</div>
+        <ul class="foot__list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot__h mono">Elsewhere</div>
+        <ul class="foot__list">
+          <li><a href="mailto:hello@rafaelreyes.dev">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/reyesralf17" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://drive.google.com/file/d/1HjKzQR7-CzYpcu2JTC6ixwIcjOjyoJ0V/view?usp=sharing" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar mono">
+      <span>&copy; 2026 Rafael Reyes</span>
+      <span>Interface images are illustrative &mdash; no client data</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

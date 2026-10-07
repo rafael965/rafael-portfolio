@@ -9,7 +9,7 @@ NAV = '''<nav class="nav" data-open="false">
       <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
     </button>
     <div class="nav__links" id="menu">
-      <a class="nav__link" href="../index.html#work">Work<sup>08</sup></a>
+      <a class="nav__link" href="../index.html#work">Work<sup>12</sup></a>
       <a class="nav__link" href="../index.html#services">Services<sup>05</sup></a>
       <a class="nav__link" href="../index.html#experience">Experience<sup>06</sup></a>
       <a class="nav__link" href="../about.html">About</a>
@@ -569,6 +569,230 @@ whether the ramp target is still realistic. That turns onboarding from an anecdo
 a manager can actually act on before it becomes a problem.</p>
 <div class="note-box"><p>The interface above is an illustration built for this portfolio. Progress
 and results are invented &mdash; no personal or client information appears on this site.</p></div>""",
+},
+{
+ "slug":"agent-system",
+ "title":"Five agents with real boundaries",
+ "eyebrow":"Lively &middot; AI systems",
+ "desc":"Five AI agents with defined domains, written routing rules, and a shared client knowledge base that compounds across accounts.",
+ "lede":"Most teams end up with one general-purpose assistant that is vaguely useful at "
+        "everything. I built five that are each unambiguously responsible for something &mdash; "
+        "and told them when to decline.",
+ "img":"agents.webp","imgh":"780",
+ "alt":"Illustrative agent system showing the roster, routing rules and shared knowledge base",
+ "caption":"Illustrative interface &mdash; no client information",
+ "meta":[("Role","Designer &amp; builder"),("Agents","5"),
+         ("Shared memory","4 client brands"),("Discipline","AI systems")],
+ "body":"""<h2>The problem with one assistant</h2>
+<p>A single general-purpose agent gives you confident answers in domains it has no business
+answering. Ask it to price an offer and it will cheerfully produce a number with no grasp of
+margin. Ask it to clean a CRM and it will advise rather than act.</p>
+<p>The failure is not capability. It is that nothing <em>owns</em> anything, so nothing can be
+relied upon &mdash; which is the same failure as an operations team with no named owners.</p>
+
+<h2>The roster</h2>
+<ul>
+  <li><strong>Bruce</strong> &mdash; marketing strategy. Demand generation, channels, audiences,
+      creative, content, SEO, paid media, offer construction.</li>
+  <li><strong>Marcus</strong> &mdash; sales and revenue operations. Pricing, margin, unit
+      economics, pipeline, forecasting, retention and expansion.</li>
+  <li><strong>Jarvis</strong> &mdash; executive assistant. Inbox, scheduling, briefings,
+      follow-ups, and hands-on operation of the CRM, task and document systems.</li>
+  <li><strong>Tony</strong> &mdash; due diligence on prospective clients and their strategic
+      partners, before a commitment gets made rather than after.</li>
+  <li><strong>Troy</strong> &mdash; research on referral partners and networking opportunities,
+      so calendar time goes to rooms worth being in.</li>
+</ul>
+
+<h2>The routing rules are the design</h2>
+<p>Defining five roles is easy. The work is in the overlaps, because that is where a user's
+question does not announce which agent it belongs to.</p>
+<p>So the boundaries are written down explicitly, as a shared vocabulary resolved once:</p>
+<ul>
+  <li>An offer's <strong>price or margin</strong> goes to Marcus. The same offer's <strong>hook
+      and creative</strong> goes to Bruce.</li>
+  <li>&ldquo;Funnel&rdquo; as a campaign question is Bruce. As a forecast question, Marcus.</li>
+  <li>CRM: <em>whether the data can be trusted</em> is Marcus. <em>Performing the cleanup</em> is
+      Jarvis.</li>
+  <li>Deciding what should happen is Bruce or Marcus. Doing it in a system is Jarvis.</li>
+</ul>
+<p>Each agent is told what to <strong>decline</strong>, not only what to do. Jarvis executes and
+coordinates; he does not set strategy. Bruce does not touch pricing. That refusal is what makes
+the answers trustworthy &mdash; an agent that answers everything tells you nothing about whether
+this particular answer is any good.</p>
+
+<h2>The part that actually compounds</h2>
+<p>Each agent has one canonical prompt, versioned in a single place, so everyone on the team is
+talking to the same Bruce rather than to whichever copy they happened to paste.</p>
+<p>But the prompts are the easy half. The asset is the <strong>shared memory</strong>: a
+standardised knowledge base per client brand &mdash; brand, audience, voice, offers, channels,
+campaigns, performance, competitors, economics, pipeline, sales process, decisions and learnings.
+Fourteen files, the same shape for every account.</p>
+<p>That structure is what lets someone who has never touched an account get a real answer in one
+prompt, instead of a plausible one. Prompts are trivially copyable. Accumulated client
+intelligence, in a consistent shape, is not.</p>
+
+<h2>How it gets distributed</h2>
+<p>Build scripts generate the paste-ready project instructions and packaged skill bundles from the
+canonical prompts, so updating an agent is a single edit followed by a rebuild, rather than a
+message asking everyone to re-copy something.</p>
+<p>Which is the same idea as every other system here: write it down once, give it an owner, and
+make the next use a configuration rather than a rebuild.</p>
+<div class="note-box"><p>The interface above is an illustration built for this portfolio. No
+client knowledge-base content appears anywhere on this site.</p></div>""",
+},
+{
+ "slug":"camp-hb-6week",
+ "title":"The Final 6-Week Challenge",
+ "eyebrow":"The Camp &middot; Huntington Beach",
+ "desc":"A six-week fitness challenge landing page built in eighteen days, with a live countdown and a prize pool that grows with enrolments.",
+ "lede":"Eighteen days from brief to live. Not because it was simple, but because the engine "
+        "already existed and only the campaign was new.",
+ "img":"camp-hb-6w.webp","imgh":"750",
+ "alt":"The Camp Huntington Beach 6-Week Challenge landing page",
+ "caption":"Live site &mdash; camp-hb-6-week-challenge.vercel.app",
+ "meta":[("Role","Builder"),("Runway","18 days"),("Discipline","Campaign funnel"),
+         ("Live",'<a href="https://camp-hb-6-week-challenge.vercel.app" target="_blank" rel="noopener">View site &#8599;</a>')],
+ "body":"""<h2>The brief</h2>
+<p>A six-week transformation programme starting on a fixed Monday, open to new and existing
+members, with a cash prize that grows as more people enrol. Eighteen days of runway. The page had
+to carry a deadline, an offer, and enough proof to make a stranger book a workout.</p>
+<p>Two constraints shaped it. The client was explicit that there would be <strong>no guarantee or
+risk reversal</strong> &mdash; so the page could not lean on the easiest conversion crutch
+available. And the supplied flyers were reference only: nothing from them ships, because
+franchise collateral carries burned-in text and stale calls to action that date a page the moment
+it goes up.</p>
+
+<h2>What carries the page instead</h2>
+<ul>
+  <li><strong>A real deadline, stated three ways.</strong> A countdown in the hero, a persistent
+      bar with days remaining, and the end date framed as &ldquo;done before Thanksgiving&rdquo;
+      &mdash; because a date is abstract and a holiday is not.</li>
+  <li><strong>A prize that grows.</strong> The pool rises with every enrolment, which turns a
+      flat incentive into a reason to tell someone else.</li>
+  <li><strong>A low-commitment first step.</strong> The call to action is not &ldquo;enrol&rdquo;,
+      it is <em>book a free workout</em>. Forty-five seconds, no card, no account.</li>
+  <li><strong>Before-and-afters, stripped.</strong> Cropped to the bare pair, with all franchise
+      overlay text removed, so the evidence reads as evidence rather than as an advert.</li>
+</ul>
+
+<h2>Why eighteen days was enough</h2>
+<p>Because almost none of it was new. The page runs on the design system and booking engine built
+for the rejoin promo &mdash; same serverless backend, same dual-host adapters, same email pattern,
+same class-schedule configuration shape.</p>
+<p>What actually got built in those eighteen days was the campaign: the offer logic, the countdown,
+the prize mechanic, the copy, and the asset work. The infrastructure was a decision made months
+earlier, and this is what that decision bought.</p>
+
+<h2>What ships alongside the page</h2>
+<p>A landing page produces bookings, which only matter if somebody acts on them. So the project
+also delivered a front-desk playbook, QR collateral for print, a share card for links and texts,
+a branded 404, and its own Google Sheet with its own Apps Script deployment &mdash; deliberately
+separate, so retiring this campaign can never disturb another location's live funnel.</p>
+<div class="note-box"><p>One of five campaign funnels built on the same engine for this client.
+The others are linked from the work index &mdash; worth reading together, because the interesting
+part is what stayed the same.</p></div>""",
+},
+{
+ "slug":"camp-whittier-6week",
+ "title":"The same challenge, relocated",
+ "eyebrow":"The Camp &middot; Whittier",
+ "desc":"The Huntington Beach challenge page relocated to a second gym in days, with only the genuinely local differences changed.",
+ "lede":"The second location did not get a rebuild. It got a relocation &mdash; and the list of "
+        "what actually had to change is the whole point.",
+ "img":"camp-whittier-6w.webp","imgh":"750",
+ "alt":"The Camp Whittier 6-Week Challenge landing page",
+ "caption":"Live site &mdash; camp-whittier-6-week-challenge.vercel.app",
+ "meta":[("Role","Builder"),("Source","HB challenge page"),("Discipline","Campaign funnel"),
+         ("Live",'<a href="https://camp-whittier-6-week-challenge.vercel.app" target="_blank" rel="noopener">View site &#8599;</a>')],
+ "body":"""<h2>The temptation</h2>
+<p>A second gym wants the same campaign. The obvious move is to copy the folder, change the
+address and the phone number, and ship it. That is how two pages quietly become two codebases
+that drift apart until nobody is sure which one is correct.</p>
+<p>The alternative is to treat the first build as the system and the second as a configuration of
+it &mdash; which means being disciplined about what is genuinely different rather than assuming
+everything is.</p>
+
+<h2>What actually changed</h2>
+<p>Six things, each confirmed with the client before a line was written.</p>
+<ol class="chain">
+  <li><span class="n">01</span><span><strong>Elite strength training removed.</strong> Huntington
+      Beach runs it; Whittier does not. It came out of the page and out of the emails, rather than
+      being left in as an aspirational detail that would embarrass the front desk.</span></li>
+  <li><span class="n">02</span><span><strong>Its own prize pool.</strong> Not a share of a
+      franchise pot &mdash; Whittier's own, growing with Whittier's own enrolments.</span></li>
+  <li><span class="n">03</span><span><strong>Its own lead destination.</strong> A separate Google
+      Sheet and a separate Apps Script deployment, so neither location can break the other.</span></li>
+  <li><span class="n">04</span><span><strong>A different call to action.</strong> HB books a tour;
+      Whittier invites you to take a class, because that is what their front desk is set up to
+      receive.</span></li>
+  <li><span class="n">05</span><span><strong>Its own class schedule</strong> driving the time
+      picker.</span></li>
+  <li><span class="n">06</span><span><strong>Local details</strong> &mdash; address, phone, email,
+      dates.</span></li>
+</ol>
+
+<h2>What deliberately did not change</h2>
+<p>The design system, the booking engine, the email templates, the page structure, the serverless
+backend, the dual-host adapters, the print collateral pattern. None of it was revisited, because
+none of it was wrong.</p>
+<p>The same discipline applied to what was <em>not</em> added. No guarantee, no risk reversal, no
+capacity cap invented to manufacture scarcity &mdash; the deadline was real, so nothing else was
+needed. Resisting the urge to improve a working page while moving it is most of the skill.</p>
+
+<h2>Why this is the case study worth reading</h2>
+<p>Anyone can build one landing page. The question that decides whether a business can run
+campaigns at all is what the second one costs &mdash; and the answer here is a short list of
+confirmed differences rather than a project.</p>
+<p>That is the same argument as the intake runbook and the reporting platform, in a different
+medium: do the thinking once, write it down, and the next instance becomes configuration.</p>""",
+},
+{
+ "slug":"camp-hb-rejoin",
+ "title":"Rejoin for $1",
+ "eyebrow":"The Camp &middot; Huntington Beach",
+ "desc":"A win-back funnel offering former members thirty days for a dollar, with its own lead pipeline kept separate from the live non-member funnel.",
+ "lede":"The cheapest member to acquire is one you already had. This page exists to make coming "
+        "back require almost nothing.",
+ "img":"camp-hb-rejoin.webp","imgh":"750",
+ "alt":"The Camp Huntington Beach Rejoin for $1 landing page",
+ "caption":"Live site &mdash; thecamp-hb-rejoin-promo.vercel.app",
+ "meta":[("Role","Builder"),("Audience","Lapsed members"),("Discipline","Win-back funnel"),
+         ("Live",'<a href="https://thecamp-hb-rejoin-promo.vercel.app" target="_blank" rel="noopener">View site &#8599;</a>')],
+ "body":"""<h2>A different audience to a cold lead</h2>
+<p>A former member is not a prospect. They already know the gym, the coaches and the format. They
+left for a reason &mdash; money, time, an injury, a move, or they simply drifted &mdash; and the
+job of the page is not to explain the product.</p>
+<p>It is to make returning feel small. Thirty days for a dollar, no contract decision at the door,
+and a first class booked before they can talk themselves out of it.</p>
+
+<h2>What the page does</h2>
+<p>One mobile-first page: claim the offer, pick a class, submit. No login, no account, no payment
+taken online. The team receives an email formatted for how they actually enter leads, and the
+prospect receives a confirmation with a calendar invite attached.</p>
+<p>Reactivating the membership stays manual, deliberately. It keeps the conversion path short and
+preserves a human touchpoint with somebody who already has history with the gym &mdash; which is
+worth more here than automation would be.</p>
+
+<h2>The decision that mattered most</h2>
+<p>This promo runs on <strong>its own Google Sheet, its own Apps Script deployment, its own repo
+and its own deploy</strong>, entirely separate from the live non-member booking funnel at the same
+location.</p>
+<p>That looks like duplication, and it is the right call. These are different offers to different
+audiences with different lifespans. When the rejoin promo ends, it gets switched off &mdash; and
+switching it off cannot touch the funnel that handles everyday new-member bookings. A shared
+backend would have made retirement a risk instead of a routine.</p>
+
+<h2>Everything around the page</h2>
+<p>A front-desk playbook, QR codes in print-ready formats, a share card for texts and DMs, a
+branded 404, and a generator for regenerating the share card when the offer changes.</p>
+<p>The page converts; the playbook is what makes the booking turn into a reactivated member. Most
+campaigns fail at the second step, not the first.</p>
+
+<h2>Where it led</h2>
+<p>This was the design system the Huntington Beach and Whittier challenge pages were later built
+on. It was not planned as a template &mdash; it became one because it was built cleanly enough to
+reuse, which is usually how that happens.</p>""",
 },
 {
  "slug":"camp-hb",

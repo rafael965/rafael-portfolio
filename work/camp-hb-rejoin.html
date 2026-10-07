@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rejoin for $1 — Rafael Reyes</title>
+<meta name="description" content="A win-back funnel offering former members thirty days for a dollar, with its own lead pipeline kept separate from the live non-member funnel.">
+<meta property="og:title" content="Rejoin for $1 — Rafael Reyes">
+<meta property="og:description" content="A win-back funnel offering former members thirty days for a dollar, with its own lead pipeline kept separate from the live non-member funnel.">
+<meta property="og:image" content="https://rafaelreyes.dev/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://rafaelreyes.dev/work/camp-hb-rejoin.html">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nav" data-open="false">
+  <div class="nav__in">
+    <a class="nav__mark" href="../index.html">RR<span>.</span></a>
+    <button class="nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <svg width="22" height="16" viewBox="0 0 22 16"><rect y="1" width="22" height="2"/><rect y="7" width="22" height="2"/><rect y="13" width="22" height="2"/></svg>
+    </button>
+    <div class="nav__links" id="menu">
+      <a class="nav__link" href="../index.html#work">Work<sup>12</sup></a>
+      <a class="nav__link" href="../index.html#services">Services<sup>05</sup></a>
+      <a class="nav__link" href="../index.html#experience">Experience<sup>06</sup></a>
+      <a class="nav__link" href="../about.html">About</a>
+      <a class="nav__link" href="../resources.html">Resources</a>
+      <a class="nav__link" href="../index.html#contact">Contact</a>
+    </div>
+    <a class="btn btn--ink nav__cta" href="../index.html#contact">Let's talk <span class="btn__arw">&#8599;</span></a>
+  </div>
+</nav>
+<main id="main" class="wrap">
+  <a class="back" href="../index.html#work"><span aria-hidden="true">&larr;</span> All work</a>
+
+  <header class="chead">
+    <span class="chead__eyebrow mono">The Camp &middot; Huntington Beach</span>
+    <h1 class="chead__title">Rejoin for $1</h1>
+    <p class="lead chead__lede">The cheapest member to acquire is one you already had. This page exists to make coming back require almost nothing.</p>
+  </header>
+
+  <div class="cmeta"><div class="cmeta__c"><span class="cmeta__k mono">Role</span><span class="cmeta__v">Builder</span></div><div class="cmeta__c"><span class="cmeta__k mono">Audience</span><span class="cmeta__v">Lapsed members</span></div><div class="cmeta__c"><span class="cmeta__k mono">Discipline</span><span class="cmeta__v">Win-back funnel</span></div><div class="cmeta__c"><span class="cmeta__k mono">Live</span><span class="cmeta__v"><a href="https://thecamp-hb-rejoin-promo.vercel.app" target="_blank" rel="noopener">View site &#8599;</a></span></div></div>
+
+  <figure class="shot">
+    <img src="../assets/img/screens/camp-hb-rejoin.webp" srcset="../assets/img/screens/camp-hb-rejoin-sm.webp 600w, ../assets/img/screens/camp-hb-rejoin.webp 1200w" sizes="(max-width: 48rem) 100vw, 50vw" alt="The Camp Huntington Beach Rejoin for $1 landing page" width="1200" height="750">
+    <figcaption>Live site &mdash; thecamp-hb-rejoin-promo.vercel.app</figcaption>
+  </figure>
+
+  <article class="prose">
+<h2>A different audience to a cold lead</h2>
+<p>A former member is not a prospect. They already know the gym, the coaches and the format. They
+left for a reason &mdash; money, time, an injury, a move, or they simply drifted &mdash; and the
+job of the page is not to explain the product.</p>
+<p>It is to make returning feel small. Thirty days for a dollar, no contract decision at the door,
+and a first class booked before they can talk themselves out of it.</p>
+
+<h2>What the page does</h2>
+<p>One mobile-first page: claim the offer, pick a class, submit. No login, no account, no payment
+taken online. The team receives an email formatted for how they actually enter leads, and the
+prospect receives a confirmation with a calendar invite attached.</p>
+<p>Reactivating the membership stays manual, deliberately. It keeps the conversion path short and
+preserves a human touchpoint with somebody who already has history with the gym &mdash; which is
+worth more here than automation would be.</p>
+
+<h2>The decision that mattered most</h2>
+<p>This promo runs on <strong>its own Google Sheet, its own Apps Script deployment, its own repo
+and its own deploy</strong>, entirely separate from the live non-member booking funnel at the same
+location.</p>
+<p>That looks like duplication, and it is the right call. These are different offers to different
+audiences with different lifespans. When the rejoin promo ends, it gets switched off &mdash; and
+switching it off cannot touch the funnel that handles everyday new-member bookings. A shared
+backend would have made retirement a risk instead of a routine.</p>
+
+<h2>Everything around the page</h2>
+<p>A front-desk playbook, QR codes in print-ready formats, a share card for texts and DMs, a
+branded 404, and a generator for regenerating the share card when the offer changes.</p>
+<p>The page converts; the playbook is what makes the booking turn into a reactivated member. Most
+campaigns fail at the second step, not the first.</p>
+
+<h2>Where it led</h2>
+<p>This was the design system the Huntington Beach and Whittier challenge pages were later built
+on. It was not planned as a template &mdash; it became one because it was built cleanly enough to
+reuse, which is usually how that happens.</p>
+  </article>
+
+  <div class="nextup">
+    <a href="camp-hb.html">
+      <span class="nextup__k mono">Next case</span>
+      <span class="nextup__t">Non-member class booking <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="nav__mark" style="font-size:1.4rem;margin-bottom:.75rem">Rafael Reyes<span style="color:var(--green)">.</span></div>
+        <p class="mute" style="max-width:34ch">Operations Manager &amp; AI Systems Builder. Building the systems I run.</p>
+      </div>
+      <div>
+        <div class="foot__h mono">Site</div>
+        <ul class="foot__list">
+          <li><a href="../index.html#work">Work</a></li>
+          <li><a href="../index.html#services">Services</a></li>
+          <li><a href="../index.html#experience">Experience</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../resources.html">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot__h mono">Elsewhere</div>
+        <ul class="foot__list">
+          <li><a href="mailto:hello@rafaelreyes.dev">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/reyesralf17" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://drive.google.com/file/d/1HjKzQR7-CzYpcu2JTC6ixwIcjOjyoJ0V/view?usp=sharing" target="_blank" rel="noopener">R&eacute;sum&eacute;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bar mono">
+      <span>&copy; 2026 Rafael Reyes</span>
+      <span>Interface images are illustrative &mdash; no client data</span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

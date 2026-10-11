@@ -24,9 +24,9 @@ app/                    routes: / about resources work/[slug] api/subscribe,
 content/site.ts         ALL non-case content: nav, services, roles, testimonials, tools
 content/cases.json      the ten case studies (body is HTML, rendered on paper)
 content/cases.ts        types, homepage card copy, helpers
-components/home/        homepage sections
-components/motion/      SmoothScroll, SplitReveal, Reveal, ImageReveal, Magnetic, Counter,
-                        ScrollWords, Cursor, StrokeText, LogoLoop
+components/home/        homepage sections (Hero + Showreel, FeaturedStack, bento Services, ...)
+components/motion/      SmoothScroll, SplitReveal, Reveal, ImageReveal, Magnetic,
+                        ScrollWords, StrokeText, LogoLoop
 components/layout/      Nav, Footer (the footer is the #contact section on every page)
 public/                 images, favicons, the kit PDF — paths unchanged from the static site
 mockups/                SOURCE for generated images — not part of the published site
@@ -66,11 +66,25 @@ on pine:  paper 8.6    fawn 6.2    sage 4.8
 
 Sage and fawn on paper are decorative only (1.8:1, 1.4:1).
 
+### House style (anti-template rules)
+
+- **One display face.** Archivo, with its own italic for emphasis inside headlines
+  (`t-accent`). No serif accent words.
+- **No em or en dashes** anywhere visible: commas, colons, periods, parentheses. Hyphens
+  for ranges ("3-4").
+- **No numbered section labels**, scroll cues, decorative grid lines, status dots, custom
+  cursor or "Fig." captions. Headings carry sections on their own.
+- **Shape:** containers, cards and media are `rounded-2xl`; anything clickable is a pill.
+- **One label per intent:** contact is always "Let's talk", the work is always "View work".
+- **The site is dark** by brand choice. A page may switch to paper once, for long reading
+  (case-study bodies, the About story).
+- **Testimonials are word-for-word excerpts**, three lines at most.
+
 ## 4. No client data
 
 The Lively dashboard and sales portal, ARC (intake, calendar, content) and Grace Built
 images are **illustrations built for this site**, with invented names and figures. Their
-browser frames say "Illustrative interface — no client data", and the footer says so too.
+browser frames say "Illustrative interface, no client data", and the footer says so too.
 
 The real screenshots contained a law firm's conversion rate, a construction project's
 location and named staff, and an executive calendar carrying privileged matter subjects
@@ -119,6 +133,6 @@ LinkedIn caches the card; refresh it with the Post Inspector after changing it.
 ## 9. Motion and accessibility
 
 Every effect respects `prefers-reduced-motion`: reveals render in place, the name is drawn
-already filled, Lenis is off, and the toolkit marquee stops and wraps instead of looping.
-The custom cursor only appears for a fine pointer. Vercel Web Analytics is included via
+already filled, Lenis is off, the hero reel holds on its first slide, the work stack keeps its
+sticky layout without the scale/dim, and the toolkit marquee stops and wraps instead of looping. Vercel Web Analytics is included via
 `@vercel/analytics`.

@@ -19,6 +19,9 @@ export function SmoothScroll() {
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
+    // Web fonts swap in after first layout and reflow headings; re-measure triggers then.
+    document.fonts?.ready.then(() => ScrollTrigger.refresh()).catch(() => {});
+
     return () => {
       gsap.ticker.remove(tick);
       lenis.destroy();

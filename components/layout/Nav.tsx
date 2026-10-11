@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { Logo } from "@/components/ui/Logo";
 import { ArrowUpRight } from "@/components/ui/Arrow";
 import { getLenis } from "@/lib/lenis";
@@ -19,19 +19,14 @@ export function Nav() {
   const [hidden, setHidden] = useState(false);
 
   // Solid capsule once scrolled; slides away on scroll down, returns on scroll up.
-  useEffect(() => {
-    let last = window.scrollY;
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 24);
-      setHidden(y > 320 && y > last + 4);
-      if (y < last - 4) setHidden(false);
-      last = y;
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // Motion's scroll value is batched per frame, unlike a raw scroll listener.
+  const { scrollY } = useScroll();
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const last = scrollY.getPrevious() ?? 0;
+    setScrolled(y > 24);
+    if (y > 320 && y > last + 4) setHidden(true);
+    else if (y < last - 4) setHidden(false);
+  });
 
   // Close the menu on navigation (adjusting state during render, not in an effect).
   const [lastPath, setLastPath] = useState(pathname);
@@ -136,7 +131,7 @@ export function Nav() {
             role="dialog"
             aria-modal="true"
             aria-label="Menu"
-            className="grain fixed inset-0 z-[55] flex flex-col bg-onyx pt-28 text-paper lg:hidden"
+            className="fixed inset-0 z-[55] flex flex-col bg-onyx pt-28 text-paper lg:hidden"
             initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
             animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
             exit={{ clipPath: "inset(0% 0% 100% 0%)" }}

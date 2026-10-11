@@ -15,45 +15,31 @@ const elsewhere = [
 /** Every page ends on the same invitation. `#contact` is the nav CTA's target. */
 export function Footer() {
   return (
-    <footer id="contact" className="grain grid-dark relative overflow-hidden bg-onyx text-paper">
-      <div className="shell relative z-[2] pb-10 pt-28 md:pt-40">
-        <Reveal className="eyebrow flex items-center gap-4 border-t border-paper/15 pt-4 text-dim">
-          <span className="text-fawn">/05</span>
-          <span>Contact</span>
+    <footer id="contact" className="relative overflow-hidden bg-onyx text-paper">
+      <div className="shell pb-10 pt-32 md:pt-44">
+        <SplitReveal as="h2" className="t-display pb-[0.1em] text-[clamp(3.4rem,11vw,12rem)]">
+          Want to talk <span className="t-accent text-fawn">shop?</span>
+        </SplitReveal>
+        <Reveal>
+          <p className="t-lead mt-8 max-w-[44ch] text-sage">
+            Always glad to talk operations, internal tooling, or how any of the systems here actually got built.
+          </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-12 md:mt-16 lg:grid-cols-12 lg:items-end">
-          <SplitReveal as="h2" className="t-display text-[clamp(3.4rem,11.5vw,12.5rem)] lg:col-span-9">
-            Want to talk <span className="t-accent text-fawn">shop?</span>
-          </SplitReveal>
-          <Reveal className="lg:col-span-3 lg:pb-4">
-            <p className="t-lead max-w-[30ch] text-sage">
-              Always glad to talk operations, internal tooling, or how any of the systems here actually got built. The
-              inbox is open.
-            </p>
-          </Reveal>
-        </div>
-
-        <Reveal className="mt-14 flex flex-wrap items-center gap-4 md:mt-20">
+        <Reveal className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-5 md:mt-14">
           <Magnetic>
             <a
               href={`mailto:${site.email}`}
-              className="group inline-flex items-center gap-4 rounded-full bg-fawn py-3 pl-7 pr-3 text-onyx transition-colors duration-500 hover:bg-paper md:py-4 md:pl-9"
+              className="group inline-flex items-center gap-4 rounded-full bg-fawn py-3 pl-8 pr-3 text-onyx transition-colors duration-500 hover:bg-paper active:scale-[0.98] md:py-3.5"
             >
-              <span className="t-h4">{site.email}</span>
-              <span className="grid size-11 place-items-center rounded-full bg-onyx text-fawn transition-transform duration-700 ease-[var(--ease-expo)] group-hover:rotate-45 md:size-12">
+              <span className="t-h4">Let&rsquo;s talk</span>
+              <span className="grid size-11 place-items-center rounded-full bg-onyx text-fawn transition-transform duration-700 ease-[var(--ease-expo)] group-hover:rotate-45">
                 <ArrowUpRight className="size-4" />
               </span>
             </a>
           </Magnetic>
-          <a
-            href={site.linkedin}
-            target="_blank"
-            rel="noopener"
-            className="group inline-flex items-center gap-2 rounded-full border border-paper/20 px-6 py-4 text-paper transition-colors hover:border-fawn hover:text-fawn"
-          >
-            LinkedIn
-            <ArrowUpRight className="size-3.5" />
+          <a href={`mailto:${site.email}`} className="link-underline text-lg text-paper/90 hover:text-paper">
+            {site.email}
           </a>
         </Reveal>
 
@@ -65,7 +51,7 @@ export function Footer() {
             </p>
           </div>
           <nav aria-label="Footer" className="md:col-span-3">
-            <p className="eyebrow mb-4 text-dim">Site</p>
+            <p className="mb-4 text-[0.9rem] text-dim">Site</p>
             <ul className="grid gap-2">
               {nav.map((item) => (
                 <li key={item.href}>
@@ -77,7 +63,7 @@ export function Footer() {
             </ul>
           </nav>
           <div className="md:col-span-4">
-            <p className="eyebrow mb-4 text-dim">Elsewhere</p>
+            <p className="mb-4 text-[0.9rem] text-dim">Elsewhere</p>
             <ul className="grid gap-2">
               {elsewhere.map((item) => (
                 <li key={item.label}>
@@ -95,9 +81,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col justify-between gap-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-dim sm:flex-row">
+        <div className="mt-16 flex flex-col justify-between gap-3 text-[0.85rem] text-dim sm:flex-row">
           <span>© 2026 Rafael Reyes</span>
-          <span>Internal-tool screens are illustrative — no client data</span>
+          <span>Internal-tool screens are illustrative, with no client data</span>
         </div>
       </div>
     </footer>

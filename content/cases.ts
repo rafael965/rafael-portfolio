@@ -26,12 +26,12 @@ export const FEATURED = 4;
 export const cards: Record<string, { blurb: string; tags: string[] }> = {
   "dcse-website": {
     blurb:
-      "A ground-up redesign for a structural engineering firm — an engineering-drawing design language, a Three.js logo that assembles on scroll, and project photography given one art direction.",
+      "A ground-up redesign for a structural engineering firm: an engineering-drawing design language, a Three.js logo that assembles on scroll, and project photography given one art direction.",
     tags: ["Next.js", "GSAP", "Three.js", "Art direction"],
   },
   "lively-website": {
     blurb:
-      "A premium multi-page site for an AI operations company — generated particle visuals, a self-drawing logo and an agent showcase, built in Next.js and Motion.",
+      "A premium multi-page site for an AI operations company, with generated particle visuals, a self-drawing logo and an agent showcase, built in Next.js and Motion.",
     tags: ["Next.js", "Motion", "Canvas", "Copy & IA"],
   },
   "agent-system": {
@@ -41,7 +41,7 @@ export const cards: Record<string, { blurb: string; tags: string[] }> = {
   },
   "arc-intake": {
     blurb:
-      "A seventeen-step onboarding chain from first enquiry to open matter — documented, delegable, and wired across Clio, DocuSign, LawPay and Dropbox.",
+      "A seventeen-step onboarding chain from first enquiry to open matter. Documented, delegable, and wired across Clio, DocuSign, LawPay and Dropbox.",
     tags: ["Clio Grow", "Clio Manage", "DocuSign", "SOP design"],
   },
   "lively-dashboard": {
@@ -51,17 +51,17 @@ export const cards: Record<string, { blurb: string; tags: string[] }> = {
   },
   "exec-calendar": {
     blurb:
-      "Protected blocks, prep buffers, team availability and deadlines as fixtures — so the week is a budget rather than a queue.",
+      "Protected blocks, prep buffers, team availability and deadlines as fixtures, so the week is a budget rather than a queue.",
     tags: ["Calendar", "Inbox triage", "Outlook"],
   },
   "content-programme": {
     blurb:
-      "Twenty-four articles in eight months on AI and intellectual property — written, reviewed, illustrated and published to a held cadence.",
+      "Twenty-four articles in eight months on AI and intellectual property: written, reviewed, illustrated and published to a held cadence.",
     tags: ["Editorial", "Ghostwriting", "LinkedIn"],
   },
   "campaign-engine": {
     blurb:
-      "Five landing pages for two gyms on one reusable funnel engine — from a $1 win-back to a six-week challenge shipped in eighteen days.",
+      "Five landing pages for two gyms on one reusable funnel engine, from a $1 win-back to a six-week challenge shipped in eighteen days.",
     tags: ["Landing pages", "Serverless", "Staff SOPs"],
   },
   "gbi-buildertrend": {

@@ -18,7 +18,7 @@ const inside = [
   },
   {
     title: "SOP template",
-    body: "The seven fields that make a written process survive contact with reality — including the one everybody leaves out.",
+    body: "The seven fields that make a written process survive contact with reality, including the one everybody leaves out.",
   },
   {
     title: "Weekly calendar structure",
@@ -33,27 +33,23 @@ const inside = [
 export default function Resources() {
   return (
     <>
-      <section aria-labelledby="kit-title" className="grain relative overflow-hidden bg-onyx pb-24 pt-36 text-paper md:pb-32 md:pt-44">
-        <div aria-hidden="true" className="grid-dark absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]" />
-        <div className="shell relative z-[2]">
-          <Reveal className="eyebrow flex items-center gap-4 border-t border-paper/15 pt-4 text-dim">
-            <span className="text-fawn">Free resource</span>
-            <span>9 pages · PDF</span>
-          </Reveal>
-          <div className="mt-12 grid gap-16 lg:grid-cols-12">
+      <section aria-labelledby="kit-title" className="bg-onyx pb-24 pt-28 text-paper md:pb-32 md:pt-32">
+        <div className="shell">
+          <Reveal className="text-[0.95rem] text-fawn">Free resource, 9-page PDF</Reveal>
+          <div className="mt-6 grid gap-16 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <SplitReveal as="h1" id="kit-title" trigger="load" delay={0.1} className="t-h1">
+              <SplitReveal as="h1" id="kit-title" trigger="load" delay={0.1} className="t-h1 pb-[0.08em]">
                 The Operations <span className="t-accent text-fawn">Runbook</span> Kit
               </SplitReveal>
               <Reveal delay={0.25}>
                 <p className="t-lead mt-8 max-w-[52ch] text-paper">
                   Four templates for turning work that lives in your head into work someone else can run. Every one came
-                  out of a real job — a client intake chain, an executive&rsquo;s calendar, a project coordinator&rsquo;s
+                  out of a real job: a client intake chain, an executive&rsquo;s calendar, a project coordinator&rsquo;s
                   handover.
                 </p>
                 <p className="mt-6 max-w-[56ch] leading-relaxed text-sage">
                   They are deliberately tool-agnostic. The value was never the software; it was deciding who owns each
-                  step and what &ldquo;done&rdquo; means. Nine pages, no signup wall on the content itself — if you
+                  step and what &ldquo;done&rdquo; means. Nine pages, no signup wall on the content itself. If you
                   would rather just read it, the download link is in the email and there is nothing else in there.
                 </p>
               </Reveal>
@@ -62,7 +58,7 @@ export default function Resources() {
               </Reveal>
             </div>
             <div className="lg:col-span-5">
-              <ImageReveal from="bottom" parallax={6} delay={0.3} className="aspect-[760/983] w-full bg-onyx-2 shadow-[0_50px_120px_-40px_rgb(0_0_0/0.7)]">
+              <ImageReveal from="bottom" parallax={6} delay={0.3} className="aspect-[760/983] w-full rounded-2xl bg-onyx-2 shadow-[0_50px_120px_-40px_rgb(0_0_0/0.7)]">
                 <img
                   src="/assets/img/kit-cover.webp"
                   alt="Cover of the Operations Runbook Kit"
@@ -78,14 +74,14 @@ export default function Resources() {
 
       <section aria-labelledby="inside" className="on-light bg-paper py-24 text-onyx md:py-32">
         <div className="shell">
-          <h2 id="inside" className="eyebrow border-t border-onyx/15 pt-4 text-graphite">
-            <span className="text-pine">Inside</span>&nbsp;&nbsp;Four templates
+          <h2 id="inside" className="t-h3">
+            What&rsquo;s inside
           </h2>
-          <Reveal stagger={0.08} as="ol" className="mt-12 grid gap-px bg-onyx/15 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal stagger={0.08} as="ol" className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {inside.map((t, i) => (
-              <li key={t.title} className="bg-paper p-6 md:p-8">
-                <span className="font-mono text-sm text-pine">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="t-h4 mt-10">{t.title}</h3>
+              <li key={t.title} className="rounded-2xl border border-onyx/10 bg-paper-2 p-6 md:p-8">
+                <span className="t-display text-5xl text-pine">{i + 1}</span>
+                <h3 className="t-h4 mt-8">{t.title}</h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-graphite">{t.body}</p>
               </li>
             ))}

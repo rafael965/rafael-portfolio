@@ -1,37 +1,44 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
-import { SectionHead } from "@/components/ui/SectionHead";
 import { testimonials } from "@/content/site";
 
 export function Testimonials() {
   const [featured, ...rest] = testimonials;
   return (
-    <section aria-labelledby="words-title" className="grain relative overflow-hidden bg-pine py-28 text-paper md:py-40">
-      <div className="shell relative z-[2]">
-        <SectionHead id="words-title" index="/04" label="In their words" title="Kind *words*" />
+    <section aria-labelledby="words-title" className="bg-pine py-28 text-paper md:py-40">
+      <div className="shell">
+        <h2 id="words-title" className="sr-only">
+          What people say
+        </h2>
 
-        <figure className="mt-16 grid gap-10 md:mt-24 md:grid-cols-12">
-          <span aria-hidden="true" className="t-accent -mb-10 text-[9rem] leading-[0.6] text-fawn md:col-span-1 md:mb-0">
-            &ldquo;
-          </span>
-          <blockquote className="md:col-span-10">
-            <SplitReveal as="p" stagger={0.05} className="font-serif text-[clamp(1.7rem,3.2vw,3.25rem)] leading-[1.18] tracking-[-0.01em]">
+        <figure className="max-w-6xl">
+          <blockquote>
+            <SplitReveal
+              as="p"
+              stagger={0.06}
+              className="font-display text-[clamp(1.8rem,3.3vw,3.3rem)] font-medium leading-[1.12] tracking-[-0.025em] [font-variation-settings:'wdth'_88]"
+            >
+              <span className="text-fawn">&ldquo;</span>
               {featured.quote}
+              <span className="text-fawn">&rdquo;</span>
             </SplitReveal>
           </blockquote>
-          <Reveal as="figcaption" className="md:col-span-10 md:col-start-2">
-            <span className="block text-lg text-paper">{featured.name}</span>
-            <span className="eyebrow text-fawn">{featured.org}</span>
+          <Reveal as="figcaption" className="mt-8 flex items-center gap-4">
+            <span className="h-px w-10 bg-fawn" aria-hidden="true" />
+            <span>
+              <span className="text-paper">{featured.name}</span>
+              <span className="text-sage">, {featured.org}</span>
+            </span>
           </Reveal>
         </figure>
 
-        <Reveal stagger={0.1} className="mt-24 grid gap-x-16 gap-y-14 md:mt-32 md:grid-cols-2">
+        <Reveal stagger={0.12} className="mt-20 grid gap-14 md:mt-28 md:grid-cols-2 md:gap-12 lg:ml-[33.33%] lg:grid-cols-2">
           {rest.map((t) => (
-            <figure key={t.name} className="flex flex-col justify-between gap-10 border-t border-paper/15 pt-8">
-              <blockquote className="font-serif text-[1.35rem] leading-[1.4] text-paper/90">&ldquo;{t.quote}&rdquo;</blockquote>
-              <figcaption>
-                <span className="block text-paper">{t.name}</span>
-                <span className="eyebrow text-fawn">{t.org}</span>
+            <figure key={t.name}>
+              <blockquote className="text-[1.25rem] leading-[1.45] text-paper/90">&ldquo;{t.quote}&rdquo;</blockquote>
+              <figcaption className="mt-5 text-[0.95rem]">
+                <span className="text-paper">{t.name}</span>
+                <span className="text-sage">, {t.org}</span>
               </figcaption>
             </figure>
           ))}

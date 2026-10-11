@@ -12,6 +12,10 @@
 /*    dim 6.2:1 for meta.                                                      */
 /*  - On light: onyx 15.5:1 primary, pine 8.6:1 accent/links, graphite 5.5:1.  */
 /*  - Sage and fawn on paper are decorative only (1.8:1, 1.4:1).               */
+/*                                                                             */
+/*  Shape: containers, cards and media are rounded-2xl (16px); anything you    */
+/*  click is a full pill. Nothing else.                                        */
+/*  Layers: nav 60, mobile menu 55, page curtain 70, grain 90.                 */
 /* -------------------------------------------------------------------------- */
 
 @theme {
@@ -28,7 +32,6 @@
 
   --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
 
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -155,14 +158,11 @@ html.lenis body {
   letter-spacing: -0.01em;
 }
 
-/* Serif accent word set inside a display heading. */
+/* Emphasis inside a display heading: italic of the same face, in fawn or pine. */
 @utility t-accent {
-  font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 400;
-  font-variation-settings: normal;
-  text-transform: none;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  padding-right: 0.06em;
 }
 
 @utility t-lead {
@@ -182,50 +182,16 @@ html.lenis body {
   letter-spacing: -0.03em;
 }
 
-@utility eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  line-height: 1.4;
-}
-
-@utility t-mono {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
-}
-
-/* Blueprint grid — the "systems" motif behind dark sections. */
-@utility grid-dark {
-  background-image:
-    linear-gradient(to right, rgb(229 198 135 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(229 198 135 / 0.05) 1px, transparent 1px);
-  background-size: 88px 88px;
-}
-
-@utility grid-light {
-  background-image:
-    linear-gradient(to right, rgb(18 22 25 / 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(18 22 25 / 0.05) 1px, transparent 1px);
-  background-size: 88px 88px;
-}
-
-/* Film grain over dark surfaces. */
-@utility grain {
-  position: relative;
-  isolation: isolate;
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.07;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  }
+/* Film grain: one fixed, non-interactive layer for the whole page (layout.tsx),
+   never on scrolling sections, so it costs a single composite. */
+.grain-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
 /* Screenshots: muted at rest, full colour on interaction. */
@@ -275,41 +241,6 @@ html.js [data-reveal] {
   background-position: 0% 100%;
 }
 
-@keyframes scroll-cue {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-  }
-  45% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-  55% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-  }
-  100% {
-    transform: scaleY(0);
-    transform-origin: bottom;
-  }
-}
-.animate-scroll-cue {
-  animation: scroll-cue 2.4s var(--ease-quart) infinite;
-}
-
-@keyframes pulse-dot {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.35;
-  }
-}
-.animate-pulse-dot {
-  animation: pulse-dot 2.4s ease-in-out infinite;
-}
-
 /* -------------------------------------------------------------------------- */
 /*  Case-study prose (rendered from content/cases.json on paper)               */
 /* -------------------------------------------------------------------------- */
@@ -352,9 +283,7 @@ html.js [data-reveal] {
   color: var(--color-onyx);
 }
 .prose-case em {
-  font-family: var(--font-serif);
-  font-size: 1.12em;
-  line-height: 1;
+  font-style: italic;
 }
 .prose-case a {
   color: var(--color-pine);
@@ -450,4 +379,15 @@ html.js [data-reveal] {
 }
 .prose-case .sample__x > * + * {
   margin-top: 0.8em;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }

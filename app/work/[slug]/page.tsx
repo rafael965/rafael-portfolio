@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ImageReveal } from "@/components/motion/ImageReveal";
 import { Reveal } from "@/components/motion/Reveal";
 import { SplitReveal } from "@/components/motion/SplitReveal";
-import { ArrowRight, ArrowUpRight } from "@/components/ui/Arrow";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "@/components/ui/Arrow";
 import { BrowserFrame, frameUrl } from "@/components/ui/BrowserFrame";
 import { cases, getCase, nextCase, sections, shortClient, withAnchors } from "@/content/cases";
 
@@ -39,33 +39,24 @@ export default async function CasePage({ params }: Props) {
   const c = getCase(slug);
   if (!c) notFound();
 
-  const index = cases.findIndex((x) => x.slug === c.slug) + 1;
   const toc = sections(c.body);
   const next = nextCase(c.slug);
 
   return (
     <article>
       {/* Header */}
-      <header className="grain relative overflow-hidden bg-onyx pb-16 pt-36 text-paper md:pb-24 md:pt-44">
-        <div
-          aria-hidden="true"
-          className="grid-dark absolute inset-0 [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
-        />
-        <div className="shell relative z-[2]">
-          <Reveal className="eyebrow flex flex-wrap items-center justify-between gap-4 border-t border-paper/15 pt-4 text-dim">
-            <Link href="/#work" className="group inline-flex items-center gap-2 text-paper/85 hover:text-fawn">
-              <ArrowRight className="size-3 rotate-180 transition-transform duration-500 group-hover:-translate-x-1" />
+      <header className="bg-onyx pb-16 pt-28 text-paper md:pb-24 md:pt-32">
+        <div className="shell">
+          <Reveal>
+            <Link href="/#work" className="group inline-flex items-center gap-2 text-[0.95rem] text-sage hover:text-fawn">
+              <ArrowLeft className="size-3.5 transition-transform duration-500 group-hover:-translate-x-1" />
               All work
             </Link>
-            <span>
-              <span className="text-fawn">{String(index).padStart(2, "0")}</span> /{" "}
-              {String(cases.length).padStart(2, "0")}
-            </span>
           </Reveal>
 
-          <div className="mt-14 grid gap-12 lg:grid-cols-12 lg:items-end">
+          <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
-              <Reveal className="eyebrow text-fawn">
+              <Reveal className="text-[0.95rem] text-fawn">
                 {c.client} · {c.discipline}
               </Reveal>
               <SplitReveal as="h1" trigger="load" delay={0.15} className="t-h1 mt-6">
@@ -80,7 +71,7 @@ export default async function CasePage({ params }: Props) {
               <dl className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-paper/12 pt-6">
                 {c.meta.map(([k, v]) => (
                   <div key={k}>
-                    <dt className="eyebrow text-dim">{k}</dt>
+                    <dt className="text-[0.85rem] text-dim">{k}</dt>
                     <dd className="mt-1.5 text-[0.95rem] text-paper">{v}</dd>
                   </div>
                 ))}
@@ -127,10 +118,7 @@ export default async function CasePage({ params }: Props) {
               />
             </ImageReveal>
           </BrowserFrame>
-          <figcaption className="mt-4 flex justify-between gap-6 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-dim">
-            <span>{c.image.caption}</span>
-            <span className="hidden sm:inline">Fig. 01</span>
-          </figcaption>
+          <figcaption className="mt-4 text-[0.9rem] text-dim">{c.image.caption}</figcaption>
         </div>
       </figure>
 
@@ -139,12 +127,11 @@ export default async function CasePage({ params }: Props) {
         <div className="shell grid gap-14 lg:grid-cols-12">
           <aside className="lg:col-span-3">
             <div className="lg:sticky lg:top-28">
-              <p className="eyebrow text-graphite">In this case</p>
+              <p className="text-[0.9rem] text-graphite">In this case</p>
               <ol className="mt-5 grid gap-2.5 border-l border-onyx/15 pl-5 text-[0.95rem]">
-                {toc.map((s, i) => (
+                {toc.map((s) => (
                   <li key={s.id}>
-                    <a href={`#${s.id}`} className="group flex gap-3 text-graphite transition-colors hover:text-onyx">
-                      <span className="font-mono text-xs leading-6 text-pine">{String(i + 1).padStart(2, "0")}</span>
+                    <a href={`#${s.id}`} className="text-graphite transition-colors hover:text-onyx">
                       <span className="link-underline">{s.label}</span>
                     </a>
                   </li>
@@ -163,7 +150,7 @@ export default async function CasePage({ params }: Props) {
       {c.gallery.length > 0 && (
         <section aria-label="More screens" className="on-light bg-paper pb-24 text-onyx md:pb-32">
           <div className="shell">
-            <p className="eyebrow mb-8 border-t border-onyx/15 pt-4 text-graphite">More screens</p>
+            <h2 className="t-h4 mb-8 border-t border-onyx/15 pt-6">More screens</h2>
             <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">
               {c.gallery.map((g, i) => (
                 <figure key={g.src}>
@@ -193,9 +180,7 @@ export default async function CasePage({ params }: Props) {
                       />
                     </ImageReveal>
                   </BrowserFrame>
-                  <figcaption className="mt-3 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-graphite">
-                    Fig. {String(i + 2).padStart(2, "0")} — {g.caption}
-                  </figcaption>
+                  <figcaption className="mt-3 text-[0.9rem] text-graphite">{g.caption}</figcaption>
                 </figure>
               ))}
             </div>
@@ -206,7 +191,6 @@ export default async function CasePage({ params }: Props) {
       {/* Next case */}
       <Link
         href={`/work/${next.slug}`}
-        data-cursor="Next"
         className="group relative block overflow-hidden border-t border-paper/10 bg-onyx py-24 text-paper md:py-36"
       >
         <img
@@ -217,8 +201,10 @@ export default async function CasePage({ params }: Props) {
           className="absolute inset-0 h-full w-full scale-110 object-cover object-top opacity-0 blur-[2px] grayscale transition-[opacity,transform] duration-1000 ease-[var(--ease-expo)] group-hover:scale-100 group-hover:opacity-[0.18]"
         />
         <div className="shell relative">
-          <p className="eyebrow text-dim">
-            <span className="text-fawn">Next case</span> · {shortClient(next.client)} · {next.discipline}
+          <p className="text-[0.95rem] text-sage">
+            <span className="text-fawn">Next case</span>
+            <span className="mx-2 text-dim">/</span>
+            {shortClient(next.client)}
           </p>
           <p className="t-h1 mt-6 flex items-end justify-between gap-8">
             <span className="max-w-[16ch] transition-colors duration-500 group-hover:text-fawn">{next.title}</span>

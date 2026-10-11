@@ -1,70 +1,108 @@
 import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
-import { ArrowUpRight } from "@/components/ui/Arrow";
-import { services } from "@/content/site";
+import { services, type Service } from "@/content/site";
 import { getCase } from "@/content/cases";
+import { cn } from "@/lib/cn";
+
+// Bento rhythm on a 12-column grid: wide/narrow, narrow/wide, then an even pair.
+const SPANS = ["lg:col-span-7", "lg:col-span-5", "lg:col-span-5", "lg:col-span-7", "lg:col-span-6", "lg:col-span-6"];
+
+const TONE: Record<Service["tone"], { cell: string; muted: string; num: string; chip: string; shot: string }> = {
+  dark: {
+    cell: "bg-onyx-2 border-paper/10 text-paper",
+    muted: "text-sage",
+    num: "text-fawn",
+    chip: "border-paper/20 hover:border-fawn hover:bg-fawn hover:text-onyx",
+    shot: "border-paper/10",
+  },
+  pine: {
+    cell: "bg-pine border-paper/10 text-paper",
+    muted: "text-sage",
+    num: "text-fawn",
+    chip: "border-paper/25 hover:border-fawn hover:bg-fawn hover:text-onyx",
+    shot: "border-paper/15",
+  },
+  fawn: {
+    cell: "bg-fawn border-onyx/10 text-onyx",
+    muted: "text-pine",
+    num: "text-pine",
+    chip: "border-onyx/25 hover:border-onyx hover:bg-onyx hover:text-fawn",
+    shot: "border-onyx/15",
+  },
+};
+
+function Cell({ s, span }: { s: Service; span: string }) {
+  const t = TONE[s.tone];
+  return (
+    <article
+      className={cn("group relative flex flex-col overflow-hidden rounded-2xl border p-7 md:p-9", t.cell, span)}
+    >
+      <h3 className="t-h3">{s.title}</h3>
+      <p className={cn("mt-4 max-w-[42ch] leading-relaxed", t.muted)}>{s.body}</p>
+
+      <div className="mt-6 flex flex-wrap items-center gap-2">
+        <span className={cn("mr-1 text-sm", t.muted)}>Proof:</span>
+        {s.proof.map((slug) => {
+          const c = getCase(slug);
+          if (!c) return null;
+          return (
+            <Link
+              key={slug}
+              href={`/work/${slug}`}
+              className={cn("rounded-full border px-3 py-1 text-[0.82rem] transition-colors duration-300", t.chip)}
+            >
+              {c.title}
+            </Link>
+          );
+        })}
+      </div>
+
+      {s.stat && (
+        <div className="mt-auto pt-12">
+          <p className={cn("t-display text-[clamp(5rem,9vw,9rem)]", t.num)}>{s.stat.value}</p>
+          <p className={cn("mt-3 max-w-[26ch]", t.muted)}>{s.stat.label}</p>
+        </div>
+      )}
+
+      {s.image && (
+        <div className="mt-auto pt-12">
+          <div
+            className={cn(
+              "-mb-7 h-52 translate-y-3 overflow-hidden rounded-t-xl border border-b-0 shadow-[0_-20px_60px_-30px_rgb(0_0_0/0.5)] transition-transform duration-700 ease-[var(--ease-expo)] group-hover:translate-y-0 md:-mb-9 md:h-64",
+              t.shot
+            )}
+          >
+            <img
+              src={s.image.src}
+              alt={s.image.alt}
+              width={720}
+              height={405}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
+        </div>
+      )}
+    </article>
+  );
+}
 
 export function Services() {
   return (
-    <section
-      id="services"
-      aria-labelledby="services-title"
-      className="on-light grid-light relative scroll-mt-24 bg-paper py-28 text-onyx md:py-40"
-    >
+    <section id="services" aria-labelledby="services-title" className="scroll-mt-24 bg-onyx pb-32 text-paper md:pb-44">
       <div className="shell">
         <SectionHead
           id="services-title"
-          tone="light"
-          index="/02"
-          label="What I do"
-          title="Six ways I make a business *run*"
-          aside="Each one is backed by work you can read — the proof links go straight to the case study."
+          title="Six ways I make a business *run.*"
+          lede="Each one comes with proof: the case studies that show it working."
         />
-
-        <ol className="mt-16 border-b border-onyx/15 md:mt-24">
+        <Reveal stagger={0.08} className="mt-14 grid gap-4 md:mt-20 md:gap-5 lg:grid-cols-12">
           {services.map((s, i) => (
-            <li key={s.title} className="group relative border-t border-onyx/15">
-              {/* Hover sweep */}
-              <span
-                aria-hidden="true"
-                className="absolute inset-0 origin-bottom scale-y-0 bg-paper-2 transition-transform duration-700 ease-[var(--ease-expo)] group-hover:scale-y-100"
-              />
-              <Reveal className="relative grid gap-6 py-10 md:grid-cols-12 md:gap-8 md:py-14">
-                <span className="font-mono text-sm text-pine md:col-span-1">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="t-h3 md:col-span-5 lg:col-span-4">{s.title}</h3>
-                <div className="md:col-span-6 lg:col-span-7">
-                  <p className="max-w-[56ch] text-[1.05rem] leading-relaxed text-graphite">{s.body}</p>
-                  <ul className="mt-6 grid gap-x-8 gap-y-2 text-[0.95rem] sm:grid-cols-2">
-                    {s.points.map((p) => (
-                      <li key={p} className="flex items-start gap-3">
-                        <span aria-hidden="true" className="mt-[0.7em] h-px w-3 shrink-0 bg-sea" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-7 flex flex-wrap items-center gap-2">
-                    <span className="eyebrow mr-2 text-graphite">Proof</span>
-                    {s.proof.map((slug) => {
-                      const c = getCase(slug);
-                      if (!c) return null;
-                      return (
-                        <Link
-                          key={slug}
-                          href={`/work/${slug}`}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-onyx/20 px-3.5 py-1.5 text-[0.85rem] transition-colors duration-300 hover:border-pine hover:bg-pine hover:text-paper"
-                        >
-                          {c.title}
-                          <ArrowUpRight className="size-3" />
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              </Reveal>
-            </li>
+            <Cell key={s.title} s={s} span={SPANS[i]} />
           ))}
-        </ol>
+        </Reveal>
       </div>
     </section>
   );

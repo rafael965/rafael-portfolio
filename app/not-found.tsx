@@ -3,11 +3,10 @@ import { ArrowRight } from "@/components/ui/Arrow";
 
 export default function NotFound() {
   return (
-    <section className="grain relative flex min-h-svh items-end overflow-hidden bg-onyx pb-20 pt-36 text-paper">
-      <div aria-hidden="true" className="grid-dark absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-      <div className="shell relative z-[2]">
-        <p className="eyebrow text-fawn">Error 404</p>
-        <h1 className="t-display mt-6 text-[clamp(4rem,16vw,16rem)]">
+    <section className="flex min-h-[100dvh] items-end bg-onyx pb-20 pt-28 text-paper">
+      <div className="shell">
+        <p className="text-[0.95rem] text-fawn">Error 404</p>
+        <h1 className="t-display mt-6 pb-[0.1em] text-[clamp(4rem,16vw,16rem)]">
           Not <span className="t-accent text-fawn">here</span>
         </h1>
         <p className="t-lead mt-8 max-w-[44ch] text-sage">

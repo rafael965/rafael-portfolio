@@ -29,7 +29,7 @@ export function SubscribeForm() {
       const out = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(out.error || "Something went wrong.");
       form.reset();
-      setState({ kind: "ok", text: "Sent. Check your inbox — the download link is in the email." });
+      setState({ kind: "ok", text: "Sent. Check your inbox for the download link." });
     } catch (err) {
       setState({ kind: "err", text: err instanceof Error ? err.message : "Something went wrong." });
     }
@@ -41,13 +41,13 @@ export function SubscribeForm() {
   return (
     <form onSubmit={onSubmit} noValidate className="grid gap-7">
       <div>
-        <label htmlFor="kName" className="eyebrow text-dim">
-          Name <span className="normal-case tracking-normal">(optional)</span>
+        <label htmlFor="kName" className="text-[0.9rem] text-sage">
+          Name <span className="text-dim">(optional)</span>
         </label>
         <input id="kName" name="name" type="text" autoComplete="name" maxLength={80} className={field} />
       </div>
       <div>
-        <label htmlFor="kEmail" className="eyebrow text-dim">
+        <label htmlFor="kEmail" className="text-[0.9rem] text-sage">
           Email
         </label>
         <input

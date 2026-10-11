@@ -1,9 +1,9 @@
 "use client";
 
 // Adapted from React Bits <StrokeText /> (https://reactbits.dev): ported to
-// TypeScript, plus `delay`, a height-driven `fit` mode, an optional `capHeight`
-// crop, and a hidden first paint so the finished word never flashes before the
-// outline starts drawing.
+// TypeScript, plus `delay`, `fit` modes (height-driven, and fill-the-width), an
+// optional `capHeight` crop, re-measuring when it becomes visible, and a hidden
+// first paint so the finished word never flashes before the outline draws.
 
 import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
@@ -28,8 +28,12 @@ type Props = {
   reverse?: boolean;
   /** Seconds before a mount/scroll timeline starts. */
   delay?: number;
-  /** "width" fills the container (original behaviour); "height" sizes by --stroke-fit-height. */
-  fit?: "width" | "height";
+  /**
+   * "width": original behaviour (full width, fixed height).
+   * "height": sized by --stroke-fit-height, natural width.
+   * "fill": full width, height follows the word's proportions.
+   */
+  fit?: "width" | "height" | "fill";
   /**
    * Cap height as a fraction of fontSize. When set, the viewBox is cropped to the
    * capitals instead of the full em box — for all-caps words with no descenders.
@@ -116,10 +120,22 @@ export default function StrokeText({
     measure();
     document.fonts?.ready.then(measure).catch(() => {});
 
+    // A copy hidden at one breakpoint measures as zero; measure again once shown.
+    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(measure) : null;
+    if (rootRef.current) ro?.observe(rootRef.current);
+
     return () => {
       cancelled = true;
+      ro?.disconnect();
     };
   }, [characters, fontSize, fontWeight, letterSpacing, strokeWidth, capHeight]);
+
+  // The measured box can change the page height; re-measure every scroll trigger.
+  useEffect(() => {
+    if (!box) return undefined;
+    const id = window.setTimeout(() => ScrollTrigger.refresh(), 60);
+    return () => window.clearTimeout(id);
+  }, [box]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -215,7 +231,14 @@ export default function StrokeText({
     };
   }, [box, dash, drawDuration, fillDelay, stagger, ease, trigger, fillMode, reverse, delay]);
 
-  const viewBox = box ? `${box.x} ${box.y} ${box.width} ${box.height}` : `0 ${-fontSize} 600 ${fontSize * 1.3}`;
+  // Before measuring, estimate the box from the character count so the element
+  // reserves roughly its final size (no layout shift when the real box lands).
+  const estPad = fontSize * 0.035;
+  const viewBox = box
+    ? `${box.x} ${box.y} ${box.width} ${box.height}`
+    : capHeight
+      ? `0 ${-capHeight * fontSize - estPad} ${characters.length * fontSize * 0.56} ${capHeight * fontSize + estPad * 2}`
+      : `0 ${-fontSize} 600 ${fontSize * 1.3}`;
   const animated = trigger !== "hover";
 
   return (
@@ -225,6 +248,7 @@ export default function StrokeText({
         "stroke-text",
         trigger === "hover" && "stroke-text--hover",
         fit === "height" && "stroke-text--fit-height",
+        fit === "fill" && "stroke-text--fill",
         className,
       ]
         .filter(Boolean)

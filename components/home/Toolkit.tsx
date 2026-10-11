@@ -61,7 +61,7 @@ export function Toolkit() {
         { label: "Operate in", logos: operateItems, direction: "right" as const, aria: "Operations software" },
       ].map((row) => (
         <div key={row.label}>
-          <p className="shell eyebrow mb-4 text-dim">{row.label}</p>
+          <p className="shell mb-5 text-[0.95rem] text-sage">{row.label}</p>
           <LogoLoop
             logos={row.logos}
             speed={42}

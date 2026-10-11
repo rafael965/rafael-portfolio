@@ -27,6 +27,12 @@
   height: var(--stroke-fit-height, 12vw);
 }
 
+/* fit="fill": spans the container; height follows the viewBox proportions. */
+.stroke-text--fill .stroke-text__svg {
+  width: 100%;
+  height: auto;
+}
+
 .stroke-text__stroke,
 .stroke-text__fill {
   user-select: none;

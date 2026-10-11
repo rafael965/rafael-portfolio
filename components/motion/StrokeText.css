@@ -1,0 +1,33 @@
+/* React Bits StrokeText — base styles, plus a height-driven sizing mode. */
+.stroke-text {
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+.stroke-text--hover {
+  cursor: pointer;
+}
+
+.stroke-text__svg {
+  display: block;
+  width: 100%;
+  height: var(--stroke-text-height, 160px);
+  overflow: visible;
+}
+
+/* fit="height": every instance shares one cap height and takes its natural
+   width, so stacked words line up at the same size. */
+.stroke-text--fit-height {
+  display: inline-block;
+  width: auto;
+}
+.stroke-text--fit-height .stroke-text__svg {
+  width: auto;
+  height: var(--stroke-fit-height, 12vw);
+}
+
+.stroke-text__stroke,
+.stroke-text__fill {
+  user-select: none;
+}

@@ -13,3 +13,9 @@ node_modules/
 
 # Kit page renders (regenerated from kit/kit.html)
 kit/p-*.jpg
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo

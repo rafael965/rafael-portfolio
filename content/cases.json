@@ -1,0 +1,446 @@
+[
+ {
+  "slug": "dcse-website",
+  "title": "A website drawn like a structural set",
+  "client": "DCSE Associates, Inc.",
+  "discipline": "Website & brand",
+  "summary": "A ground-up website redesign for a structural engineering firm — an engineering-drawing design language, a 3D logo that assembles on scroll, and a content audit that surfaced the work the old site was hiding.",
+  "lede": "The firm's strongest evidence — decades of buildings — sat in unlabelled carousels. The redesign makes the work the argument, and draws the whole site the way an engineer draws a building.",
+  "image": {
+   "src": "/assets/img/screens/dcse-home.webp",
+   "sm": "/assets/img/screens/dcse-home-sm.webp",
+   "w": 1440,
+   "h": 810,
+   "alt": "DCSE Associates homepage: a dark hero reading “Strength behind every structure” over a building, with blueprint gridlines",
+   "caption": "Homepage hero — gridline bubbles, a sheet label and a monochrome project photograph"
+  },
+  "meta": [
+   [
+    "Role",
+    "Designer & developer"
+   ],
+   [
+    "Discipline",
+    "Website & brand"
+   ],
+   [
+    "Stack",
+    "Next.js, GSAP, Three.js"
+   ],
+   [
+    "Status",
+    "In client review"
+   ]
+  ],
+  "live": "https://dcse-website.vercel.app",
+  "gallery": [
+   {
+    "src": "/assets/img/screens/dcse-projects.webp",
+    "sm": "/assets/img/screens/dcse-projects-sm.webp",
+    "w": 1440,
+    "h": 810,
+    "alt": "DCSE projects page with named, captioned project photography",
+    "caption": "Projects — every building named, sectored and captioned",
+    "url": "dcse-website.vercel.app/projects"
+   },
+   {
+    "src": "/assets/img/screens/dcse-services.webp",
+    "sm": "/assets/img/screens/dcse-services-sm.webp",
+    "w": 1440,
+    "h": 810,
+    "alt": "DCSE services page laid out like a numbered drawing sheet",
+    "caption": "Services — sections numbered like sheets in a drawing set",
+    "url": "dcse-website.vercel.app/services"
+   }
+  ],
+  "body": "<h2>The starting point</h2>\n<p>The previous site was a six-page template build. It had genuine assets &mdash; a distinctive\nisometric star logo, a clear mission about delivering <em>the soundest structural system per\nconstruction dollar spent</em>, and real photography of real buildings. It just was not using them.\nThe hero was a generic bridge video with the player controls showing. Projects lived in carousels\nwith no names, no sectors and no captions, so the firm's best proof of capability was the hardest\nthing on the site to find. And the metadata undersold the firm in search.</p>\n\n<h2>The audit came first</h2>\n<p>Before any design, I audited what was already there: brand colours sampled from the logo files\nand the live stylesheet, the typeface, every page and every claim. The output was a written list of\nwhat to keep, what to fix &mdash; and which facts needed re-confirming with the firm before launch,\nbecause nothing on a professional services site should be invented to make a layout look full.</p>\n\n<h2>A design language borrowed from the drawings</h2>\n<ul>\n  <li><strong>Sheet numbers.</strong> Sections are labelled S-101, S-201 and so on, the way sheets\n      are numbered in a structural set.</li>\n  <li><strong>Gridlines and dimensions.</strong> Gridline bubbles, dimension strings and level\n      datums run through the layout as quiet structure rather than decoration.</li>\n  <li><strong>Type that echoes the wordmark.</strong> A variable-width grotesque set slightly\n      condensed, matching the condensed DCSE letters, with a mono face for annotations.</li>\n  <li><strong>The palette, retained exactly.</strong> Every brand colour came from the existing logo\n      and site. The only additions were neutrals and one tint of the logo blue for linework on dark.</li>\n</ul>\n\n<h2>The logo, built in 3D</h2>\n<p>The star in the logo is a true isometric form &mdash; three orthogonal members &mdash; so I\nbuilt it as one in Three.js. On scroll it assembles from blueprint linework into the solid mark and\nlands in the logo's exact isometric pose. It is lazy-loaded, so it never stands between a visitor and\nthe first paint.</p>\n\n<h2>One art direction for mixed photography</h2>\n<p>The project photography varied in quality and resolution. Rather than hide the weaker images,\nthe site gives all of them one treatment: monochrome by default, colour revealed on interaction.\nEvery project is now named, assigned a sector and captioned.</p>\n\n<h2>Motion with restraint</h2>\n<p>Masked line reveals on headings, shutter-style image reveals, smooth scrolling, a magnetic pull\non the primary calls to action, and a curtain transition between pages. All of it is built on GSAP,\nLenis and Motion, and all of it switches off for visitors who prefer reduced motion.</p>\n\n<h2>Built to be handed over</h2>\n<ul>\n  <li><strong>One content file.</strong> Company details, projects, markets, services and team live\n      in a single typed file. Adding a project means dropping in a photo and adding one entry.</li>\n  <li><strong>A contact form that fails gracefully.</strong> Submissions send through Resend; if\n      email is not configured, the form shows the direct address instead of an error.</li>\n  <li><strong>Launch is a switch.</strong> Search indexing stays off on preview URLs and turns on\n      with one environment variable at launch. Redirects keep every old URL working.</li>\n</ul>\n\n<div class=\"note-box\"><p>The site is in final review with the firm. The link above is the staging\npreview, and project names and imagery remain subject to the firm's sign-off.</p></div>"
+ },
+ {
+  "slug": "lively-website",
+  "title": "A website for an AI operations company",
+  "client": "Lively",
+  "discipline": "Website & motion",
+  "summary": "A premium multi-page website for an AI operations company — generated particle visuals, a self-drawing logo and an agent showcase, built in Next.js and Motion.",
+  "lede": "Lively had outgrown a single funnel page. The new site had to explain an unfamiliar category — an AI operations company — to business owners who would rather not think about AI at all.",
+  "image": {
+   "src": "/assets/img/screens/lively-home.webp",
+   "sm": "/assets/img/screens/lively-home-sm.webp",
+   "w": 1440,
+   "h": 810,
+   "alt": "Lively homepage: “Your business shouldn't need you in the middle of it.” beside a dotted particle sphere",
+   "caption": "Homepage hero — the headline beside a generated particle sphere"
+  },
+  "meta": [
+   [
+    "Role",
+    "Designer & developer"
+   ],
+   [
+    "Discipline",
+    "Website & motion"
+   ],
+   [
+    "Stack",
+    "Next.js, React, Motion"
+   ],
+   [
+    "Status",
+    "Pre-launch"
+   ]
+  ],
+  "live": null,
+  "gallery": [
+   {
+    "src": "/assets/img/screens/lively-os.webp",
+    "sm": "/assets/img/screens/lively-os-sm.webp",
+    "w": 1440,
+    "h": 810,
+    "alt": "Lively Operating System page explaining the layered model",
+    "caption": "Operating System — systems first, then AI on top"
+   },
+   {
+    "src": "/assets/img/screens/lively-how.webp",
+    "sm": "/assets/img/screens/lively-how-sm.webp",
+    "w": 1440,
+    "h": 810,
+    "alt": "Lively How We Work page showing the three-step process",
+    "caption": "How We Work — the process in Lively's own terms"
+   }
+  ],
+  "body": "<h2>The brief</h2>\n<p>Replace a one-page funnel with a site that explains what Lively actually does: fix the systems\nfirst, then put AI on top of them. The headline stayed the founder's own &mdash; <em>Your business\nshouldn't need you in the middle of it</em> &mdash; and the rest of the language came from her\nproposal deck and operations growth plan, not from me. Positioning is the client's to set.</p>\n\n<h2>Structure before style</h2>\n<p>Seven pages: Home, Operating System, How We Work, Work, Well Entrepreneur, About and Contact.\nThe process is named in Lively's terms &mdash; Discovery Call, Growth Plan Presentation, Plan\nImplementation &mdash; and a layered section builds the model from the bottom up, so a visitor\nunderstands the order of operations before they see a single tool.</p>\n\n<h2>Visuals that are generated, not licensed</h2>\n<ul>\n  <li><strong>The particle sphere</strong> is drawn in canvas: scattered points that gather into a\n      sphere as the page settles. It is on-brand by construction and weighs almost nothing.</li>\n  <li><strong>The logo draws itself.</strong> No vector of the mark existed, so its centrelines were\n      traced automatically from the PNG and animated as strokes.</li>\n  <li><strong>Brand colour as a surface.</strong> The palette is built on the founder's own vivid\n      blue, with deeper steps for depth and soft top-lit shading on blue sections.</li>\n</ul>\n\n<h2>The agents, introduced</h2>\n<p>A full-bleed hover accordion introduces Lively's three AI agents &mdash; Jarvis, Bruce and Marcus\n&mdash; the same agents described in the <a href=\"/work/agent-system\">agent system case study</a>.\nHover uses a short intent delay so columns do not flicker as a cursor passes; click, tap and keyboard\nwork for everyone else.</p>\n\n<h2>Engineering choices</h2>\n<p>Next.js App Router, React 19, TypeScript and Tailwind, with Motion as the only animation\ndependency &mdash; pinned scroll sections use CSS sticky positioning and scroll-linked values rather\nthan a heavier library. Video clips are re-encoded so they play on Safari and iOS. Booking is the\nclient's live scheduling widget, embedded directly. Every response carries a no-index header until\nlaunch day.</p>\n\n<div class=\"note-box\"><p>The site is in pre-launch staging, so there is no public link yet. The\nscreens above are from the staging build.</p></div>"
+ },
+ {
+  "slug": "agent-system",
+  "title": "Five agents with real boundaries",
+  "client": "Lively & ARC IP Law",
+  "discipline": "AI systems",
+  "summary": "Five AI agents across two organisations — a strategy-and-execution team at Lively and research agents at ARC IP Law — each defined as much by what it declines as by what it does.",
+  "lede": "Most teams end up with one general-purpose assistant that is vaguely useful at everything. I built five that are each unambiguously responsible for something — and told them, in writing, what to refuse.",
+  "image": {
+   "src": "/assets/img/screens/agents.webp",
+   "sm": "/assets/img/screens/agents-sm.webp",
+   "w": 1200,
+   "h": 724,
+   "alt": "Illustrative agent system showing the Lively and ARC IP Law rosters, routing rules and the due diligence path",
+   "caption": "Illustrative interface — no client or counterparty information"
+  },
+  "meta": [
+   [
+    "Role",
+    "Designer & builder"
+   ],
+   [
+    "Agents",
+    "5"
+   ],
+   [
+    "Organisations",
+    "Lively, ARC IP Law"
+   ],
+   [
+    "Discipline",
+    "AI systems"
+   ]
+  ],
+  "live": null,
+  "gallery": [],
+  "body": "<h2>The problem with one assistant</h2>\n<p>A single general-purpose agent gives you confident answers in domains it has no business\nanswering. Ask it to price an offer and it will cheerfully produce a number with no grasp of\nmargin. Ask it whether a prospective client is safe to take on and it will tell you, without\nknowing that it should not be the one deciding.</p>\n<p>The failure is not capability. It is that nothing <em>owns</em> anything, so nothing can be\nrelied upon &mdash; which is the same failure as an operations team with no named owners.</p>\n\n<h2>Lively: a strategy-and-execution team</h2>\n<ul>\n  <li><strong>Bruce</strong> &mdash; marketing strategy. Channels, audiences, creative, content,\n      SEO, paid media, offer construction.</li>\n  <li><strong>Marcus</strong> &mdash; sales and revenue operations. Pricing, margin, unit\n      economics, pipeline, forecasting, retention.</li>\n  <li><strong>Jarvis</strong> &mdash; executive assistant. Inbox, scheduling, briefings, and\n      hands-on operation of the CRM, task and document systems.</li>\n</ul>\n<p>Three agents whose domains genuinely overlap, which is why the routing rules are the real\ndesign. A user's question rarely announces which agent it belongs to, so the boundaries are written\ndown as a shared vocabulary, resolved once:</p>\n<ul>\n  <li>An offer's <strong>price or margin</strong> goes to Marcus. The same offer's <strong>hook\n      and creative</strong> goes to Bruce.</li>\n  <li>&ldquo;Funnel&rdquo; as a campaign question is Bruce. As a forecast question, Marcus.</li>\n  <li>CRM: <em>whether the data can be trusted</em> is Marcus. <em>Performing the cleanup</em> is\n      Jarvis.</li>\n  <li>Deciding what should happen is Bruce or Marcus. Doing it in a system is Jarvis.</li>\n</ul>\n<p>Underneath them sits a shared memory: a standardised knowledge base per client brand &mdash;\nbrand, audience, voice, offers, channels, campaigns, performance, competitors, economics,\npipeline, sales process, decisions and learnings. Fourteen files, the same shape for every\naccount, so someone who has never touched an account gets a real answer in one prompt rather than\na plausible one. Prompts are easy to copy. Accumulated client intelligence in a consistent shape\nis not.</p>\n\n<h2>ARC IP Law: research agents</h2>\n<ul>\n  <li><strong>Tony</strong> &mdash; due diligence on prospective clients and their strategic\n      partners, before a commitment is made rather than after.</li>\n  <li><strong>Troy</strong> &mdash; research on referral partners and networking opportunities,\n      so calendar time goes to rooms worth being in.</li>\n</ul>\n<p>Diligence for a law firm is the clearest case for hard boundaries, because a wrong answer is\nnot merely unhelpful. Tony is built around four rules:</p>\n<ul>\n  <li><strong>Confirm identity before attributing anything.</strong> Name collisions are the\n      most common way diligence goes wrong, and the most damaging &mdash; adverse information\n      pinned to the wrong person.</li>\n  <li><strong>Keep verified fact apart from allegation.</strong> Primary and official sources\n      first; anything adverse stays an allegation until a reliable source establishes it.</li>\n  <li><strong>Classify, and say what the classification cannot tell you.</strong> A Green,\n      Yellow or Red rating &mdash; with the explicit caveat that finding nothing is not proof of\n      no risk.</li>\n  <li><strong>Escalate judgement to an attorney.</strong> Tony never states that conflicts are\n      clear, because conflicts are a separate process, and never makes the final decision on\n      whether to accept a client. Legal judgement calls go to a person whose job that is.</li>\n</ul>\n<p>The detailed procedures load only when a task needs them, so the core instructions stay short\nenough to follow reliably.</p>\n\n<h2>The principle both share</h2>\n<p>Each agent is told what to <strong>decline</strong>, not only what to do. Jarvis executes;\nhe does not set strategy. Bruce does not touch pricing. Tony researches and recommends; he never\nclears conflicts or accepts a client.</p>\n<p>That refusal is what makes the answers trustworthy. An agent that answers everything tells you\nnothing about whether this particular answer is any good &mdash; and in a law firm, an agent that\noversteps can create a problem a person then has to unwind.</p>\n\n<h2>How it gets maintained</h2>\n<p>Each agent has one canonical definition, versioned in a single place, with build scripts that\ngenerate the paste-ready instructions and packaged skill bundles from it. Updating an agent is one\nedit and a rebuild, rather than a message asking everyone to re-copy something.</p>\n<p>Which is the same idea as every other system here: write it down once, give it an owner, and\nmake the next use a configuration rather than a rebuild.</p>\n<div class=\"note-box\"><p>The interface above is an illustration built for this portfolio. No\nclient, counterparty or knowledge-base content from either organisation appears on this site.</p></div>"
+ },
+ {
+  "slug": "arc-intake",
+  "title": "The intake system that runs itself",
+  "client": "ARC IP Law, PC",
+  "discipline": "Legal operations",
+  "summary": "A seventeen-step client intake and onboarding chain for an IP law firm, documented and delegable.",
+  "lede": "A law firm loses money in the gap between “someone enquired” and “the matter is open.” I closed that gap by writing the whole thing down and wiring the tools together.",
+  "image": {
+   "src": "/assets/img/screens/arc-intake.webp",
+   "sm": "/assets/img/screens/arc-intake-sm.webp",
+   "w": 1200,
+   "h": 675,
+   "alt": "Illustrative intake console showing pipeline stages and an onboarding runbook",
+   "caption": "Illustrative interface — sample data, no client information"
+  },
+  "meta": [
+   [
+    "Role",
+    "Client Coordinator & EA"
+   ],
+   [
+    "Discipline",
+    "Legal operations"
+   ],
+   [
+    "Stack",
+    "Clio, DocuSign, LawPay, Dropbox"
+   ],
+   [
+    "Sector",
+    "Intellectual property"
+   ]
+  ],
+  "live": null,
+  "gallery": [],
+  "body": "<h2>The problem</h2>\n<p>Intake at a small firm is deceptively hard. A prospective client emails, calls, or arrives\nthrough a referral. Somebody books a consultation. Somebody else drafts an engagement letter.\nA retainer needs collecting, a conflicts check needs running, an entity needs verifying with the\nSecretary of State, and a matter needs opening in a different system than the one the enquiry\narrived in.</p>\n<p>None of that is difficult. All of it is forgettable. And when a step is forgotten, the failure\nis silent — the enquiry simply goes quiet, and nobody notices until the month-end review asks\nwhy the pipeline looks thin.</p>\n<p>The firm had capable people. What it did not have was a written answer to\n<strong>“what happens next, and who does it.”</strong></p>\n\n<h2>What I built</h2>\n<p>A single onboarding chain covering every step from first contact to an open, funded matter —\nsequenced, owned, and documented well enough that someone who had never done it could run it\ncorrectly on their first attempt.</p>\n<ol class=\"chain\">\n  <li><span class=\"n\">01</span><span>Create the matter and log the enquiry source</span></li>\n  <li><span class=\"n\">02</span><span>Provision the client folder against a fixed structure</span></li>\n  <li><span class=\"n\">03</span><span>Send the intake form and record what came back</span></li>\n  <li><span class=\"n\">04</span><span>Verify the entity where the client is a company</span></li>\n  <li><span class=\"n\">05</span><span>Prepare the engagement letter and disclosures</span></li>\n  <li><span class=\"n\">06</span><span>Route to the assigned attorney for review</span></li>\n  <li><span class=\"n\">07</span><span>Send for signature and track the retainer</span></li>\n  <li><span class=\"n\">08</span><span>File executed documents back to the client folder</span></li>\n  <li><span class=\"n\">09</span><span>Convert the record into an active matter</span></li>\n  <li><span class=\"n\">10</span><span>Trigger the welcome sequence and first follow-up task</span></li>\n</ol>\n<p>Seventeen steps in total. Each one names the tool, the owner, and the trigger for the step\nafter it — so the process moves without anyone holding the whole thing in their head.</p>\n\n<h2>How it holds together</h2>\n<p>The chain spans four systems that do not natively talk to each other, so the documentation\n<em>is</em> the integration. Clio Grow holds the enquiry, Clio Manage holds the matter, DocuSign\ncarries the signature, LawPay carries the retainer, and Dropbox holds the file. The runbook\ndefines the handoff at every boundary, including what “done” looks like before the next step\nis allowed to start.</p>\n<p>Around it sits a set of companion procedures for the work that recurs: inbox triage rules that\nsort what needs an attorney's judgement from what needs an assistant's, continuing-education\ncompliance tracking, and expense entry against the right matter.</p>\n\n<h2>Where AI actually helps</h2>\n<p>I use it where it removes genuine work rather than where it demonstrates well. Reviewing an\nexecutive inbox and surfacing what needs a decision. Turning a long thread into a short summary\nwith the action items pulled out. Drafting the routine correspondence that follows a predictable\nshape. Researching a prospective client or organisation ahead of a meeting.</p>\n<p>The pattern that made these stick was writing them as reusable workflows rather than one-off\nprompts — so the output is consistent enough to trust, and someone other than me can run them.</p>\n\n<h2>What changed</h2>\n<p>The measurable part is not speed, it is <strong>survivability</strong>. Before, the process\nlived in the head of whoever had done it last. Now it exists as a document, which means it can be\ndelegated, audited, improved, and handed to a new starter.</p>\n<p>The follow-up tracking is the part I would keep if I could only keep one thing. Enquiries do\nnot stall silently any more, because “waiting on the client” is a state the system knows about\nrather than something a person has to remember.</p>\n<div class=\"note-box\"><p>The interface above is an illustration built for this portfolio. It shows\nthe shape of the work, not the firm's data — no client information appears anywhere on this site.</p></div>"
+ },
+ {
+  "slug": "lively-dashboard",
+  "title": "Client reporting platform",
+  "client": "Lively",
+  "discipline": "Client reporting",
+  "summary": "A multi-tenant Next.js reporting platform that collects weekly client numbers, generates the monthly narrative, renders a PDF and emails it.",
+  "lede": "Monthly client reporting was a manual assembly job that consumed the same days every month. I replaced the assembly line with software.",
+  "image": {
+   "src": "/assets/img/screens/lively-dashboard.webp",
+   "sm": "/assets/img/screens/lively-dashboard-sm.webp",
+   "w": 1200,
+   "h": 672,
+   "alt": "Illustrative client reporting dashboard with KPI tiles, a trend chart and a generated summary",
+   "caption": "Illustrative interface — sample data, no client information"
+  },
+  "meta": [
+   [
+    "Role",
+    "Builder"
+   ],
+   [
+    "Stack",
+    "Next.js, TypeScript"
+   ],
+   [
+    "Services",
+    "Claude API, Sheets, Resend"
+   ],
+   [
+    "Host",
+    "Vercel"
+   ]
+  ],
+  "live": null,
+  "gallery": [],
+  "body": "<h2>The problem</h2>\n<p>An agency reporting to a roster of clients every month does the same work repeatedly: chase\neach account for their numbers, assemble them into a document, write a paragraph explaining what\nthe numbers mean, export it, and email it. Multiply by the client list and it consumes several\ndays of senior time every cycle — time that produces no new value, only the same value again.</p>\n<p>Worse, the chasing is invisible work. Nobody sees the effort spent finding out that three\naccounts have not submitted yet.</p>\n\n<h2>What I built</h2>\n<p>Two applications that operate as one system.</p>\n<ul>\n  <li><strong>An intake portal</strong> where each account submits their weekly and monthly\n      figures through structured forms — separate flows for different service lines, plus\n      financials and strategy inputs.</li>\n  <li><strong>A reporting dashboard</strong> that reads what came in, tracks it against per-client\n      goals, surfaces which accounts are healthy and which are drifting, generates the written\n      summary, renders the report as a PDF, and sends it.</li>\n</ul>\n<p>Both sit behind one-time-passcode authentication with signed sessions, because the data is\ncommercially sensitive and the users are not technical.</p>\n\n<h2>How it works</h2>\n<p>Submissions land in a structured store the team can still inspect directly — deliberately, so\nnobody is locked out of their own numbers by the tool meant to help them. The dashboard reads\nagainst that, compares to goals, and derives the health signals.</p>\n<p>The narrative summary is generated through the Claude API from the actual figures, then\nreviewed before delivery. The report renders server-side to PDF and goes out through a\ntransactional email service. Reports can also be shared as tokenised links, so a client can open\none without needing an account.</p>\n<p>Scheduled checks watch for the things that quietly go wrong — a missed submission, an invoice\npast due, a month with no monthly report — and raise them rather than waiting for someone to\nnotice.</p>\n\n<h2>Decisions worth defending</h2>\n<p>The generated summary is <em>reviewed, never auto-sent.</em> The model is good at turning\nnumbers into readable prose and unreliable at knowing which omission matters. Keeping a human\napproval step is what makes it usable for client-facing work.</p>\n<p>Authentication is one-time passcode rather than passwords. For a small set of infrequent,\nnon-technical users, passwords generate support burden and get reused; a passcode to a known\naddress removes both problems.</p>\n\n<h2>What changed</h2>\n<p>The reporting cycle stopped being a manual assembly job. Chasing became visible — the system\nknows who has not submitted, so the follow-up is a glance rather than an investigation. And the\nmonthly narrative starts from a draft rather than a blank page.</p>\n<div class=\"note-box\"><p>The interface above is an illustration built for this portfolio, with\ninvented clients and figures. No client data appears anywhere on this site.</p></div>"
+ },
+ {
+  "slug": "exec-calendar",
+  "title": "Running a principal's calendar",
+  "client": "ARC IP Law, PC",
+  "discipline": "Executive operations",
+  "summary": "Weekly calendar structure for a law firm's principal attorney — protected time, prep buffers, team availability and deadline visibility.",
+  "lede": "An attorney's calendar is the constraint the whole firm runs against. Left to fill itself, it fills with other people's priorities.",
+  "image": {
+   "src": "/assets/img/screens/calendar.webp",
+   "sm": "/assets/img/screens/calendar-sm.webp",
+   "w": 1200,
+   "h": 693,
+   "alt": "Illustrative weekly calendar showing protected blocks, buffers, team availability and a deadline",
+   "caption": "Illustrative interface — sample data, no client, matter or personal information"
+  },
+  "meta": [
+   [
+    "Role",
+    "Executive Assistant"
+   ],
+   [
+    "Discipline",
+    "Calendar & inbox"
+   ],
+   [
+    "Tools",
+    "Outlook, Teams, Zoom"
+   ],
+   [
+    "Cadence",
+    "Weekly"
+   ]
+  ],
+  "live": null,
+  "gallery": [],
+  "body": "<h2>The problem</h2>\n<p>A principal attorney's week is contested by everyone at once. Client consultations, internal\nreviews, networking commitments, vendor calls, filing deadlines, and a steady background of people\nwho need ten minutes. Every one of those requests is reasonable in isolation.</p>\n<p>Left to arrive first-come, the calendar fills with whatever was asked for earliest rather than\nwhatever matters most. The predictable results: no gap between a meeting across town and the one\nafter it, administrative work pushed to the evening because the day had no room for it, and a\ndouble-booking nobody notices until someone is already waiting.</p>\n<p>The failure is rarely a missed meeting. It is that the highest-value work &mdash; the work only\nthe attorney can do &mdash; gets whatever is left over.</p>\n\n<h2>How I structure the week</h2>\n<p>The calendar is treated as a budget rather than a queue. Some of it is spent before anyone gets\nto ask.</p>\n<ul>\n  <li><strong>Protected blocks.</strong> Recurring, defended time for inbox triage, invoicing and\n      matter administration. Booked like a meeting, because time that is not on the calendar is\n      time other people assume is free.</li>\n  <li><strong>Buffers.</strong> Prep and travel sit on the calendar as their own entries before\n      anything external. A one o'clock across town starts at twelve-fifteen.</li>\n  <li><strong>Categories.</strong> Client, internal, networking, protected and buffer are visually\n      distinct, so a glance answers &ldquo;what kind of week is this&rdquo; without reading a\n      single title.</li>\n  <li><strong>Availability bands.</strong> Who is out, who is remote, who is working several hours\n      ahead &mdash; across the top, where it informs scheduling instead of being discovered\n      afterwards.</li>\n  <li><strong>Deadlines as fixtures.</strong> Filing and response dates sit in the all-day row from\n      the moment they are known, so the days before them are visibly spoken for.</li>\n</ul>\n\n<h2>The judgement part</h2>\n<p>Structure handles the routine. The rest is triage, and it is the part that cannot be automated.</p>\n<p>When two things collide, someone has to weigh which moves &mdash; against travel feasibility,\nwho else is affected, whether the other party can reasonably be rescheduled, and what it costs the\nrelationship. I make that call and present a recommendation rather than handing over a conflict.</p>\n<p>The same applies to the inbox. Most of what arrives needs an answer, a delegation or a diary\nentry; only a fraction genuinely needs the principal's judgement. Sorting those is the job.</p>\n\n<h2>Why it holds</h2>\n<p>Because the rules are written down rather than held in my head. The categories, the buffer\nconventions, what gets protected and what may be moved &mdash; documented alongside the firm's\nother procedures, so someone covering for me schedules the week the way I would.</p>\n<p>That is the same test I apply to everything else here. A calendar only I can run is not a\nsystem, it is a dependency.</p>\n<div class=\"note-box\"><p>The calendar above is an illustration built for this portfolio. Every\nname, meeting and deadline is invented &mdash; no client, matter or personal information from any\nfirm appears anywhere on this site.</p></div>"
+ },
+ {
+  "slug": "content-programme",
+  "title": "The firm's LinkedIn content programme",
+  "client": "ARC IP Law, PC",
+  "discipline": "Business development",
+  "summary": "An editorial programme for an IP law firm — twenty-four articles across eight months on AI and intellectual property, written, produced and published to a held cadence.",
+  "lede": "Every professional services firm knows it should be publishing. Almost none of them do it consistently, and the reason is always the same: it depends on the busiest person.",
+  "image": {
+   "src": "/assets/img/screens/content-pipeline.webp",
+   "sm": "/assets/img/screens/content-pipeline-sm.webp",
+   "w": 1200,
+   "h": 778,
+   "alt": "Illustrative editorial pipeline showing an article calendar, production run and topic mix",
+   "caption": "Illustrative interface — no performance data, no personal information"
+  },
+  "meta": [
+   [
+    "Role",
+    "Content & BD support"
+   ],
+   [
+    "Output",
+    "24 articles, 8 months"
+   ],
+   [
+    "Beat",
+    "AI & intellectual property"
+   ],
+   [
+    "Cadence",
+    "3–4 per month"
+   ]
+  ],
+  "live": null,
+  "gallery": [],
+  "body": "<h2>The problem</h2>\n<p>Thought leadership at a small firm fails in a predictable way. Someone decides the firm should\nbe visible. Three good posts go out in a fortnight. Then a filing deadline lands, and nothing\nappears for two months.</p>\n<p>Sporadic publishing is close to worthless, because none of it compounds. The audience never\nforms a habit, the firm never builds a beat it is known for, and the effort already spent is\nwasted rather than banked.</p>\n<p>The bottleneck is never ideas. It is that drafting depends on the person with the least\navailable time &mdash; the attorney whose expertise makes the writing worth reading.</p>\n\n<h2>What I do</h2>\n<p>I run the programme end to end so the attorney's involvement is concentrated where only they\ncan contribute: reviewing for accuracy and positioning.</p>\n<ul>\n  <li><strong>Topic selection against the news.</strong> An editorial calendar tracking rulings,\n      agency guidance and disputes as they land, filtered to what the firm's clients would\n      actually act on.</li>\n  <li><strong>Drafting.</strong> Each article written to a consistent shape &mdash; what happened,\n      why it matters commercially, what a business should do about it.</li>\n  <li><strong>Attorney review.</strong> The one step that cannot be delegated, and the reason the\n      rest is worth delegating.</li>\n  <li><strong>Production.</strong> A matched banner graphic per article, so the feed presence is\n      recognisable rather than incidental.</li>\n  <li><strong>Publication and reporting.</strong> Scheduled to hold the cadence, with performance\n      rolled into the monthly summary to leadership.</li>\n</ul>\n\n<h2>Choosing the beat</h2>\n<p>The programme concentrated on <strong>artificial intelligence and intellectual property</strong>,\nand that focus is what made it work.</p>\n<p>It is where the firm's clients have live, unresolved questions, and where the law is moving fast\nenough that timely commentary has genuine value. It also rewards consistency: a reader who wants to\nunderstand how AI is reshaping IP risk has a reason to come back, which a general-interest legal\nfeed never earns.</p>\n<p>Pieces covered privilege over AI-generated documents, trade secret contamination between\ncompetitors, chain-of-title problems in training data, copyright exposure surfacing in discovery,\nand the shifting IP landscape in China &mdash; alongside the foundational trademark material a\nprospective client searches for.</p>\n\n<h2>Selected writing</h2>\n<p>Openings from three pieces, chosen for range rather than performance. Each was written for the\nfirm and published under its byline &mdash; these are excerpts shown as writing samples, not\nrepublished articles.</p>\n\n<div class=\"samples\">\n\n  <article class=\"sample\">\n    <div class=\"sample__m\"><span class=\"sample__d mono\">August 2026</span><span class=\"tag\">AI &amp; trade secrets</span></div>\n    <h3 class=\"sample__t\">Apple v. OpenAI Is a Warning Shot on Trade Secret Contamination</h3>\n    <div class=\"sample__x\">\n      <p>On July 10, 2026, Apple filed a trade-secret and breach-of-contract lawsuit in the Northern\n      District of California against OpenAI, two former employees, and related entities tied to\n      OpenAI&rsquo;s hardware push. The case is at an early stage, and the allegations remain\n      allegations. But for business leaders, that does not mean the dispute is only interesting if\n      Apple ultimately wins.</p>\n      <p>What makes this filing important is the type of IP risk it highlights. For the last several\n      years, AI legal commentary has focused heavily on copyright, training data, and model outputs.\n      Those issues still matter. But the Apple complaint is a reminder that the next major AI IP\n      problem for some companies may look less like a copyright theory and more like trade secret\n      contamination.</p>\n    </div>\n    <div class=\"sample__by mono\">Written for ARC IP Law, PC &middot; published under the firm&rsquo;s byline</div>\n  </article>\n\n  <article class=\"sample\">\n    <div class=\"sample__m\"><span class=\"sample__d mono\">March 2026</span><span class=\"tag\">Privilege &amp; AI</span></div>\n    <h3 class=\"sample__t\">AI-Created Documents Sent to Counsel Are Not Privileged, Federal Judge Rules</h3>\n    <div class=\"sample__x\">\n      <p>A recent federal court decision from the Southern District of New York has delivered a clear\n      message about the limits of attorney-client privilege in the age of artificial intelligence. In\n      <em>United States v. Heppner</em>, a district court held that documents a client generated using\n      a commercial AI tool and later shared with his attorneys were not protected by attorney-client\n      privilege or the work-product doctrine.</p>\n      <p>The case involved a financial services executive facing federal fraud charges who used an AI\n      tool to create a series of documents related to his legal defense. Even though the client shared\n      those materials with his lawyer, the court agreed with the government that privilege did not\n      apply.</p>\n    </div>\n    <div class=\"sample__by mono\">Written for ARC IP Law, PC &middot; published under the firm&rsquo;s byline</div>\n  </article>\n\n  <article class=\"sample\">\n    <div class=\"sample__m\"><span class=\"sample__d mono\">February 2026</span><span class=\"tag\">Trademarks</span></div>\n    <h3 class=\"sample__t\">Why Trademark Clearance Should Happen Before You Launch</h3>\n    <div class=\"sample__x\">\n      <p>Launching a new brand is exciting. You have invested time, money, and creativity into your\n      name, logo, and messaging, and you are ready to go to market.</p>\n      <p>But one of the most common &mdash; and costly &mdash; mistakes we see is skipping trademark\n      clearance before launch. In today&rsquo;s fast-moving, digital-first environment, failing to\n      clear a brand name early can expose businesses to unnecessary risk, expense, and disruption.</p>\n    </div>\n    <div class=\"sample__by mono\">Written for ARC IP Law, PC &middot; published under the firm&rsquo;s byline</div>\n  </article>\n\n</div>\n\n<h2>What made it hold</h2>\n<p>Twenty-four articles between January and August, at three to four a month. The number matters\nless than the fact that the cadence survived busy months, which is exactly where these programmes\nnormally die.</p>\n<p>It survived because it stopped being a creative act performed when someone felt inspired and\nbecame a production run with defined steps and a named owner at each one. Same path every time.\nThat is the whole trick, and it is the same one behind the intake system and the reporting\nplatform on this site.</p>\n<div class=\"note-box\"><p>The pipeline above is an illustration built for this portfolio. It shows\nno performance figures and no personal data &mdash; audience and engagement metrics belong to the\nfirm and its people, not to a portfolio.</p></div>"
+ },
+ {
+  "slug": "campaign-engine",
+  "title": "One funnel engine, five campaigns",
+  "client": "The Camp Transformation Center",
+  "discipline": "Campaign funnels",
+  "summary": "Five landing pages for two gyms — a free-class booking flow, a grand reopening, a six-week challenge in two locations and a $1 win-back — all running on one reusable funnel engine.",
+  "lede": "The first page took weeks. The fifth took days. The difference was deciding early that the engine was the product, and every campaign was a configuration of it.",
+  "image": {
+   "src": "/assets/img/screens/camp-hb-6w.webp",
+   "sm": "/assets/img/screens/camp-hb-6w-sm.webp",
+   "w": 1200,
+   "h": 750,
+   "alt": "The Final 6-Week Challenge landing page with a countdown and a growing prize pool",
+   "caption": "The Final 6-Week Challenge — eighteen days from brief to live",
+   "url": "camp-hb-6-week-challenge.vercel.app"
+  },
+  "meta": [
+   [
+    "Role",
+    "Builder"
+   ],
+   [
+    "Campaigns",
+    "5 pages, 2 gyms"
+   ],
+   [
+    "Stack",
+    "Static + serverless"
+   ],
+   [
+    "Hosts",
+    "Vercel, Netlify"
+   ]
+  ],
+  "live": null,
+  "gallery": [
+   {
+    "src": "/assets/img/screens/camp-hb.webp",
+    "sm": "/assets/img/screens/camp-hb-sm.webp",
+    "w": 1200,
+    "h": 750,
+    "alt": "Non-member class booking page for Huntington Beach",
+    "caption": "Non-member class booking — the original",
+    "url": "thecamp-hb-booking.vercel.app"
+   },
+   {
+    "src": "/assets/img/screens/camp-whittier.webp",
+    "sm": "/assets/img/screens/camp-whittier-sm.webp",
+    "w": 1200,
+    "h": 750,
+    "alt": "Grand reopening promotion page for Whittier",
+    "caption": "Grand reopening — a dollar for the first month",
+    "url": "thecamp-whittier-reopening-promo.vercel.app"
+   },
+   {
+    "src": "/assets/img/screens/camp-whittier-6w.webp",
+    "sm": "/assets/img/screens/camp-whittier-6w-sm.webp",
+    "w": 1200,
+    "h": 750,
+    "alt": "Six-week challenge page relocated to Whittier",
+    "caption": "The same challenge, relocated to a second gym",
+    "url": "camp-whittier-6-week-challenge.vercel.app"
+   },
+   {
+    "src": "/assets/img/screens/camp-hb-rejoin.webp",
+    "sm": "/assets/img/screens/camp-hb-rejoin-sm.webp",
+    "w": 1200,
+    "h": 750,
+    "alt": "Rejoin for $1 win-back page for lapsed members",
+    "caption": "Rejoin for $1 — a win-back for lapsed members",
+    "url": "thecamp-hb-rejoin-promo.vercel.app"
+   }
+  ],
+  "body": "<h2>Five campaigns</h2>\n<ol class=\"chain\">\n  <li><span class=\"n\">01</span><span><strong>Non-member class booking</strong> &mdash; Huntington Beach. Pick a class, submit in about forty-five seconds. <a href=\"https://thecamp-hb-booking.vercel.app\" target=\"_blank\" rel=\"noopener\">Live&nbsp;&#8599;</a></span></li>\n  <li><span class=\"n\">02</span><span><strong>Grand reopening</strong> &mdash; Whittier. A dollar for the first month, for a gym under new ownership with a hard date. <a href=\"https://thecamp-whittier-reopening-promo.vercel.app\" target=\"_blank\" rel=\"noopener\">Live&nbsp;&#8599;</a></span></li>\n  <li><span class=\"n\">03</span><span><strong>The Final 6-Week Challenge</strong> &mdash; Huntington Beach. Eighteen days from brief to live. <a href=\"https://camp-hb-6-week-challenge.vercel.app\" target=\"_blank\" rel=\"noopener\">Live&nbsp;&#8599;</a></span></li>\n  <li><span class=\"n\">04</span><span><strong>The same challenge, relocated</strong> &mdash; Whittier. Six confirmed differences and nothing else touched. <a href=\"https://camp-whittier-6-week-challenge.vercel.app\" target=\"_blank\" rel=\"noopener\">Live&nbsp;&#8599;</a></span></li>\n  <li><span class=\"n\">05</span><span><strong>Rejoin for $1</strong> &mdash; Huntington Beach. Thirty days for a dollar, for members who drifted away. <a href=\"https://thecamp-hb-rejoin-promo.vercel.app\" target=\"_blank\" rel=\"noopener\">Live&nbsp;&#8599;</a></span></li>\n</ol>\n\n<h2>The engine</h2>\n<p>Almost all of the traffic arrives from a phone, via Instagram or a text from a friend, and gives\nthe page well under a minute. So every page does exactly one job &mdash; claim the offer, pick a\nclass, submit &mdash; with no account, no online payment and no CRM integration to fail at the moment\nof conversion.</p>\n<ul>\n  <li><strong>One backend, two hosts.</strong> All server logic &mdash; validation and both emails\n      &mdash; lives once, in a shared module. Thin adapters expose it on Netlify and on Vercel, and\n      the page always posts to the same path. Moving host is a configuration change, not a rebuild.</li>\n  <li><strong>Two emails per booking.</strong> The team gets one formatted for how they actually\n      enter leads; the prospect gets a confirmation with a calendar invite attached.</li>\n  <li><strong>A deliberately manual step.</strong> Staff update their sales system by hand. It keeps\n      the critical path short and gives the front desk a human touchpoint.</li>\n  <li><strong>A schedule anyone can edit.</strong> Class times are defined as a weekly pattern in one\n      place, so the front desk can change them without touching anything that looks like code.</li>\n</ul>\n\n<h2>What each campaign actually added</h2>\n<p>Because the infrastructure already existed, each new page was only the campaign: offer logic,\ncopy, assets and whatever mechanic the offer needed. The six-week challenge is the clearest example.\nThe client was explicit that there would be no guarantee or risk reversal, so the page carries a real\ndeadline stated three ways &mdash; a countdown, a persistent days-remaining bar, and an end date framed\nas &ldquo;done before Thanksgiving&rdquo; &mdash; plus a prize pool that grows with every enrolment and a\nfree workout as the first step instead of a signup.</p>\n\n<h2>Relocating, not rebuilding</h2>\n<p>When the second gym wanted the same challenge, the obvious move was to copy the folder and change\nthe address. That is how two pages quietly become two codebases that drift apart. Instead, six\ndifferences were confirmed with the client before a line was written &mdash; a class the second gym\ndoes not run, its own prize pool, its own lead destination, a different call to action, its own\nschedule and its local details &mdash; and nothing else was touched. Resisting the urge to improve a\nworking page while moving it is most of the skill.</p>\n\n<h2>Separate on purpose</h2>\n<p>Every campaign runs on its own sheet, its own script deployment, its own repo and its own deploy.\nThat looks like duplication, and it is the right call: these are different offers with different\nlifespans. When a promotion ends it gets switched off, and switching it off cannot touch the funnel\nthat handles everyday bookings.</p>\n\n<h2>The half that is not a website</h2>\n<p>A booking page produces bookings, which only matter if somebody acts on them. Each campaign\nshipped with its operating material: a front-desk playbook that works as a web page and a PDF from one\nsource, QR codes and counter signs, text-message follow-up templates, a share card for links and\nDMs, a branded 404, and a testing checklist to run before the link went out.</p>"
+ },
+ {
+  "slug": "gbi-buildertrend",
+  "title": "Project operations in Buildertrend",
+  "client": "Grace Built Inc",
+  "discipline": "Construction",
+  "summary": "Estimating, allowances and compliance documentation standardised inside Buildertrend for a residential builder.",
+  "lede": "Construction admin fails quietly. A missing certificate or an uncategorised line item costs nothing on the day and a great deal three months later.",
+  "image": {
+   "src": "/assets/img/screens/gbi-project.webp",
+   "sm": "/assets/img/screens/gbi-project-sm.webp",
+   "w": 1200,
+   "h": 587,
+   "alt": "Illustrative construction project operations view with milestones and daily logs",
+   "caption": "Illustrative interface — sample data, no client or project information"
+  },
+  "meta": [
+   [
+    "Role",
+    "Project Coordinator"
+   ],
+   [
+    "Discipline",
+    "Construction operations"
+   ],
+   [
+    "Stack",
+    "Buildertrend, Excel"
+   ],
+   [
+    "Focus",
+    "Estimating & compliance"
+   ]
+  ],
+  "live": null,
+  "gallery": [],
+  "body": "<h2>The problem</h2>\n<p>A residential build generates a continuous stream of small administrative obligations. Daily\nlogs, subcontractor certificates with expiry dates, change orders awaiting owner decisions,\ninvoices moving toward payment, allowance tracking against a budget that shifts weekly.</p>\n<p>Each item is trivial. Collectively they decide whether a project stays profitable and whether\nthe builder can answer a question three months later. The failure mode is not dramatic — it is a\ncertificate that lapsed, a line item nobody categorised, an allowance quietly overspent.</p>\n\n<h2>What I did</h2>\n<p>Brought the recurring work into one predictable shape inside Buildertrend, so the same job\nproduced the same artefacts every time regardless of who was doing it.</p>\n<ul>\n  <li><strong>Estimate structure.</strong> Line items categorised against a consistent scheme, so\n      estimates could be compared across jobs instead of each being its own dialect.</li>\n  <li><strong>Allowance setup.</strong> Allowances configured and tracked so overruns surfaced\n      while there was still time to have the conversation.</li>\n  <li><strong>Compliance documentation.</strong> Subcontractor certificates and required documents\n      organised with expiry visible, rather than discovered during an audit.</li>\n  <li><strong>A coordinator's guide.</strong> The recurring procedures written down, so the role\n      could be handed over without a week of shadowing.</li>\n</ul>\n\n<h2>Why the documentation mattered most</h2>\n<p>The estimating and allowance work made individual projects legible. The written guide is what\nmade the <em>role</em> transferable.</p>\n<p>Construction coordination is heavy on undocumented knowledge — which subcontractor needs\nchasing, what a particular owner wants to approve personally, which milestone always slips. Some\nof that is genuinely irreducible judgement. A surprising amount is just procedure nobody had\nbothered to write down.</p>\n\n<h2>What carried forward</h2>\n<p>This is where the pattern I now apply everywhere first became obvious to me: the bottleneck in\na small operation is rarely capability, and almost always the fact that the process exists only\nas habit. The same instinct produced the intake system at ARC and the reporting platform at\nLively — find the recurring work, write it down, then automate the parts that deserve it.</p>\n<div class=\"note-box\"><p>The interface above is an illustration built for this portfolio. Project\nnames, people and figures are invented &mdash; no client or project information appears on this site.</p></div>"
+ },
+ {
+  "slug": "bdr-portal",
+  "title": "Sales onboarding portal",
+  "client": "Lively",
+  "discipline": "Enablement",
+  "summary": "A React training portal with sequential modules and assessments for onboarding new sales development reps.",
+  "lede": "New reps were ramping by shadowing whoever happened to be free. That makes onboarding quality a function of who was available that week.",
+  "image": {
+   "src": "/assets/img/screens/bdr-portal.webp",
+   "sm": "/assets/img/screens/bdr-portal-sm.webp",
+   "w": 1200,
+   "h": 737,
+   "alt": "Illustrative training portal showing sequential modules and a knowledge check",
+   "caption": "Illustrative interface — sample data, no personal information"
+  },
+  "meta": [
+   [
+    "Role",
+    "Builder & curriculum"
+   ],
+   [
+    "Stack",
+    "React, Vite"
+   ],
+   [
+    "Discipline",
+    "Enablement"
+   ],
+   [
+    "Output",
+    "9 modules"
+   ]
+  ],
+  "live": null,
+  "gallery": [],
+  "body": "<h2>The problem</h2>\n<p>Onboarding by apprenticeship has an obvious appeal and a hidden cost. What a new starter learns\ndepends on who had capacity to teach them, so two reps hired a month apart receive materially\ndifferent training — and nobody can say which parts either of them actually absorbed.</p>\n<p>It also consumes the time of exactly the people you least want pulled off their own work.</p>\n\n<h2>What I built</h2>\n<p>A self-serve training portal with a defined curriculum. Modules unlock in sequence, each ending\nin a knowledge check that has to be passed before the next opens.</p>\n<p>The sequencing is the point. Objection handling before qualification produces a rep who argues\nwith the wrong people; the order encodes how the job is actually learned, not just what there is\nto know.</p>\n\n<h2>Curriculum over software</h2>\n<p>The application is deliberately modest — React and Vite, module content in structured data,\nassessments alongside. That was the right call, because the difficulty was never technical.</p>\n<p>The hard part was deciding what a new rep genuinely needs in week one versus what a manager\nmerely enjoys explaining. Most training material fails by being comprehensive: it covers\neverything, so a new starter cannot tell what matters. Cutting it back to what changes behaviour\nin the first fortnight took considerably longer than building the portal that delivers it.</p>\n\n<h2>What it gives a manager</h2>\n<p>Visibility, mainly. Where each starter is, what they have passed, what needs retaking, and\nwhether the ramp target is still realistic. That turns onboarding from an anecdote into something\na manager can actually act on before it becomes a problem.</p>\n<div class=\"note-box\"><p>The interface above is an illustration built for this portfolio. Progress\nand results are invented &mdash; no personal or client information appears on this site.</p></div>"
+ }
+]

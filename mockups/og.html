@@ -1,24 +1,29 @@
 <!doctype html><html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,600..800&family=JetBrains+Mono:wght@500&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0}
-body{width:1200px;height:630px;background:#dce1de;color:#1f2421;font-family:Archivo,sans-serif;
- padding:64px 72px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
-body::after{content:"";position:absolute;right:-90px;bottom:-90px;width:420px;height:420px;border-radius:50%;background:#9cc5a1;opacity:.55}
+body{width:1200px;height:630px;background:#121619;color:#f3ecdd;font-family:Archivo,sans-serif;
+ padding:60px 72px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+body::before{content:"";position:absolute;inset:0;
+ background-image:linear-gradient(to right,rgba(229,198,135,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(229,198,135,.05) 1px,transparent 1px);
+ background-size:88px 88px;-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 20%,transparent 75%)}
+body::after{content:"";position:absolute;right:-160px;top:-160px;width:620px;height:620px;border-radius:50%;
+ background:radial-gradient(circle,rgba(9,129,74,.32),transparent 68%)}
 .mono{font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
-.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(31,36,33,.2);border-radius:999px;padding:9px 18px;background:#f2f5f3;position:relative;z-index:1;align-self:flex-start}
-.dot{width:9px;height:9px;border-radius:50%;background:#49a078}
-h1{font-size:132px;font-weight:800;line-height:.84;letter-spacing:-.055em;text-transform:uppercase;position:relative;z-index:1}
-h1 .o{color:transparent;-webkit-text-stroke:2.5px #1f2421;display:block}
-p{font-size:26px;font-weight:600;letter-spacing:-.02em;position:relative;z-index:1}
-.rule{height:1px;background:#1f2421;margin:26px 0 20px;position:relative;z-index:1}
-.foot{display:flex;justify-content:space-between;color:#216869;position:relative;z-index:1}
+.top{display:flex;align-items:center;gap:12px;color:#9a9780;position:relative;z-index:1}
+.dot{width:9px;height:9px;border-radius:50%;background:#09814a}
+h1{font-size:176px;font-weight:800;font-variation-settings:"wdth" 72;line-height:.82;letter-spacing:-.035em;text-transform:uppercase;position:relative;z-index:1;color:#e5c687}
+h1 .o{color:transparent;-webkit-text-stroke:2.5px #09814a;display:block}
+p{font-size:30px;font-weight:600;font-variation-settings:"wdth" 86;letter-spacing:-.02em;position:relative;z-index:1}
+p em{font-family:"Instrument Serif",serif;font-weight:400;color:#e5c687}
+.rule{height:1px;background:rgba(243,236,221,.18);margin:28px 0 22px;position:relative;z-index:1}
+.foot{display:flex;justify-content:space-between;color:#bcb382;position:relative;z-index:1}
 </style></head><body>
-<span></span>
+<div class="top mono"><span class="dot"></span><span style="color:#f3ecdd">rafaelreyes.dev</span></div>
 <div>
   <h1><span class="o">Rafael</span><span>Reyes</span></h1>
   <div class="rule"></div>
-  <p>Operations Manager &amp; AI Systems Builder</p>
+  <p>Operations Manager &amp; AI Systems Builder — <em>building the systems I run.</em></p>
 </div>
-<div class="foot mono"><span>Legal · Construction · Marketing</span><span>9 years</span></div>
+<div class="foot mono"><span>Tools · Agents · Websites · SOPs</span><span>9 years</span></div>
 </body></html>

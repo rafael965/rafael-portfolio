@@ -1,167 +1,124 @@
 # rafael-portfolio
 
 Personal portfolio site for Rafael Reyes — Operations Manager & AI Systems Builder.
+Live at **https://rafaelreyes.dev**.
 
-Plain HTML, CSS and JavaScript. **No build step, no dependencies, no framework.**
-Open `index.html` in a browser and it works.
+Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4. Motion is GSAP
+(ScrollTrigger, SplitText), Lenis smooth scrolling and Motion for React. Every page is
+statically prerendered; the only server code is the kit signup route.
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build
+npm run lint
+```
 
 ---
 
 ## 1. Layout
 
 ```
-index.html            Home — hero, work, services, experience, testimonials, contact
-about.html            Full background, roles, education, tooling
-work/*.html           Six case studies
-assets/css/           tokens.css (design tokens) · base.css (chrome) · home.css · case.css
-assets/js/main.js     Nav, scroll reveals, accordion. ~3 KB, no libraries.
-assets/img/           Portrait, social card
-assets/img/screens/   Case study imagery (WebP, 1200px + 600px)
-mockups/              SOURCE for generated images — not part of the published site
+app/                    routes: / about resources work/[slug] api/subscribe,
+                        sitemap.ts, robots.ts, template.tsx (page transition), not-found
+content/site.ts         ALL non-case content: nav, services, roles, testimonials, tools
+content/cases.json      the ten case studies (body is HTML, rendered on paper)
+content/cases.ts        types, homepage card copy, helpers
+components/home/        homepage sections
+components/motion/      SmoothScroll, SplitReveal, Reveal, ImageReveal, Magnetic, Counter,
+                        ScrollWords, Cursor, StrokeText, LogoLoop
+components/layout/      Nav, Footer (the footer is the #contact section on every page)
+public/                 images, favicons, the kit PDF — paths unchanged from the static site
+mockups/                SOURCE for generated images — not part of the published site
+kit/                    SOURCE for the Operations Runbook Kit PDF
 ```
 
-`mockups/` is tooling, not content. It holds the HTML used to render the dashboard
-images and the social card, plus `build_cases.py`. You can delete it from a deploy;
-keep it in the repo so the images can be regenerated.
+`StrokeText` (the hero name) and `LogoLoop` (the toolkit marquee) are adapted from
+[React Bits](https://reactbits.dev). Changes are noted at the top of each file.
 
 ## 2. Editing
 
-Everything is hand-editable HTML. The one exception is the case studies.
-
-**Case studies are generated.** Content lives in the `CASES` list in
-`mockups/build_cases.py`, which also holds the shared nav and footer. Edit there,
-then regenerate from the project root:
-
-```bash
-python3 mockups/build_cases.py
-```
-
-Editing `work/*.html` directly works, but the next run of that script overwrites it.
+- **A case study:** edit its entry in `content/cases.json`. Order in the file is order on
+  the homepage; the first four are featured. Card copy and tags live in `cards` in
+  `content/cases.ts`. A new case also needs its slug added to a service's `proof` list in
+  `content/site.ts` if it is evidence for one.
+- **Images:** WebP pairs in `public/assets/img/screens/` — `name.webp` (1200–1440px) and
+  `name-sm.webp` (600–720px). Screenshots sit in a browser frame; the address shown is the
+  live host, or `url` on the image entry, or an "illustrative" label.
+- **Services, roles, testimonials, tools:** `content/site.ts`.
 
 ## 3. Design tokens
 
-All colour and type lives in `assets/css/tokens.css`.
-
-| Token | Value | Use |
-|---|---|---|
-| `--ink` | `#1f2421` | Body text, dark sections, footer |
-| `--teal` | `#216869` | Eyebrows, links, section numbers on light |
-| `--green` | `#49a078` | Accent — see the rule below |
-| `--sage` | `#9cc5a1` | Body text on dark sections |
-| `--paper` | `#dce1de` | Page ground |
+Palette: Onyx `#121619`, Pine Teal `#2D4739`, Sea Green `#09814A`, Dry Sage `#BCB382`,
+Soft Fawn `#E5C687`, plus derived neutrals (paper `#F3ECDD`, paper-2, onyx-2, graphite,
+dim). All defined in `app/globals.css` under `@theme`.
 
 ### The one rule that matters
 
-**`--green` on `--paper` measures 2.41:1 and fails WCAG AA.**
-
-On the light ground, green is a **fill only** — button backgrounds with `--ink` text on
-top, the status dot, underline bars. Never green text, and never a green glyph, on
-`--paper` or `--card`. Use `--teal` there (4.88:1).
-
-On dark sections green is fine as text (4.94:1 against `--ink`).
-
-Every other pair in the system passes AA:
+**Sea green is a fill, never body text.** It measures 3.68:1 on onyx and 4.20:1 on paper —
+both fail AA for normal text. Buttons use white text on sea green (4.94:1).
 
 ```
-ink/paper 11.91   ink/card 14.36   mute/paper 5.80   mute/card 7.00
-teal/paper 4.88   teal/card 5.89   sage/ink  8.19    green/ink 4.94
+on dark:  paper 15.5   fawn 11.1   sage 8.6   dim 6.2
+on light: onyx 15.5    pine 8.6    graphite 5.5
+on pine:  paper 8.6    fawn 6.2    sage 4.8
 ```
 
-## 4. Images
+Sage and fawn on paper are decorative only (1.8:1, 1.4:1).
 
-Case study imagery is WebP at 1200px and 600px. To regenerate:
+## 4. No client data
 
-```bash
-CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-"$CHROME" --headless=new --disable-gpu --hide-scrollbars \
-  --force-device-scale-factor=2 --virtual-time-budget=7000 \
-  --window-size=1280,720 --screenshot=out.png \
-  "file://$PWD/mockups/arc-intake.html"
-```
+The Lively dashboard and sales portal, ARC (intake, calendar, content) and Grace Built
+images are **illustrations built for this site**, with invented names and figures. Their
+browser frames say "Illustrative interface — no client data", and the footer says so too.
 
-Then downscale to WebP (quality 84). Heights differ per mockup — measure the content
-rather than guessing, or the image gets dead space at the bottom.
+The real screenshots contained a law firm's conversion rate, a construction project's
+location and named staff, and an executive calendar carrying privileged matter subjects
+and live meeting links. None of that belongs on a public page.
 
-### No client data
+The content-programme case carries **no engagement metrics** — the analytics belonged to
+the firm's principal. The DCSE, Lively website and Camp images are genuine screenshots of
+marketing sites with nothing private on them.
 
-The Lively, ARC (intake, calendar and content) and Grace Built images are **illustrations built
-for this site**, using invented names and figures. They are labelled as such in the interface itself, in each
-case study, and in the site footer.
+**Keep it that way.** Check any real screenshot at full resolution for names, addresses,
+figures and third parties before it goes in.
 
-This was deliberate. The real screenshots contained a law firm's conversion rate; a
-construction project's location, named staff and payment activity; and an executive
-calendar carrying litigation deadlines, privileged matter subjects, matter numbers,
-live meeting links and colleagues' vacation dates. None of that belongs on a public
-page, and the calendar in particular could not have been safely redacted — nearly every
-block held something identifying.
-
-The content-programme case deliberately carries **no engagement metrics**. The source
-analytics belonged to the firm's principal — her followers, profile views and search
-appearances — and two of the four headline figures were negative. Scale of output is
-Rafael's to cite; audience performance is not. The Camp images are genuine, because those are public
-marketing pages with nothing private on them.
-
-**Keep it that way.** If you swap in a real screenshot, check it at full resolution for
-names, addresses, figures and third parties first.
+DCSE links to its staging preview until the firm approves launch; update `live` on the
+`dcse-website` entry when the real domain is up. The Lively website has no public link
+until it launches.
 
 ## 5. Availability
 
-The site carries no "available for work" signal. To put one back, three places:
+The site carries no "available for work" signal, and no role shows as current — no dates,
+no "present". Keep it that way unless that changes.
 
-- `index.html` hero — a pill above the name
-- `index.html` contact section — a pill above the headline, plus the headline and
-  supporting copy, which currently invite conversation rather than pitch for work
-- `mockups/og.html` — the social card pill; re-render it afterwards (see Images)
+## 6. Kit signup
 
-The `.status` / `.status__dot` CSS and its `pulse` keyframes were removed when the
-pills came out. Restore them from git history rather than rewriting:
-`git log -S"status__dot" -- assets/css/base.css`
+`app/api/subscribe/route.ts` emails the kit through Resend. It needs `RESEND_API_KEY` in
+the Vercel project's environment variables; without it the form reports that email is not
+configured. The PDF lives at `/downloads/operations-runbook-kit.pdf` — that URL is in emails
+already sent, so it must not move.
 
-## 6. Analytics
+## 7. URLs
 
-Vercel Web Analytics, added as one tag on every page:
+`next.config.ts` permanently redirects every URL from the static site: `*.html` pages to
+their clean paths, and the five former Camp case studies to `/work/campaign-engine`.
 
-```html
-<script defer src="/_vercel/insights/script.js"></script>
-```
+## 8. Social card and favicon
 
-**It only reports once enabled in the dashboard** — Vercel project →
-Analytics → Enable. The script is served by Vercel at that path at runtime;
-there is no package to install and nothing to configure in the code.
-
-Cookieless, so no consent banner is required. The path 404s when you open the
-files locally, which is harmless — the tag is deferred and nothing else depends
-on it.
-
-To add Speed Insights later, the same pattern applies with
-`/_vercel/speed-insights/script.js`.
-
-## 7. Deploying
-
-Static — any host works. Drag the folder into Netlify, or:
+Rendered from `mockups/og.html` and `mockups/favicon.html` with headless Chrome:
 
 ```bash
-npx vercel --prod
+CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+"$CHROME" --headless=new --hide-scrollbars --virtual-time-budget=6000 \
+  --window-size=1200,630 --screenshot=public/assets/img/og.png "file://$PWD/mockups/og.html"
 ```
 
-Live at **https://rafaelreyes.dev**
+LinkedIn caches the card; refresh it with the Post Inspector after changing it.
 
-The domain appears in four places. Change all of them together when it moves:
+## 9. Motion and accessibility
 
-- `robots.txt` — the `Sitemap:` line
-- `sitemap.xml` — every `<loc>`
-- `index.html` and `about.html` — `og:image` and `og:url`
-- `mockups/build_cases.py` — the `og:image` in the page template
-
-```bash
-OLD=rafaelreyes.dev; NEW=your-domain.com
-grep -rl "$OLD" --include=*.html --include=*.xml --include=*.txt --include=*.py . \
-  | xargs sed -i '' "s|$OLD|$NEW|g"
-python3 mockups/build_cases.py
-```
-
-## 8. Browser support
-
-Modern evergreen browsers. Uses `:has()`-free CSS, CSS nesting-free syntax, WebP,
-`overflow: clip`, `inert`, and `IntersectionObserver`. Reduced motion is respected —
-all animation is disabled under `prefers-reduced-motion: reduce`.
+Every effect respects `prefers-reduced-motion`: reveals render in place, the name is drawn
+already filled, Lenis is off, and the toolkit marquee stops and wraps instead of looping.
+The custom cursor only appears for a fine pointer. Vercel Web Analytics is included via
+`@vercel/analytics`.

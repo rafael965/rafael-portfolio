@@ -90,7 +90,7 @@ export default function About() {
               compliance, held together by documentation and improved with automation where automation genuinely earns
               its place.
             </p>
-            <p className="border-l-2 border-sea pl-6 text-graphite">
+            <p className="t-h4 mt-4 !leading-snug">
               The part I care about is <strong className="font-semibold text-onyx">handover</strong>. A system that only
               works while I&rsquo;m running it isn&rsquo;t a system. It&rsquo;s a dependency. Everything on this site
               was built to be given away.
